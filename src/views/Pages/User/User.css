@@ -1,0 +1,28 @@
+@font-face {
+  font-family: "AvenirNextLTProRegular";
+  src: url("../../../assets/fonts/AvenirNextLTProRegular.otf");
+  src: url("../../../assets/fonts/AvenirNextLTProRegular.otf")
+    format("opentype");
+}
+
+@font-face {
+  font-family: "AvenirNextLTProDemi";
+  src: url("../../../assets/fonts/AvenirNextLTProDemi.otf");
+  src: url("../../../assets/fonts/AvenirNextLTProDemi.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "AvenirNextLTProBold";
+  src: url("../../../assets/fonts/AvenirNextLTProBold.otf");
+  src: url("../../../assets/fonts/AvenirNextLTProBold.otf") format("opentype");
+}
+
+.user-font {
+  font-family: "AvenirNextLTProDemi";
+}
+
+.like-number {
+  font-family: "AvenirNextLTProBold" !important;
+  font-weight: bold;
+  color: #707070;
+}

@@ -1,0 +1,59 @@
+/* .uppy-Dashboard-poweredBy {
+  display: none !important;
+}
+
+.uppy-Webcam-permissonsIcon,
+.uppy-Webcam-title {
+  text-align: center;
+  z-index: 50;
+}
+.uppy-Webcam-permissons {
+  width: 90%;
+  text-align: center;
+}
+
+@media (max-width: 669px) {
+  .uppy-Dashboard-inner {
+    width: 100% !important;
+    outline: none;
+    max-width: 100% !important;
+    height: 10px !important;
+    min-height: 220px;
+  }
+
+  .uppy-Dashboard-files {
+    height: 150px !important;
+  }
+
+  .uppy-Root {
+    margin-top: 15vw !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .uppy-StatusBar.is-waiting .uppy-StatusBar-actionBtn--upload {
+    display: none;
+  }
+}
+.uppy-StatusBar.is-waiting .uppy-StatusBar-actionBtn--upload {
+  background-color: #08a187;
+  display: none;
+}
+
+.uppy-StatusBar-actions {
+  border: none;
+}
+
+.uppy-Webcam-video,
+.uppy-Webcam-video--mirrored {
+  max-height: 400px;
+}
+
+.uppy-Webcam-button--video {
+  color: red;
+  width: 40px;
+}
+
+.uppy-Webcam-buttonContainer > button {
+  font-size: 40px;
+} */

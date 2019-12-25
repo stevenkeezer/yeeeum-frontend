@@ -1,0 +1,123 @@
+@media (min-width: 960px) {
+  .app-header {
+    display: none;
+  }
+  .header-fixed .app-body {
+    margin-top: 0px;
+  }
+}
+
+@media only screen and (min-width: 959px) and (max-width: 1200px) {
+  .app-header {
+    display: flex !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .sidebar-fixed .app-header + .app-body .sidebar {
+    height: 100%;
+  }
+  .navbar-brand {
+    width: 80px !important;
+  }
+}
+.navbar-brand {
+  font-size: 1.5rem !important;
+  top: -3px !important;
+}
+
+.app-header {
+  border-bottom: 0px;
+  height: 50px;
+}
+
+.navbar-brand {
+  color: #f15a24 !important;
+  font-size: 1.5rem;
+  font-family: "AvertaDemo-ExtraBoldItalic", sans-serif;
+}
+
+.navbar-toggler {
+  outline: none !important;
+}
+
+.navbar-toggler-icon {
+  height: 20px !important;
+}
+
+.img-avatar {
+  height: 25px !important;
+}
+
+@media (max-width: 991.98px) {
+  .app-body {
+    margin-top: 15px;
+  }
+}
+/* Demo 2 */
+#demo-2 input[type="search"] {
+  width: 15px;
+  /* padding-left: 10px; */
+  color: transparent;
+  cursor: pointer;
+}
+#demo-2 input[type="search"]:hover {
+  background-color: #ffffff;
+}
+#demo-2 input[type="search"]:focus {
+  width: 130px;
+  padding-left: 32px;
+  color: #000;
+  background-color: #fff;
+  cursor: auto;
+}
+#demo-2 input:-moz-placeholder {
+  color: transparent;
+}
+#demo-2 input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+#demo-2 input {
+  outline: none;
+}
+#demo-2 input[type="search"] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+  font-family: inherit;
+  font-size: 100%;
+}
+#demo-2 input::-webkit-search-decoration,
+#demo-2 input::-webkit-search-cancel-button {
+  display: none;
+}
+
+#demo-2 input[type="search"] {
+  background: #ffffff
+    url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat
+    9px center;
+  border: solid 1px white;
+  padding-right: 13px;
+  /* width: -55px; */
+
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+}
+#demo-2 input[type="search"]:focus {
+  width: 130px;
+  background-color: #fff;
+  /* border-color: #66cc75; */
+}
+
+input:-webkit-autofill {
+  background-color: transparent !important;
+}
+
+.dropdown-item {
+  border: none;
+}
+
+.dropdown-item > a {
+  color: black;
+}

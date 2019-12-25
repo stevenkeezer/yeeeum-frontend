@@ -1,0 +1,61 @@
+.your-recipes {
+  font-family: "AvenirNextLTProDemi", sans-serif;
+  color: #222222 !important;
+  font-weight: "bold";
+}
+
+@font-face {
+  font-family: "AvenirNextLTProDemi";
+  src: url("../../../assets/fonts/AvenirNextLTProDemi.otf");
+  src: url("../../../assets/fonts/AvenirNextLTProDemi.otf") format("opentype");
+}
+
+.add-img-button {
+  font-family: "AvenirNextLTProDemi";
+}
+
+.username {
+  font-family: "AvenirNextLTProDemi";
+}
+
+@media (min-width: 600) {
+  .profile-circle {
+    width: 30px !important;
+  }
+}
+
+.uppy-StatusBar.is-waiting .uppy-StatusBar-actionBtn--upload {
+  background-color: #08a187;
+  display: none;
+}
+
+.uppy-StatusBar-actions {
+  border: none;
+}
+
+.uppy-Webcam-video,
+.uppy-Webcam-video--mirrored {
+  max-height: 400px;
+}
+
+.uppy-Webcam-button--video {
+  color: red;
+  width: 40px;
+}
+
+.uppy-Webcam-buttonContainer > button {
+  font-size: 40px;
+}
+
+.uppy-Root {
+  margin-top: 2vw !important;
+}
+.uppy-Webcam-permissonsIcon,
+.uppy-Webcam-title {
+  text-align: center;
+  z-index: 50;
+}
+.uppy-Webcam-permissons {
+  width: 90%;
+  text-align: center;
+}

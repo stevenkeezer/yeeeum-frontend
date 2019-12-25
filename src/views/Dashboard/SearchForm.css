@@ -1,0 +1,48 @@
+@font-face {
+  font-family: "AvenirNextLTProRegular";
+  src: url("../../assets/fonts/AvenirNextLTProRegular.otf");
+  src: url("../../assets/fonts/AvenirNextLTProRegular.otf") format("opentype");
+}
+
+.email-field {
+  width: 100%;
+  height: 58px;
+  border-radius: 75px;
+  padding: 0.6em 0.9em;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "AvenirNextLTProRegular";
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12), inset 0 0 1px rgba(0, 0, 0, 0.05);
+  outline: none;
+  border: 0;
+  color: #656565;
+  -webkit-appearance: none;
+}
+
+.email-field::placeholder {
+  color: #bababa;
+  font-size: 1.12em;
+}
+
+@media (max-width: 1178px) {
+  .search-form {
+    margin-top: 2%;
+  }
+}
+
+@media (max-width: 778px) {
+  .search-form {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 779px) and (max-width: 1200px) {
+  .search-form {
+    margin-top: 7%;
+  }
+}
+
+.search-form-font {
+  font-family: "AvenirNextLTProRegular" !important;
+}

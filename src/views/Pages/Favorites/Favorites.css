@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "AvenirNextLTProDemi";
+  src: url("../../../assets/fonts/AvenirNextLTProDemi.otf");
+  src: url("../../../assets/fonts/AvenirNextLTProDemi.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "AvenirNextLTProRegular";
+  src: url("../../../assets/fonts/AvenirNextLTProRegular.otf");
+  src: url("../../../assets/fonts/AvenirNextLTProRegular.otf")
+    format("opentype");
+}
+
+.favorites-font {
+  font-family: "AvenirNextLTProRegular";
+}
+
+.favorites-header {
+  font-family: "AvenirNextLTProDemi";
+}

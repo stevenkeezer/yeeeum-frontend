@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "AvenirNextLTProBold";
+  src: url("../../../assets/fonts/AvenirNextLTProBold.otf");
+  src: url("../../../assets/fonts/AvenirNextLTProBold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "AvenirNextLTProRegular";
+  src: url("../../../assets/fonts/AvenirNextLTProRegular.otf");
+  src: url("../../../assets/fonts/AvenirNextLTProRegular.otf")
+    format("opentype");
+}
+
+.tab-content {
+  border: none;
+}
+
+.tab-item {
+  text-transform: uppercase;
+  color: #707070;
+  margin-right: 22px;
+  padding-bottom: 4px;
+  white-space: nowrap;
+}
+
+.nav-tabs .nav-link.active {
+  color: #2f353a;
+  background: #fff;
+  border-bottom: 3px solid #00a287 !important;
+}
+
+.tab-link {
+  font-family: "AvenirNextLTProBold" !important;
+}
+
+.nav-tabs {
+  border: none;
+  font-family: "AvenirNextLTProBold" !important;
+}

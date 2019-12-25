@@ -1,0 +1,175 @@
+@font-face {
+  font-family: "AvenirNextLTProDemi";
+  src: url("../../../assets/fonts/AvenirNextLTProDemi.otf");
+  src: url("../../../assets/fonts/AvenirNextLTProDemi.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "AvenirNextLTProRegular";
+  src: url("../../../assets/fonts/AvenirNextLTProRegular.otf");
+  src: url("../../../assets/fonts/AvenirNextLTProRegular.otf")
+    format("opentype");
+}
+
+h4 {
+  font-family: "AvenirNextLTProDemi";
+}
+
+.label-container {
+  position: fixed;
+  bottom: 48px;
+  right: 105px;
+  display: table;
+  visibility: hidden;
+}
+
+.label-text {
+  color: #ffffff;
+  background: rgba(51, 51, 51, 0.5);
+  display: table-cell;
+  vertical-align: middle;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.label-arrow {
+  display: table-cell;
+  vertical-align: middle;
+  color: #333;
+  opacity: 0.5;
+}
+
+.float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #08a287;
+  color: #ffffff;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 2px 2px 3px #999;
+}
+
+@media (max-width: 700px) {
+  #recipeForm {
+    margin-top: 5% !important;
+    margin-bottom: 120px;
+  }
+}
+
+#recipeForm {
+  margin-bottom: 150px;
+}
+.MuiInputBase-root {
+  font-family: "AvenirNextLTProRegular" !important;
+}
+
+.my-float {
+  font-size: 24px;
+  margin-top: 18px;
+  color: white;
+}
+
+a.float + div.label-container {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s ease;
+}
+
+a.float:hover + div.label-container {
+  visibility: visible;
+  opacity: 1;
+}
+
+.float:active {
+  box-shadow: 0 0.5px #666;
+  transform: translateY(0.2px);
+}
+
+.MuiInput-underline:after {
+  border-bottom: 2px solid #08a287 !important;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  border: 0;
+  /* padding: 10px 5px; */
+  background: white no-repeat;
+  height: auto;
+
+  /*
+	* IMPORTANT PART HERE
+	*/
+
+  /* 2 imgs : 1px gray line (normal state) AND 2px green line (focus state) */
+  background-image: linear-gradient(to bottom, #1abc9c, #1abc9c),
+    linear-gradient(to bottom, #949494, #949494);
+  /* sizes for the 2 images (default state) */
+  background-size: 0 2px, 100% 1px;
+  /* positions for the 2 images. Change both "50%" to "0%" or "100%" and tri again */
+  background-position: 50% 100%, 50% 100%;
+
+  /* animation solely on background-size */
+  transition: background-size 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+}
+
+input:focus,
+textarea:focus {
+  /* sizes for the 2 images (focus state) */
+  background-size: 100% 2px, 100% 1px;
+  outline: none;
+}
+
+textarea::placeholder {
+  font-size: 17px;
+  color: #a2a2a2;
+}
+
+/* textarea::-webkit-resizer {
+  background: url(http://jsfiddle.net/favicon.png);
+  background-size: 100%;
+} */
+
+@media (min-width: 700px) {
+  .ingredientsField-ingredients {
+    width: 60% !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .ingredientsField-ingredients {
+    width: 53% !important;
+  }
+}
+
+@media (min-width: 700px) {
+  .ingredientsField-ingredients-edit {
+    width: 64% !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .ingredientsField-ingredients-edit {
+    width: 56% !important;
+  }
+}
+
+h3 {
+  font-family: "AvenirNextLTProDemi";
+}
+
+.error {
+  color: #f44336 !important;
+  margin: 0;
+  font-size: 0.75rem;
+  margin-top: 8px;
+  min-height: 1em;
+  text-align: left;
+  font-family: "AvenirNextLTProRegular";
+  font-weight: 400;
+  line-height: 1em;
+  letter-spacing: 0.03333em;
+}

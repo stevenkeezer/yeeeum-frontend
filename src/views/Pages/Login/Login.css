@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "AvenirNextLTProDemi";
+  src: url("../../../assets/fonts/AvenirNextLTProDemi.otf");
+  src: url("../../../assets/fonts/AvenirNextLTProDemi.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "AvenirNextLTProRegular";
+  src: url("../../../assets/fonts/AvenirNextLTProRegular.otf");
+  src: url("../../../assets/fonts/AvenirNextLTProRegular.otf")
+    format("opentype");
+}
+
+.login-form {
+  font-family: "AvenirNextLTProRegular";
+}
+
+.login-header {
+  font-family: "AvenirNextLTProDemi";
+}
+
+.MuiInputBase-root {
+  font-family: "AvenirNextLTProRegular" !important;
+}
+
+@media (max-width: 700px) {
+  .sign-up-btn {
+    display: none;
+  }
+}

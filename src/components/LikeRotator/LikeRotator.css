@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "AvenirNextLTProBold";
+  src: url("../../assets/fonts/AvenirNextLTProBold.otf");
+  src: url("../../assets/fonts/AvenirNextLTProBold.otf") format("opentype");
+}
+
+.rotate {
+  animation: rotate-keyframes 1s;
+}
+
+@keyframes rotate-keyframes {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+.like-number {
+  color: #707070;
+  font-family: "AvenirNextLTProBold";
+}

@@ -1,0 +1,253 @@
+@font-face {
+  font-family: "AvenirNextLTProMedium";
+  src: url("../../assets//fonts/AvenirNextLTProMedium.otf");
+  src: url("../../assets/fonts/AvenirNextLTProMedium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "AvenirNextLTProRegular";
+  src: url("../../assets/fonts/AvenirNextLTProRegular.otf");
+  src: url("../../assets/fonts/AvenirNextLTProRegular.otf") format("opentype");
+}
+.recipes-container {
+  margin-top: 4.5%;
+  width: 100%;
+  min-height: 700px;
+}
+
+.card {
+  border: none !important;
+  background-color: transparent !important;
+}
+.info-wrap {
+  /* padding-top: 0.9rem; */
+}
+.card-product:after {
+  content: "";
+  display: table;
+  clear: both;
+  visibility: hidden;
+}
+.card-product .price-new,
+.card-product .price {
+  margin-right: 5px;
+}
+.card-product .price-old {
+  color: #999;
+}
+.card-product .img-wrap {
+  border-radius: 3px 3px 0 0;
+  overflow: hidden;
+  position: relative;
+  height: 220px;
+  text-align: center;
+}
+.card-product .img-wrap img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+.card-product .info-wrap {
+  overflow: hidden;
+  padding: 15px;
+}
+.card-product .action-wrap {
+  padding-top: 4px;
+  margin-top: 4px;
+}
+.card-product .bottom-wrap {
+  padding: 15px;
+}
+.card-product .title {
+  margin-top: 0;
+}
+
+.checked {
+  color: orange;
+}
+.col-md-3 {
+  padding-left: 0.78rem !important;
+  padding-right: 0.78rem !important;
+}
+
+.no-padding {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.container-fluid {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.card-header:first-child {
+  border-color: white;
+}
+
+.card-header {
+  background-color: white !important;
+}
+
+.sub-article-title {
+  font-size: 0.98rem;
+  color: #232323 !important;
+  text-decoration: none;
+  font-family: "AvenirNextLTProMedium";
+}
+
+.sub-article-title:hover {
+  color: #00a287 !important;
+}
+
+.image-container {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  border-bottom-left-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
+}
+
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.author-name {
+  font-size: 0.9rem;
+}
+
+.col-9 {
+  /* padding-left: 0 !important; */
+  padding-right: 0 !important;
+}
+
+.caption {
+  overflow: hidden;
+  opacity: 0.99;
+  position: relative;
+  box-shadow: 0 0 1.5em 0 rgba(0, 0, 0, 0.05);
+  display: inline-block;
+}
+
+.caption:before {
+  content: "";
+  background: -webkit-linear-gradient(
+    top,
+    transparent 0%,
+    rgba(0, 0, 0, 0.85) 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.85) 100%
+  );
+  width: 100%;
+  height: 50%;
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 2;
+  -webkit-transition-property: top, opacity;
+  transition-property: top, opacity;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.caption img {
+  display: block;
+  max-width: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.caption .details {
+  font-size: 1em;
+  line-height: 1.1em;
+  padding: 1em;
+  color: #ffffff;
+  text-shadow: 0px 0px 3px #000;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+}
+
+.caption .details span {
+  display: block;
+  opacity: 1;
+  position: relative;
+  top: 50%;
+  -webkit-transition-property: top, opacity;
+  transition-property: top, opacity;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+
+.caption .details .title {
+  line-height: 1em;
+  font-weight: bold;
+  font-size: 1em;
+  font-family: "AvenirNextLTProMedium";
+}
+
+.caption .details .info {
+  line-height: 1.2em;
+  margin-top: 0.25em;
+  font-size: 0.8em;
+}
+
+.caption .details span {
+  opacity: 1;
+  top: 100px;
+}
+.caption:before {
+  opacity: 1;
+  top: 100%;
+}
+.caption:focus:before,
+.caption:focus span,
+.caption:hover:before,
+.caption:hover span {
+  opacity: 1;
+}
+.caption:focus:before,
+.caption:hover:before {
+  top: 50%;
+}
+.caption:focus span,
+.caption:hover span {
+  top: 0;
+}
+.caption:focus .title,
+.caption:hover .title {
+  -webkit-transition-delay: 0.25s;
+  transition-delay: 0.25s;
+}
+.caption:focus .info,
+.caption:hover .info {
+  -webkit-transition-delay: 0.25s;
+  transition-delay: 0.25s;
+}
+
+@media (min-width: 992px) {
+  .like-aligner {
+    margin-right: 0px !important;
+  }
+  .like-rotator {
+    margin-right: 14px !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .like-rotator {
+    margin-right: 5px !important;
+  }
+}
+.author-name {
+  font-family: "AvenirNextLTProRegular";
+}

@@ -1,0 +1,262 @@
+@font-face {
+  font-family: "AvertaDemo-ExtraBoldItalic";
+  src: url("../../assets/fonts/AvertaDemo-ExtraBoldItalic.otf");
+  src: url("../../assets/fonts/AvertaDemo-ExtraBoldItalic.otf")
+    format("opentype");
+}
+
+@font-face {
+  font-family: "AvenirNextLTProThin";
+  src: url("../../assets/fonts/AvenirNextLTProThin.otf");
+  src: url("../../assets/fonts/AvenirNextLTProThin.otf") format("opentype");
+}
+@font-face {
+  font-family: "AvenirNextLTProRegular";
+  src: url("../../assets/fonts/AvenirNextLTProRegular.otf");
+  src: url("../../assets/fonts/AvenirNextLTProRegular.otf") format("opentype");
+}
+@font-face {
+  font-family: "AvenirNextLTProDemi";
+  src: url("../../assets/fonts/AvenirNextLTProDemi.otf");
+  src: url("../../assets/fonts/AvenirNextLTProDemi.otf") format("opentype");
+}
+
+.saved-recipes {
+  font-family: "AvenirNextLTProDemi";
+}
+.sidebar {
+  background-color: #ffffff;
+  box-shadow: 0 0 2em rgba(0, 0, 0, 0.047);
+  height: 100% !important;
+  position: fixed;
+  min-height: 100vh;
+}
+
+.sidebar .nav-link:hover {
+  height: 100%;
+}
+@media (max-width: 575.98px) {
+  .sidebar-show .main::before,
+  .aside-menu-show .main::before {
+    min-height: 100vh;
+  }
+  .logo {
+    display: none;
+  }
+  #separator {
+    display: none;
+  }
+  .profile-img-container {
+    margin-top: 50px;
+  }
+
+  .login-button {
+    padding-bottom: 0px !important;
+  }
+}
+
+.more {
+  position: absolute;
+  font-family: "AvenirNextLTProRegular";
+  bottom: -10px;
+  right: 78px;
+}
+.sidebar .sidebar-nav {
+  width: 100%;
+  /* height: 100vh !important; */
+  z-index: 4;
+  overflow-y: scroll !important;
+  /* position: relative !important; */
+}
+
+.sidebar .nav {
+  min-height: 0 !important;
+}
+
+.profile-img {
+  width: 27.4%;
+  margin-bottom: 27px;
+  margin-top: 13px;
+}
+.profile-load-img {
+  margin-right: 0px auto;
+  margin-left: 0px auto;
+  /* margin-right: 200px;
+  width: 100%;
+  margin-bottom: 21px;
+  margin-top: 15px; */
+}
+
+.profile-img-container {
+  text-align: center;
+}
+
+.nav-footer {
+  font-size: 0.7rem;
+  /* position: fixed; */
+  /* width: 100%; */
+
+  position: absolute;
+  bottom: 0 !important;
+}
+
+@media (max-width: 500px) {
+  .nav-footer {
+    display: none !important;
+  }
+}
+
+.nav-footer a {
+  color: #707070;
+  font-family: "AvenirNextLTProDemi", sans-serif;
+}
+
+.nav-link {
+  padding: 5px !important;
+  font-size: 0.83rem;
+  font-family: "AvenirNextLTProThin", sans-serif;
+  color: #707070;
+  transition: color 0.4s ease;
+  border: none !important;
+  outline: none !important;
+  font-weight: bold;
+}
+
+.sidebar-login-button {
+  letter-spacing: 0;
+  display: inline-block;
+  outline: none;
+  border: none;
+  border-radius: 3em;
+  box-sizing: border-box;
+  position: relative;
+  font-size: 14px;
+  text-decoration: none;
+  white-space: nowrap;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 11px 24px;
+  font-family: "AvenirNextLTProRegular";
+  background-color: #fff;
+}
+
+.sidebar-link-no-bcg:hover {
+  background: none !important;
+}
+.logo-container {
+  text-align: center;
+  margin-top: 35%;
+  margin-bottom: 23px;
+}
+.sidebar .nav-link.active {
+  color: #747474;
+  background: none;
+}
+
+@media (min-width: 992px) {
+  .sidebar-fixed .sidebar {
+    width: 205px;
+  }
+
+  html:not([dir="rtl"]) .sidebar {
+    margin-left: -205px;
+  }
+}
+
+@media (min-width: 992px) {
+  html:not([dir="rtl"]) .sidebar-lg-show.sidebar-fixed .main,
+  html:not([dir="rtl"]) .sidebar-lg-show.sidebar-fixed .app-footer,
+  html:not([dir="rtl"]) .sidebar-show.sidebar-fixed .main,
+  html:not([dir="rtl"]) .sidebar-show.sidebar-fixed .app-footer {
+    margin-left: 205px;
+  }
+}
+
+@media (min-width: 1200px) {
+  html:not([dir="rtl"]) .sidebar-xl-show.sidebar-fixed .main,
+  html:not([dir="rtl"]) .sidebar-xl-show.sidebar-fixed .app-footer,
+  html:not([dir="rtl"]) .sidebar-show.sidebar-fixed .main,
+  html:not([dir="rtl"]) .sidebar-show.sidebar-fixed .app-footer {
+    margin-left: 205px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .sidebar {
+    width: 205px;
+  }
+
+  html:not([dir="rtl"]) .sidebar {
+    margin-left: -205px;
+  }
+}
+
+.sidebar {
+  flex-direction: none;
+}
+.is-active {
+  color: #292e34;
+  text-emphasis: none;
+  font-weight: 900;
+  background: linear-gradient(
+    to right,
+    #00a287 0,
+    #00a287 1.4%,
+    transparent 1.2%
+  ) !important;
+}
+
+.nav-link:hover {
+  color: #292e34 !important;
+}
+
+.login-button {
+  font-family: "AvenirNextLTProRegular";
+}
+
+@media (min-width: 992px) {
+  html:not([dir="rtl"]) .sidebar-lg-show.sidebar-fixed .main,
+  html:not([dir="rtl"]) .sidebar-lg-show.sidebar-fixed .app-footer,
+  html:not([dir="rtl"]) .sidebar-show.sidebar-fixed .main,
+  html:not([dir="rtl"]) .sidebar-show.sidebar-fixed .app-footer {
+    margin-left: 205px;
+  }
+}
+
+@media (min-width: 1200px) {
+  html:not([dir="rtl"]) .sidebar-xl-show.sidebar-fixed .main,
+  html:not([dir="rtl"]) .sidebar-xl-show.sidebar-fixed .app-footer,
+  html:not([dir="rtl"]) .sidebar-show.sidebar-fixed .main,
+  html:not([dir="rtl"]) .sidebar-show.sidebar-fixed .app-footer {
+    margin-left: 205px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .sidebar {
+    width: 205px;
+  }
+
+  html:not([dir="rtl"]) .sidebar {
+    margin-left: -205px;
+  }
+}
+
+@media (max-width: 576px) {
+}
+
+html:not([dir="rtl"]) .sidebar-sm-show.sidebar-fixed .main,
+html:not([dir="rtl"]) .sidebar-sm-show.sidebar-fixed .app-footer,
+html:not([dir="rtl"]) .sidebar-show.sidebar-fixed .main,
+html:not([dir="rtl"]) .sidebar-show.sidebar-fixed .app-footer {
+  margin-left: 0px;
+}
+
+@media (max-width: 575.98px) {
+  .sidebar-show .main::before,
+  .aside-menu-show .main::before {
+    height: 100%;
+    /* height: 100vh; */
+  }
+}

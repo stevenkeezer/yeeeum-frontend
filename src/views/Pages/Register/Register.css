@@ -1,0 +1,54 @@
+@font-face {
+  font-family: "AvenirNextLTProDemi";
+  src: url("../../../assets/fonts/AvenirNextLTProDemi.otf");
+  src: url("../../../assets/fonts/AvenirNextLTProDemi.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "AvenirNextLTProRegular";
+  src: url("../../../assets/fonts/AvenirNextLTProRegular.otf");
+  src: url("../../../assets/fonts/AvenirNextLTProRegular.otf")
+    format("opentype");
+}
+
+.register-header {
+  font-family: "AvenirNextLTProDemi";
+}
+
+.register-form {
+  font-family: "AvenirNextLTProDemi";
+}
+
+@media (min-width: 700px) {
+  .register-card {
+    margin-left: 14%;
+  }
+}
+
+@media (min-width: 500px) {
+  .card-bcg {
+    background-color: transparent;
+  }
+  .logo {
+    top: 40px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .card-bcg {
+    padding: 23px;
+    background-color: white;
+  }
+  .logo {
+    top: 20px;
+  }
+}
+.button-facebook {
+  color: #fff;
+  background-color: #3b5998;
+  border-color: #3b5998;
+}
+
+.button-secondary:hover {
+  background-color: none;
+}

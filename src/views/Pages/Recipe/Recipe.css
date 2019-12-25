@@ -1,0 +1,412 @@
+@font-face {
+  font-family: "AvenirNextLTProRegular";
+  src: url("../../../assets/fonts/AvenirNextLTProRegular.otf");
+  src: url("../../../assets/fonts/AvenirNextLTProRegular.otf")
+    format("opentype");
+}
+
+@font-face {
+  font-family: "AvenirNextLTProDemi";
+  src: url("../../../assets/fonts/AvenirNextLTProDemi.otf");
+  src: url("../../../assets/fonts/AvenirNextLTProDemi.otf") format("opentype");
+}
+html {
+  font-size: 16px;
+  /* font-family: "AvenirNextLTProRegular"; */
+}
+
+.recipe-description {
+  font-family: "AvenirNextLTProRegular";
+}
+
+.comment-user-name {
+  font-family: "AvenirNextLTProRegular";
+  color: black;
+}
+.comments {
+  color: #444;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.65;
+}
+
+.comments article {
+  position: relative;
+  border-bottom: solid 1px rgba(178, 179, 153, 0.125);
+  margin: 0 auto 50px auto;
+}
+.comments article:last-child {
+  border: none;
+}
+.comments article:hover time {
+  opacity: 1;
+}
+.comments article img {
+  position: absolute;
+  top: -10px;
+  left: -75px;
+  width: 50px;
+  height: 50px;
+  border-width: 0;
+  border-radius: 100%;
+}
+.comments article h4 {
+  display: inline-block;
+  font-weight: 400;
+}
+.comments article h4 a {
+  color: #404040;
+  text-transform: lowercase;
+  text-decoration: none;
+}
+.comments article h4 a:hover {
+  color: #bfbfa8;
+}
+.comments article time {
+  color: #545454;
+  margin-left: 1rem;
+  text-transform: uppercase;
+}
+.comments article .icon-rocknroll {
+  color: #545454;
+  font-size: 0.85rem;
+}
+.comments article .icon-rocknroll:hover {
+  opacity: 0.5;
+}
+.comments article time,
+.comments article .like-count,
+.comments article .icon-rocknroll {
+  font-size: 0.75rem;
+  opacity: 0;
+}
+.comments article time,
+.comments article .like-count {
+  font-weight: 300;
+}
+.comments article p {
+  margin-bottom: 50px;
+}
+.comments article p .reply {
+  color: #bfbfa8;
+  cursor: pointer;
+}
+.comments article .active {
+  opacity: 1;
+}
+
+.like-data {
+  float: right;
+}
+
+.icon-rocknroll {
+  background: none;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  margin: 0 0.125rem 0 0;
+  padding: 0;
+}
+
+.comments article:hover .icon-rocknroll,
+.comments article:hover .like-count {
+  opacity: 1;
+}
+
+@media (max-width: 650px) {
+  .comments {
+    width: 100%;
+    padding: 0 1rem;
+  }
+  .comments article {
+    width: 90%;
+  }
+  .comments article #profile-photo {
+    position: relative;
+    left: -1rem;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .comments article h4 {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .comments article h4 time {
+    display: block;
+    margin-left: 0 !important;
+    opacity: 0.5 !important;
+  }
+  .recipe-title {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .recipe-title {
+    font-size: 2rem;
+  }
+}
+
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+input,
+select,
+button {
+  border: 1px solid #ccc;
+  background: #ffffff;
+  border-radius: 6px;
+  /* margin-bottom: 8px; */
+  box-sizing: border-box;
+}
+
+.card {
+  margin-bottom: 0px;
+}
+.custom-question {
+  padding: 16px;
+  background: #f5f5f5;
+  margin: 16px;
+}
+.field-wrapper {
+  display: flex;
+  width: 100%;
+}
+.field-wrapper .form-group:first-child {
+  flex-grow: 1;
+  margin-right: 16px;
+}
+
+.field-wrapper .form-group:first-child input {
+  display: block;
+  width: 100%;
+}
+
+.col-sm-6 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.col-lg-6 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.recipe-title {
+  font-weight: bold;
+  font-family: "AvenirNextLTProDemi";
+}
+
+.carousel {
+  border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+  overflow: hidden;
+  margin-top: 8%;
+}
+
+.recipe-container-top {
+  max-width: 950px;
+}
+
+@media (min-width: 700px) {
+  .recipe-header {
+    margin-top: 14%;
+  }
+
+  .recipe-img-container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 650px) {
+  .comments {
+    padding-left: 75px;
+  }
+}
+@media (max-width: 650px) {
+  .comments {
+    padding-left: 55px;
+  }
+  .expand-products-button {
+    margin-left: 3.5% !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .comments {
+    padding-left: 65px;
+  }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 891px) {
+  .carousel {
+    max-width: 480px;
+  }
+}
+
+@media (max-width: 700px) {
+  .intro-container {
+    padding-left: 5%;
+  }
+}
+
+.break {
+  border: 0.6px solid #e3e3e3;
+  border-top: 0.6px solid #e3e3e3 !important;
+}
+
+.edit {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  top: 102px;
+  left: 11vw;
+  background-color: grey;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 2px 2px 3px #999;
+}
+
+.my-edit {
+  margin-top: 8px;
+}
+
+.delete {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  top: 160px;
+  left: 11%;
+  background-color: grey;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 2px 2px 3px #999;
+}
+
+.my-delete {
+  margin-top: 8px;
+}
+
+.recipe-img {
+  min-width: 100%;
+}
+
+@media (min-width: 992px) {
+  .edit {
+    left: 20%;
+  }
+
+  .delete {
+    left: 20%;
+  }
+  .recipe-img {
+    max-width: 500px;
+  }
+
+  .recipe-title {
+    font-size: 2.5rem;
+  }
+  .carousel {
+    margin-top: 20%;
+  }
+  .col-lg-5 {
+    padding-left: 0px;
+  }
+
+  .card-body {
+    padding: 0px !important;
+  }
+}
+
+@media (max-width: 1202px) {
+  .sub-article-title {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1300px) {
+  .edit {
+    left: 22vw;
+    display: none;
+  }
+
+  .delete {
+    left: 22%;
+    display: none;
+  }
+}
+
+@media (min-width: 1300px) {
+  .edit-mobile {
+    left: 22vw;
+    display: none;
+  }
+
+  .delete-mobile {
+    left: 22%;
+    display: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  .product-title {
+    display: none;
+  }
+
+  .card-body {
+    padding: 0px !important;
+  }
+}
+.sub-article-title {
+  white-space: nowrap;
+  width: 100px;
+  font-family: "AvenirNextLTProDemi";
+}
+
+.modal-header {
+  border: none;
+}
+
+.modal-footer {
+  border: none;
+}
+
+.recipe-text,
+.buy-button {
+  font-family: "AvenirNextLTProRegular";
+}
+
+.buy-button {
+  font-family: "AvenirNextLTProBold";
+}
+p {
+  font-family: "AvenirNextLTProRegular";
+}
+
+.edit-mobile {
+  width: 40px;
+  height: 40px;
+  background-color: grey;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 2px 2px 3px #999;
+}
+
+.delete-mobile {
+  width: 40px;
+  height: 40px;
+  background-color: grey;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 2px 2px 3px #999;
+}
