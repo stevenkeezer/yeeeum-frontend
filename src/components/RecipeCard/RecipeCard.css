@@ -9,12 +9,24 @@
   src: url("../../assets/fonts/AvenirNextLTProRegular.otf");
   src: url("../../assets/fonts/AvenirNextLTProRegular.otf") format("opentype");
 }
+
+@font-face {
+  font-family: "AvenirNextLTProDemi";
+  src: url("../../assets/fonts/AvenirNextLTProDemi.otf");
+  src: url("../../assets/fonts/AvenirNextLTProDemi.otf") format("opentype");
+}
 .recipes-container {
   margin-top: 4.5%;
   width: 100%;
   min-height: 700px;
 }
 
+.recipe-title {
+  font-family: "AvenirNextLTProDemi";
+  font-weight: bold;
+  color: #2b2b2b2b;
+  font-size: 1rem;
+}
 .card {
   border: none !important;
   background-color: transparent !important;

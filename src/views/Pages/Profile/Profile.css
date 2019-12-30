@@ -26,7 +26,6 @@
 
 .uppy-StatusBar.is-waiting .uppy-StatusBar-actionBtn--upload {
   background-color: #08a187;
-  display: none;
 }
 
 .uppy-StatusBar-actions {

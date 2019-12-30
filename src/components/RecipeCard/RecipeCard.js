@@ -112,6 +112,7 @@ export default function RecipeCard(props) {
                       {imgLoaded ? (
                         <Fragment>
                           <Link
+                            className="sub-article-title"
                             to={`/recipe/${r.id}`}
                             style={{
                               textDecoration: "none"
