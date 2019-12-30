@@ -1,5 +1,5 @@
 import React, { Suspense, useEffect, useState } from "react";
-import { AppHeader, AppSidebar, AppSidebarHeader } from "@coreui/react";
+import { AppHeader } from "@coreui/react";
 import DefaultHeader from "../../../containers/DefaultLayout/DefaultHeader";
 import { motion } from "framer-motion";
 import RecipeCard from "../../../components/RecipeCard/RecipeCard";
@@ -26,6 +26,46 @@ export default function Profile(props) {
     return { name, calories, fat, carbs, protein };
   }
 
+  const replace_post = async id => {
+    const response = await fetch(process.env.REACT_APP_BURL + `replace_post`, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `Token ${localStorage.getItem("token")}`
+      },
+      body: JSON.stringify(id)
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+
+      let recipesCopy = JSON.parse(JSON.stringify(recipes));
+
+      const hasRecipeId = recipe => recipe.id === id;
+      recipesCopy[recipesCopy.findIndex(hasRecipeId)] = data;
+      setRecipes(recipesCopy);
+    }
+  };
+
+  const likeButton = async id => {
+    const recipeId = {
+      recipe_id: id
+    };
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Token ${localStorage.getItem("token")}`
+      },
+      body: JSON.stringify(recipeId)
+    };
+    const response = await fetch(process.env.REACT_APP_BURL + "like", options);
+    if (response.ok) {
+      const data = await response.json();
+      replace_post(id);
+    }
+  };
+
   const getUserPosts = async () => {
     const response = await fetch(process.env.REACT_APP_BURL + `profile`, {
       headers: {
@@ -36,24 +76,43 @@ export default function Profile(props) {
 
     if (response.ok) {
       const data = await response.json();
-      const notDeleted = data.filter(recipe => !recipe.deleted);
-      const rows = notDeleted.map(r => {
-        return createData(
-          r.id,
-          r.title,
-          r.ingredients.length,
-          r.description,
-          r.likes
-        );
-      });
-      setRecipeData(notDeleted);
-      setRecipes(rows);
+      setRecipes(data);
     }
   };
 
   useEffect(() => {
     getUserPosts();
   }, []);
+
+  const pageVariants = {
+    initial: {
+      opacity: 0
+      // x: "-100vw"
+    },
+    in: {
+      opacity: 1
+      // x: 0
+    },
+    out: {
+      // opacity: 0
+      // x: "100vw"
+      // scale: 1
+    }
+  };
+
+  const style = {
+    position: "absolute",
+    width: "100vw",
+    marginLeft: "auto",
+    marginRight: "auto"
+  };
+  const pageTransition = {
+    type: "tween",
+    transition: "linear",
+    ease: "anticipate",
+    duration: 0.8,
+    scale: 0.8
+  };
 
   const uppyRef = React.useRef();
 
@@ -82,14 +141,21 @@ export default function Profile(props) {
   };
 
   return (
+    <div>
+      <AppHeader fixed display="xl">
+        <Suspense fallback={loading()}>
+          <DefaultHeader onLogout={e => this.signOut(e)} props={props} />
+        </Suspense>
+      </AppHeader>
 
-      <div>
-        <AppHeader fixed display="xl">
-          <Suspense fallback={loading()}>
-            <DefaultHeader onLogout={e => this.signOut(e)} props={props} />
-          </Suspense>
-        </AppHeader>
-
+      <motion.div
+        style={style}
+        exit="out"
+        animate="in"
+        initial="initial"
+        variants={pageVariants}
+        transition={pageTransition}
+      >
         <main className="main">
           <div className="col-11 col-xl-9 col-lg-10 mx-auto">
             <div className="row pt-5">
@@ -139,9 +205,6 @@ export default function Profile(props) {
                 plugins={["Webcam"]}
               />
             </div>
-
-            {/* <RecipeTable recipes={recipes} /> */}
-
             <h3 style={{ marginLeft: "-7px" }} className="pt-4 your-recipes">
               Your Recipes
             </h3>
@@ -155,7 +218,8 @@ export default function Profile(props) {
               <div className="row pt-3">
                 <RecipeCard
                   className="mx-auto"
-                  recipes={recipeData}
+                  likeButton={likeButton}
+                  recipes={recipes}
                   setRecipes={setRecipeData}
                   getUserPosts={getUserPosts}
                 />
@@ -163,6 +227,7 @@ export default function Profile(props) {
             )}
           </div>
         </main>
-      </div>
+      </motion.div>
+    </div>
   );
 }

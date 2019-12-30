@@ -6,10 +6,11 @@ import Img from "react-image";
 import LikeRotator from "../LikeRotator/LikeRotator";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Truncate from "react-truncate";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function RecipeCard(props) {
   const [imgLoaded, setImgLoaded] = useState(false);
-  console.log(props);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     props.getPosts && props.getPosts();
@@ -19,11 +20,17 @@ export default function RecipeCard(props) {
     <>
       {props.recipes.length < 1 && (
         <div className="d-flex mx-auto justify-content-center align-self-center">
-          <CircularProgress style={{ marginTop: "13%", color: "#00a287" }} />
+          <CircularProgress
+            style={{
+              marginTop: "13%",
+              color: "#00a287"
+            }}
+          />
         </div>
       )}
+
       {props.recipes.map((r, i) => {
-        if (i == 1) {
+        if (i === 1) {
         }
         return (
           <div
@@ -106,7 +113,9 @@ export default function RecipeCard(props) {
                         <Fragment>
                           <Link
                             to={`/recipe/${r.id}`}
-                            style={{ textDecoration: "none" }}
+                            style={{
+                              textDecoration: "none"
+                            }}
                           >
                             {r.title}
                           </Link>

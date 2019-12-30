@@ -15,6 +15,13 @@ html {
   /* font-family: "AvenirNextLTProRegular"; */
 }
 
+.delete-modal {
+  font-family: "AvenirNextLTProDemi";
+}
+.delete-modal-body {
+  font-family: "AvenirNextLTProRegular";
+}
+
 .recipe-description {
   font-family: "AvenirNextLTProRegular";
 }

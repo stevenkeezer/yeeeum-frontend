@@ -32,7 +32,6 @@ class LikeRotator extends React.Component {
 
   render() {
     const { rotate } = this.state;
-
     return (
       <div className="justify-content-center align-items-center d-flex flex-column">
         <img

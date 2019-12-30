@@ -26,7 +26,7 @@ export default function home(props) {
       </AppHeader>
 
       <AppSidebarHeader />
-      <main className="main">
+      <main className="main" style={{ position: "relative" }}>
         <Container fluid>
           <Suspense fallback={loading()}>
             <Dashboard returnSearchResults={returnSearchResults} />

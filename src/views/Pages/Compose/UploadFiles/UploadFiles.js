@@ -6,6 +6,7 @@ import Facebook from "@uppy/facebook";
 import Webcam from "@uppy/webcam";
 import { Dashboard } from "@uppy/react";
 import { motion } from "framer-motion";
+import "../Compose.css";
 import "@uppy/dashboard/dist/style.css";
 import "@uppy/core/dist/style.css";
 
@@ -76,6 +77,10 @@ export default function Upload() {
     }
   };
 
+  const style = {
+    position: "absolute"
+  };
+
   const pageTransition = {
     type: "tween",
     transition: "linear",
@@ -84,16 +89,17 @@ export default function Upload() {
     scale: 0.8
   };
   return (
-    <div className="d-flex justify-content-center">
-      <motion.div
-        exit="out"
-        animate="in"
-        initial="initial"
-        variants={pageVariants}
-        transition={pageTransition}
-      >
-        <main>
-          <h1>Lets add some images</h1>
+    <main className="main vh-100">
+      <div className=" vh-100 mx-auto justify-content-center d-flex align-items-center mx-auto">
+        <motion.div
+          style={style}
+          exit="out"
+          animate="in"
+          initial="initial"
+          variants={pageVariants}
+          transition={pageTransition}
+        >
+          <h3>Add Images</h3>
           <Dashboard
             uppy={uppyRef.current}
             plugins={["Webcam"]}
@@ -102,8 +108,8 @@ export default function Upload() {
             ]}
             {...options}
           />
-        </main>
-      </motion.div>
-    </div>
+        </motion.div>
+      </div>
+    </main>
   );
 }

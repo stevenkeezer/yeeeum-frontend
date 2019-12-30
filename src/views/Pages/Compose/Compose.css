@@ -41,3 +41,6 @@ button {
   font-family: "AvenirNextLTProRegular" !important;
 }
 
+.uppy-StatusBar.is-waiting .uppy-StatusBar-actionBtn--upload {
+  background-color: #0aa287 !important;
+}

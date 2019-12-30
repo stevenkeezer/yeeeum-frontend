@@ -195,6 +195,9 @@ p {
   .banner-img {
     margin-left: 35%;
   }
+  .banner-container {
+    margin-left: 4%;
+  }
 }
 
 @media screen and (max-width: 700px) and (min-width: 591px) {

@@ -39,17 +39,8 @@ h4 {
   opacity: 0.5;
 }
 
-.float {
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  bottom: 40px;
-  right: 40px;
-  background-color: #08a287;
-  color: #ffffff;
-  border-radius: 50px;
-  text-align: center;
-  box-shadow: 2px 2px 3px #999;
+#submit-recipe-btn {
+  outline: none !important;
 }
 
 @media (max-width: 700px) {

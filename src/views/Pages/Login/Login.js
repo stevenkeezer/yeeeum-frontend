@@ -1,24 +1,62 @@
-import React from "react";
-
+import React, { useEffect } from "react";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import { Link } from "react-router-dom";
 import { Button, Container, Form, Row } from "reactstrap";
 import LoginForm from "./LoginForm.js";
+import { motion } from "framer-motion";
 import { useHistory } from "react-router-dom";
 import "./Login.css";
 
 function Login(props) {
   let history = useHistory();
-  if (props.user) {
-    history.push("/");
-  }
+
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      history.push("/");
+    }
+  }, []);
+
   const handleSubmit = () => {
-    localStorage.setItem("login", true);
+    // localStorage.setItem("login", true);
     document.getElementById("fb-form").submit();
   };
 
+  const pageVariants = {
+    initial: {
+      // opacity: 0,
+      // x: "-100vw"
+    },
+    in: {
+      // opacity: 1,
+      // x: 0
+    },
+    out: {
+      // opacity: 0,
+      // x: "100vw"
+      // scale: 1
+    }
+  };
+
+  const style = {
+    position: "absolute",
+    width: "100vw"
+  };
+  const pageTransition = {
+    type: "tween",
+    transition: "linear",
+    ease: "anticipate",
+    duration: 0.3,
+    scale: 0.8
+  };
   return (
-    <div className="animated fadeIn">
+    <motion.div
+      style={style}
+      exit="out"
+      animate="in"
+      initial="initial"
+      variants={pageVariants}
+      transition={pageTransition}
+    >
       <div className="app flex-row align-items-center">
         <Container>
           <h3
@@ -108,7 +146,7 @@ function Login(props) {
           </Row>
         </Container>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

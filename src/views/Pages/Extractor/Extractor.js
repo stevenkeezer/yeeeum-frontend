@@ -12,10 +12,10 @@ import {
 import classnames from "classnames";
 import DefaultHeader from "../../../containers/DefaultLayout/DefaultHeader";
 import RecipeCard from "../../../components/RecipeCard/RecipeCard";
+import { motion } from "framer-motion";
 import "./Extractor.css";
 
 export default function Extractor(props) {
-  const [key, setKey] = useState("home");
   const [recipes, setRecipes] = useState([]);
 
   const getRecipes = async query => {
@@ -36,6 +36,46 @@ export default function Extractor(props) {
     }
   };
 
+  const replace_post = async id => {
+    const response = await fetch(process.env.REACT_APP_BURL + `replace_post`, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `Token ${localStorage.getItem("token")}`
+      },
+      body: JSON.stringify(id)
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+
+      let recipesCopy = JSON.parse(JSON.stringify(recipes));
+
+      const hasRecipeId = recipe => recipe.id === id;
+      recipesCopy[recipesCopy.findIndex(hasRecipeId)] = data;
+      setRecipes(recipesCopy);
+    }
+  };
+
+  const likeButton = async id => {
+    const recipeId = {
+      recipe_id: id
+    };
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Token ${localStorage.getItem("token")}`
+      },
+      body: JSON.stringify(recipeId)
+    };
+    const response = await fetch(process.env.REACT_APP_BURL + "like", options);
+    if (response.ok) {
+      const data = await response.json();
+      replace_post(id);
+    }
+  };
+
   const loading = () => (
     <div className="animated fadeIn pt-1 text-center">Loading...</div>
   );
@@ -49,9 +89,39 @@ export default function Extractor(props) {
     getRecipes("latest");
   }, []);
 
+  const pageVariants = {
+    initial: {
+      opacity: 0
+    },
+    in: {
+      opacity: 1
+    },
+    out: {
+      // opacity: 0
+    }
+  };
+
+  const style = {
+    position: "absolute",
+    width: "100vw"
+  };
+  const pageTransition = {
+    type: "tween",
+    transition: "linear",
+    ease: "anticipate",
+    duration: 0.8,
+    scale: 0.8
+  };
+
   return (
-    <div>
-      {" "}
+    <motion.div
+      style={style}
+      exit="out"
+      animate="in"
+      initial="initial"
+      variants={pageVariants}
+      transition={pageTransition}
+    >
       <AppHeader fixed display="xl">
         <Suspense fallback={loading()}>
           <DefaultHeader onLogout={e => this.signOut(e)} props={props} />
@@ -96,7 +166,11 @@ export default function Extractor(props) {
               <Row>
                 <Col sm="12">
                   <Row>
-                    <RecipeCard recipes={recipes} setRecipes={setRecipes} />
+                    <RecipeCard
+                      recipes={recipes}
+                      setRecipes={setRecipes}
+                      likeButton={likeButton}
+                    />
                   </Row>
                 </Col>
               </Row>
@@ -124,6 +198,6 @@ export default function Extractor(props) {
           </TabContent>
         </div>
       </main>
-    </div>
+    </motion.div>
   );
 }

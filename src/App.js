@@ -1,14 +1,11 @@
 import React, { Component, useState, useEffect } from "react";
-import { BrowserRouter, Route, Switch, useLocation } from "react-router-dom";
+import { Route, Switch, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
 import "./App.scss";
 import "./App.css";
 import { AppSidebar } from "@coreui/react";
 import Sidebar from "./views/Sidebar/Sidebar";
-
-import { createBrowserHistory } from "history";
-const history = createBrowserHistory();
 
 const loading = () => <div className="animated fadeIn pt-3 text-center"></div>;
 
@@ -78,15 +75,12 @@ function App() {
 
   useEffect(() => {
     getUserInfo();
-    window.history.replaceState({}, document.title, window.location.pathname);
   }, []);
 
-  // const location = useLocation();
-  // console.log(location);
-  console.log(window.location.pathname);
+  const location = useLocation();
 
   return (
-    <BrowserRouter history={history}>
+    <>
       <AppSidebar fixed display="lg">
         <Sidebar
           fbId={fbId}
@@ -103,9 +97,9 @@ function App() {
         />
       </AppSidebar>
 
-      <React.Suspense fallback={loading()}>
+      <React.Suspense fallback={loading()} style={{ position: "relative" }}>
         <AnimatePresence>
-          <Switch>
+          <Switch location={location} key={location.pathname}>
             <Route
               path="/upload_files"
               name="Upload Images"
@@ -189,14 +183,14 @@ function App() {
               render={props => (
                 <Login
                   user={user}
-                  setUser={setUser}
+                  fbId={fbId}
                   userId={userId}
+                  setUser={setUser}
+                  userImg={userImg}
+                  setFbId={setFbId}
                   setUserId={setUserId}
                   setUserImg={setUserImg}
-                  userImg={userImg}
                   getUserInfo={getUserInfo}
-                  fbId={fbId}
-                  setFbId={setFbId}
                   searchResults={searchResults}
                   setSearchResults={setSearchResults}
                   returnSearchResults={returnSearchResults}
@@ -368,7 +362,7 @@ function App() {
           </Switch>
         </AnimatePresence>
       </React.Suspense>
-    </BrowserRouter>
+    </>
   );
 }
 

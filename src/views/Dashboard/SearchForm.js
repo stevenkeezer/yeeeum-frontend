@@ -30,6 +30,7 @@ export default function SearchForm(props) {
         );
         if (response.ok) {
           const data = await response.json();
+          console.log(data);
           props.returnSearchResults(data);
           history.push("/search");
         }

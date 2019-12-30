@@ -23,7 +23,7 @@ import EditIcon from "@material-ui/icons/Edit";
 import RemoveCircleOutlineIcon from "@material-ui/icons/RemoveCircleOutline";
 import CloseIcon from "@material-ui/icons/Close";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-
+import { motion } from "framer-motion";
 import LikeButton from "./LikeButton";
 import "./Recipe.css";
 import Moment from "react-moment";
@@ -174,7 +174,7 @@ export default function Recipe(props) {
     );
     if (response.ok) {
       const data = await response.json();
-      setComments(data.filter(comment => !comment.deleted));
+      setComments(data);
     }
   };
 
@@ -255,9 +255,38 @@ export default function Recipe(props) {
   const loading = () => (
     <div className="animated fadeIn pt-1 text-center">Loading...</div>
   );
+  const pageVariants = {
+    initial: {
+      opacity: 0
+      // : "-100vw"
+    },
+    in: {
+      opacity: 1
+      // x: 0
+    },
+    out: {
+      // opacity: 0
+      // x: "100vw",
+      // scale: 1
+    }
+  };
+
+  const pageTransition = {
+    type: "tween",
+    transition: "linear",
+    ease: "anticipate",
+    duration: 1,
+    scale: 0.8
+  };
 
   return (
-    <Fragment>
+    <motion.div
+      exit="out"
+      animate="in"
+      initial="initial"
+      variants={pageVariants}
+      transition={pageTransition}
+    >
       <AppHeader fixed display="xl">
         <Suspense fallback={loading()}>
           <DefaultHeader onLogout={e => this.signOut(e)} props={props} />
@@ -523,7 +552,6 @@ export default function Recipe(props) {
               setToggleIcon={setToggleIcon}
             />
           )}
-          {console.log(props)}
           {recipe && props.user && props.userId === recipe.user_id && (
             <>
               <div className="row">
@@ -549,13 +577,25 @@ export default function Recipe(props) {
                   </div>
                 </div>
                 <Modal isOpen={modal} toggle={toggle}>
-                  <ModalHeader toggle={toggle}>Delete</ModalHeader>
-                  <ModalBody>Do you want to remove this recipe?</ModalBody>
+                  <ModalHeader className="delete-modal" toggle={toggle}>
+                    Delete
+                  </ModalHeader>
+                  <ModalBody className="delete-modal-body">
+                    Do you want to remove this recipe?
+                  </ModalBody>
                   <ModalFooter>
-                    <Button color="danger" onClick={() => delete_recipe()}>
+                    <Button
+                      color="danger"
+                      className="delete-modal"
+                      onClick={() => delete_recipe()}
+                    >
                       Delete
                     </Button>{" "}
-                    <Button color="secondary" onClick={toggle}>
+                    <Button
+                      color="secondary"
+                      className="delete-modal"
+                      onClick={toggle}
+                    >
                       Cancel
                     </Button>
                   </ModalFooter>
@@ -565,6 +605,6 @@ export default function Recipe(props) {
           )}
         </main>
       </div>
-    </Fragment>
+    </motion.div>
   );
 }

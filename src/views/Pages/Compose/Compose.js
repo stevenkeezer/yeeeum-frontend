@@ -14,24 +14,32 @@ export default function Compose(props) {
   const pageVariants = {
     initial: {
       opacity: 0,
-      y: "-100vh"
+      x: "-100vw"
     },
     in: {
       opacity: 1,
-      y: 0
+      x: 0
     },
     out: {
       opacity: 0,
-      y: "100vh",
+      x: "100vw",
       scale: 1
     }
+  };
+
+  const style = {
+    position: "absolute",
+    marginTop: "8vh",
+    width: "100vw",
+    marginLeft: "auto",
+    marginRight: "auto"
   };
 
   const pageTransition = {
     type: "tween",
     transition: "linear",
     ease: "anticipate",
-    duration: 1,
+    duration: 0.8,
     scale: 0.8
   };
   return (
@@ -42,17 +50,22 @@ export default function Compose(props) {
         </Suspense>
       </AppHeader>
 
-      <main className="main">
-        <motion.div
-          exit="out"
-          animate="in"
-          initial="initial"
-          variants={pageVariants}
-          transition={pageTransition}
-        >
+      <motion.div
+        exit="out"
+        style={style}
+        animate="in"
+        initial="initial"
+        variants={pageVariants}
+        transition={pageTransition}
+      >
+        <main className="main vh-100">
+          <div className="col-xl-6 col-lg-9 col-sm-10 col-md-8 mb-3 mx-auto">
+            <h3>Recipe Creator</h3>
+          </div>
+
           <Upload />
-        </motion.div>
-      </main>
+        </main>
+      </motion.div>
     </Fragment>
   );
 }

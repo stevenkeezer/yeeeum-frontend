@@ -8,7 +8,6 @@ import "./Upload.css";
 export default function Upload() {
   let history = useHistory();
   const [fileAdded, setFileAdded] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
 
   const createPost = async data => {
     const options = {
@@ -38,12 +37,5 @@ export default function Upload() {
     createPost(values);
   };
 
-  return (
-    <div
-      style={{ marginLeft: "0px!important" }}
-      className="mx-auto col-lg-10 pt-5"
-    >
-      <RecipeField createRecipe={createRecipe} />
-    </div>
-  );
+  return <RecipeField createRecipe={createRecipe} />;
 }

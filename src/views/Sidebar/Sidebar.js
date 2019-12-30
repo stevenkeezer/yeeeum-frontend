@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import ContentLoader from "react-content-loader";
 import LocalBarIcon from "@material-ui/icons/LocalBar";
@@ -149,19 +149,19 @@ export default function Sidebar(props) {
           <li className="nav-item">
             {props.user ? (
               <NavLink
-                exact={true}
+                to={"/"}
+                exact
                 activeClassName="is-active"
                 className="nav-link sidebar-link"
-                to={"/"}
               >
                 <span className="ml-4">{props.user.split(" ")[0]}'s Feed</span>
               </NavLink>
             ) : (
               <NavLink
-                exact={true}
+                to={"/"}
+                exact
                 activeClassName="is-active"
                 className="nav-link sidebar-link"
-                to={"/"}
               >
                 <span className="ml-4">Feed</span>
               </NavLink>
@@ -169,9 +169,9 @@ export default function Sidebar(props) {
           </li>
           <li className="nav-item">
             <NavLink
+              to={"/extractor"}
               activeClassName="is-active"
               className="nav-link sidebar-link"
-              to={"/extractor"}
             >
               <span className="ml-4">R-Extractor</span>
               <span style={{ color: "#f15924" }} className="badge">
@@ -182,10 +182,10 @@ export default function Sidebar(props) {
           {props.user && (
             <li className="nav-item">
               <NavLink
-                exact={true}
+                exact
+                to={"/compose"}
                 activeClassName="is-active"
                 className="nav-link sidebar-link"
-                to={"/compose"}
               >
                 <span className="ml-4">Compose</span>
               </NavLink>
@@ -194,10 +194,10 @@ export default function Sidebar(props) {
           {props.user && (
             <li className="nav-item">
               <button
-                activeClassName="is-active"
-                exact={true}
-                className="nav-link sidebar-link"
+                exact
                 onClick={logout}
+                activeClassName="is-active"
+                className="nav-link sidebar-link"
                 style={{ border: "none!important", padding: "none!important" }}
               >
                 <span className="ml-4">Logout</span>
@@ -207,18 +207,18 @@ export default function Sidebar(props) {
           <li className="nav-item">
             <button
               exact={true}
+              onClick={pushRegister}
               activeClassName="is-active"
               className="nav-link sidebar-link "
               style={{ border: "none!important", padding: "none!important" }}
-              onClick={pushRegister}
             >
               <span className="ml-4">Get Started</span>
             </button>
           </li>
           <li className="nav-item">
             <Link
-              className="nav-link sidebar-link-no-bcg ml-4 mt-3 mb-1"
               to="hi"
+              className="nav-link sidebar-link-no-bcg ml-4 mt-3 mb-1"
             >
               <strong
                 className="saved-recipes"
@@ -227,7 +227,7 @@ export default function Sidebar(props) {
                 <span>Saved Recipes</span>
               </strong>
             </Link>
-            <NavLink
+            <Link
               exact={true}
               className="nav-link sidebar-link-no-bcg ml-4"
               to={"/favorites"}
@@ -240,11 +240,11 @@ export default function Sidebar(props) {
                 }}
               />
               Favorites
-            </NavLink>
-            <NavLink
+            </Link>
+            <Link
               exact={true}
-              className="nav-link sidebar-link-no-bcg ml-4"
               to={"/favorites"}
+              className="nav-link sidebar-link-no-bcg ml-4"
             >
               <LocalBarIcon
                 style={{
@@ -254,8 +254,8 @@ export default function Sidebar(props) {
                 }}
               />
               Drinks
-            </NavLink>
-            <NavLink
+            </Link>
+            <Link
               exact={true}
               className="nav-link sidebar-link-no-bcg ml-4"
               to={"/favorites"}
@@ -268,8 +268,8 @@ export default function Sidebar(props) {
                 }}
               />
               Dinners
-            </NavLink>
-            <NavLink
+            </Link>
+            <Link
               exact={true}
               className="nav-link sidebar-link-no-bcg ml-4"
               to={"/favorites"}
@@ -282,8 +282,8 @@ export default function Sidebar(props) {
                 }}
               />
               Yeeeums
-            </NavLink>
-            <NavLink
+            </Link>
+            <Link
               exact={true}
               className="nav-link sidebar-link-no-bcg ml-4"
               to={"/favorites"}
@@ -296,8 +296,8 @@ export default function Sidebar(props) {
                 }}
               />
               Popular
-            </NavLink>
-            <NavLink
+            </Link>
+            <Link
               exact={true}
               className="nav-link sidebar-link-no-bcg ml-4"
               to={"/favorites"}
@@ -319,7 +319,7 @@ export default function Sidebar(props) {
                   MORE
                 </span>
               </div>
-            </NavLink>
+            </Link>
           </li>
 
           <li className="pl-2 mt-auto">

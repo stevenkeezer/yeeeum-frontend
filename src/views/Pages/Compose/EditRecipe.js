@@ -5,6 +5,14 @@ import { useHistory, useParams } from "react-router-dom";
 import { TextField } from "formik-material-ui";
 import DeleteIcon from "@material-ui/icons/Delete";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
+import DescriptionIcon from "@material-ui/icons/Description";
+import KitchenIcon from "@material-ui/icons/Kitchen";
+import RestaurantIcon from "@material-ui/icons/Restaurant";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import MenuBookIcon from "@material-ui/icons/MenuBook";
+import { makeStyles } from "@material-ui/core/styles";
+import SaveIcon from "@material-ui/icons/Save";
+import Button from "@material-ui/core/Button";
 import "./RecipeField.css";
 import "@uppy/core/dist/style.css";
 import "@uppy/dashboard/dist/style.css";
@@ -14,6 +22,14 @@ export default function RecipeField(props) {
 
   let history = useHistory();
   let { id } = useParams();
+
+  const useStyles = makeStyles(theme => ({
+    button: {
+      margin: theme.spacing(1)
+    }
+  }));
+
+  const classes = useStyles();
 
   const get_post = async () => {
     const recipeId = {
@@ -93,7 +109,13 @@ export default function RecipeField(props) {
               id="recipeForm"
               className="col-lg-6 col-11 col-sm-10 mx-auto mt-5"
             >
-              <h4>Description</h4>
+              <div className="row pt-3">
+                <DescriptionIcon
+                  className="ml-3"
+                  style={{ color: "rgb(9, 162, 135)" }}
+                />
+                <h4 className="pl-2">Description</h4>
+              </div>{" "}
               <Field
                 width={{ minWidth: "100%" }}
                 type="description"
@@ -105,7 +127,13 @@ export default function RecipeField(props) {
                   fontSize: "16px"
                 }}
               />
-              <h4 className=" mt-4">Title</h4>
+              <div className="row mt-3">
+                <RestaurantIcon
+                  className="ml-3"
+                  style={{ color: "rgb(9, 162, 135)" }}
+                />
+                <h4 className="pl-2">Title</h4>
+              </div>{" "}
               <Field
                 style={{ width: "100%" }}
                 type="title"
@@ -114,8 +142,13 @@ export default function RecipeField(props) {
                 enableReinitialize={true}
                 component={TextField}
               />
-              <h4 className="mt-4">Ingredient</h4>
-
+              <div className="row pt-3">
+                <ShoppingCartIcon
+                  className="ml-3"
+                  style={{ color: "rgb(9, 162, 135)" }}
+                />
+                <h4 className="pl-2">Ingredients</h4>
+              </div>
               <FieldArray
                 name="ingredients"
                 render={arrayHelpers => (
@@ -180,7 +213,13 @@ export default function RecipeField(props) {
                 name="ingredients"
                 component="div"
               />
-              <h4>Directions</h4>
+              <div className="row">
+                <MenuBookIcon
+                  className="ml-3"
+                  style={{ color: "rgb(9, 162, 135)" }}
+                />
+                <h4 className="pl-2">Directions</h4>
+              </div>
               <Field
                 style={{
                   width: "100%",
@@ -192,20 +231,22 @@ export default function RecipeField(props) {
                 component="textarea"
               />
               <ErrorMessage name="directions" component="div" />
-              <div className="pt-3">
-                <button
-                  style={{
-                    color: "white",
-                    borderRadius: "5rem",
-                    backgroundColor: "rgb(0, 162, 135)",
-                    fontFamily: "AvenirNextLTProRegular"
-                  }}
+              <div className="text-right">
+                <Button
                   type="submit"
-                  className="btn btn-secondary"
-                  id="recipeSubmit"
+                  variant="contained"
+                  style={{
+                    backgroundColor: "#09a287",
+                    color: "white",
+                    marginTop: "2rem"
+                  }}
+                  size="large"
+                  id="submit-recipe-btn"
+                  className={classes.button}
+                  startIcon={<SaveIcon />}
                 >
-                  Save Changes
-                </button>
+                  Save
+                </Button>
               </div>
             </Form>
           )}

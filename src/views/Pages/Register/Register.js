@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import EmailForm from "./RegistrationForm";
 import FacebookIcon from "@material-ui/icons/Facebook";
+import { motion } from "framer-motion";
 
 // import pizzabcg from "../../../../public/assets/img/pizzabcg.jpg";
 import { Button, Card, CardFooter, div, Row } from "reactstrap";
@@ -11,8 +12,42 @@ function Register() {
     localStorage.setItem("login", true);
     document.getElementById("fb-form").submit();
   };
+
+  const pageVariants = {
+    initial: {
+      opacity: 0
+      // x: "-100vw"
+    },
+    in: {
+      opacity: 1
+      // x: 0
+    },
+    out: {
+      // opacity: 0
+      // x: "100vw"
+      // scale: 1
+    }
+  };
+
+  const style = {
+    position: "absolute"
+  };
+  const pageTransition = {
+    type: "tween",
+    transition: "linear",
+    ease: "anticipate",
+    duration: 1,
+    scale: 0.8
+  };
   return (
-    <div className="animated fadeIn">
+    <motion.div
+      style={style}
+      exit="out"
+      animate="in"
+      initial="initial"
+      variants={pageVariants}
+      transition={pageTransition}
+    >
       <img
         style={{ position: "absolute", left: "5%", zIndex: "10" }}
         width="90px"
@@ -22,7 +57,7 @@ function Register() {
       <div
         className="app flex-row align-items-center"
         style={{
-          backgroundImage: `url(assets/img/pizzabcg.jpg)`,
+          // backgroundImage: `url(assets/img/pizzabcg.jpg)`,
           backgroundSize: "cover",
           backgroundPosition: "top right",
           width: "100vw",
@@ -86,7 +121,7 @@ function Register() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
