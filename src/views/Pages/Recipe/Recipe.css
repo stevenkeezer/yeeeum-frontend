@@ -333,12 +333,6 @@ button {
   }
 }
 
-@media (max-width: 1202px) {
-  .sub-article-title {
-    display: none !important;
-  }
-}
-
 @media (max-width: 1300px) {
   .edit {
     left: 22vw;
@@ -371,11 +365,6 @@ button {
   .card-body {
     padding: 0px !important;
   }
-}
-.sub-article-title {
-  white-space: nowrap;
-  width: 100px;
-  font-family: "AvenirNextLTProDemi";
 }
 
 .modal-header {

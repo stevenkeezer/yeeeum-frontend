@@ -2,6 +2,7 @@ import React, { Suspense, Fragment, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import RecipeCard from "../../components/RecipeCard/RecipeCard";
 import SearchForm from "./SearchForm";
+
 import { motion } from "framer-motion";
 
 import "./Dashboard.css";
@@ -86,11 +87,11 @@ function Dashboard(props) {
 
   const pageVariants = {
     initial: {
-      opacity: 0
+      // opacity: 0
       // : "-100vw"
     },
     in: {
-      opacity: 1
+      // opacity: 1
       // x: 0
     },
     out: {
@@ -108,8 +109,8 @@ function Dashboard(props) {
     type: "tween",
     transition: "linear",
     ease: "anticipate",
-    duration: 0.8,
-    scale: 0.8
+    duration: 1
+    // scale: 0.8
   };
 
   return (

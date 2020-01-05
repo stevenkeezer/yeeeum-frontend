@@ -4,9 +4,6 @@ import { AppHeader, AppSidebar, AppSidebarHeader } from "@coreui/react";
 import Sidebar from "../../../views/Sidebar/Sidebar.js";
 import Dashboard from "../../Dashboard/Dashboard";
 import "./Home.css";
-const DefaultHeader = React.lazy(() =>
-  import("../../../containers/DefaultLayout/DefaultHeader")
-);
 
 export default function home(props) {
   const loading = () => (
@@ -19,12 +16,6 @@ export default function home(props) {
 
   return (
     <div className="app">
-      <AppHeader fixed display="lg">
-        <Suspense>
-          <DefaultHeader props={props} onLogout={e => this.signOut(e)} />
-        </Suspense>
-      </AppHeader>
-
       <AppSidebarHeader />
       <main className="main" style={{ position: "relative" }}>
         <Container fluid>

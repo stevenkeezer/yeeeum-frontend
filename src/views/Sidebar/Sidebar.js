@@ -7,6 +7,7 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import KitchenIcon from "@material-ui/icons/Kitchen";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import WhatshotIcon from "@material-ui/icons/Whatshot";
+import { AppSidebarToggler } from "@coreui/react";
 import Img from "react-image";
 import { useHistory } from "react-router-dom";
 import "./Sidebar.css";
@@ -36,6 +37,10 @@ export default function Sidebar(props) {
 
   const pushRegister = () => {
     history.push("/register");
+  };
+
+  const closeSidebar = () => {
+    document.querySelector("body").className = "sidebar-lg-show sidebar-fixed";
   };
 
   return (
@@ -153,6 +158,7 @@ export default function Sidebar(props) {
                 exact
                 activeClassName="is-active"
                 className="nav-link sidebar-link"
+                onClick={closeSidebar()}
               >
                 <span className="ml-4">{props.user.split(" ")[0]}'s Feed</span>
               </NavLink>
@@ -211,6 +217,7 @@ export default function Sidebar(props) {
               activeClassName="is-active"
               className="nav-link sidebar-link "
               style={{ border: "none!important", padding: "none!important" }}
+              data-toggle="sidebar-show"
             >
               <span className="ml-4">Get Started</span>
             </button>

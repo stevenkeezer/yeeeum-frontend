@@ -1,6 +1,4 @@
 import React, { Suspense, useEffect, useState } from "react";
-import { AppHeader, AppSidebar, AppSidebarHeader } from "@coreui/react";
-import DefaultHeader from "../../containers/DefaultLayout/DefaultHeader";
 import SearchForm from "./SearchForm";
 import RecipeCard from "../../components/RecipeCard/RecipeCard";
 import { motion } from "framer-motion";
@@ -46,12 +44,6 @@ export default function SearchResults(props) {
 
   return (
     <div>
-      <AppHeader fixed display="xl">
-        <Suspense fallback={loading()}>
-          <DefaultHeader onLogout={e => this.signOut(e)} props={props} />
-        </Suspense>
-      </AppHeader>
-
       <motion.div
         style={style}
         exit="out"

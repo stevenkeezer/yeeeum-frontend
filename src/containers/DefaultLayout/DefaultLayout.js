@@ -1,10 +1,7 @@
 import React, { Suspense } from "react";
 import { Route, Switch } from "react-router-dom";
 import { Container } from "reactstrap";
-
-import { AppHeader, AppSidebar, AppSidebarHeader } from "@coreui/react";
 import routes from "../../routes";
-const DefaultHeader = React.lazy(() => import("./DefaultHeader"));
 
 function DefaultLayout(props) {
   const loading = () => (
@@ -13,13 +10,8 @@ function DefaultLayout(props) {
 
   return (
     <div className="app">
-      <AppHeader fixed display="lg">
-        <Suspense>
-          <DefaultHeader props={props} onLogout={e => this.signOut(e)} />
-        </Suspense>
-      </AppHeader>
       <div className="app-body">
-        <main className="main">
+        <main className="main" >
           <Container fluid>
             <Suspense fallback={loading()}>
               <Switch>

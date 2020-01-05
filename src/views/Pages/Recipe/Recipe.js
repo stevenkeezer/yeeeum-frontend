@@ -14,7 +14,6 @@ import { AppHeader } from "@coreui/react";
 import { useParams, useHistory } from "react-router-dom";
 import { Carousel } from "react-responsive-carousel";
 import ControlPointIcon from "@material-ui/icons/ControlPoint";
-import DefaultHeader from "../../../containers/DefaultLayout/DefaultHeader";
 import Comments from "./Comments/Comments";
 import EditRecipe from "../Compose/EditRecipe";
 import DeleteIcon from "@material-ui/icons/Delete";
@@ -23,6 +22,7 @@ import EditIcon from "@material-ui/icons/Edit";
 import RemoveCircleOutlineIcon from "@material-ui/icons/RemoveCircleOutline";
 import CloseIcon from "@material-ui/icons/Close";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import CircularProgress from "@material-ui/core/CircularProgress";
 import { motion } from "framer-motion";
 import LikeButton from "./LikeButton";
 import "./Recipe.css";
@@ -126,6 +126,8 @@ export default function Recipe(props) {
   const [editable, setEditable] = useState(false);
   const [recipeImages, setRecipeImages] = useState([]);
   const [modal, setModal] = useState(false);
+  const [spinner, setSpinner] = useState(true);
+
   const [toggleIcon, setToggleIcon] = useState(true);
 
   let { id } = useParams();
@@ -197,6 +199,7 @@ export default function Recipe(props) {
     if (response.ok) {
       const data = await response.json();
       setRecipeImages(data);
+      setSpinner(false);
     }
   };
 
@@ -219,6 +222,7 @@ export default function Recipe(props) {
     if (response.ok) {
       const data = await response.json();
       history.push("/");
+      props.handleToast();
     }
   };
 
@@ -247,9 +251,9 @@ export default function Recipe(props) {
   };
 
   useEffect(() => {
+    get_recipe_images();
     get_post();
     get_comments();
-    get_recipe_images();
   }, []);
 
   const loading = () => (
@@ -257,11 +261,11 @@ export default function Recipe(props) {
   );
   const pageVariants = {
     initial: {
-      opacity: 0
+      // opacity: 0
       // : "-100vw"
     },
     in: {
-      opacity: 1
+      // opacity: 1
       // x: 0
     },
     out: {
@@ -275,9 +279,21 @@ export default function Recipe(props) {
     type: "tween",
     transition: "linear",
     ease: "anticipate",
-    duration: 1,
+    duration: 0.8,
     scale: 0.8
   };
+
+  if (spinner) {
+    return (
+      <main className="main">
+        <div className="d-flex justify-content-center">
+          <CircularProgress
+            style={{ marginTop: "13%", color: "#00a287" }}
+          ></CircularProgress>
+        </div>
+      </main>
+    );
+  }
 
   return (
     <motion.div
@@ -287,324 +303,317 @@ export default function Recipe(props) {
       variants={pageVariants}
       transition={pageTransition}
     >
-      <AppHeader fixed display="xl">
-        <Suspense fallback={loading()}>
-          <DefaultHeader onLogout={e => this.signOut(e)} props={props} />
-        </Suspense>
-      </AppHeader>
-      <div className="animated fadeIn">
-        <main className="main">
-          <div class="row mx-auto recipe-container-top">
-            <div class="col-md-7 col-sm-12 col-xl-6 mr-auto order-md-2">
-              <div style={{ padding: "0px" }} class="card card-body mt-5">
-                {" "}
-                {recipeImages && recipeImages.length < 1 && (
-                  <img
-                    className="image-container"
-                    alt="blah"
-                    style={{
-                      height: "auto"
-                    }}
-                    src="/assets/img/food.png"
-                  ></img>
-                )}
-                <>
-                  <Carousel
-                    showThumbs={false}
-                    showStatus={false}
-                    showIndicators={false}
-                    className="justify-content-center  carousel img-fluid"
-                  >
-                    {recipeImages &&
-                      recipeImages.map(img => {
-                        return (
-                          <div className="d-flex">
-                            <img
-                              className="img-fluid recipe-img "
-                              alt="blah"
-                              style={{
-                                width: "100%",
-                                height: "auto"
-                              }}
-                              src={`https://yeeeum.s3-us-west-1.amazonaws.com/${img.img_url}`}
-                            ></img>
-                          </div>
-                        );
-                      })}
-                  </Carousel>
-                </>
-              </div>
-            </div>
-            <div class="col-md-4 col-xl-6 ml-auto order-md-1 my-auto recipe-header">
-              {recipe && (
-                <div
-                  style={{ paddingLeft: "0px", paddingRight: "0px" }}
-                  class="card card-body"
+      <main className="main">
+        <div class="row mx-auto recipe-container-top">
+          <div class="col-md-7 col-sm-12 col-xl-6 mr-auto order-md-2">
+            <div style={{ padding: "0px" }} class="card card-body mt-5">
+              {" "}
+              {recipeImages && recipeImages.length < 1 && (
+                <img
+                  className="image-container"
+                  alt="blah"
+                  style={{
+                    height: "auto"
+                  }}
+                  src="/assets/img/food.png"
+                ></img>
+              )}
+              <>
+                <Carousel
+                  showThumbs={false}
+                  showStatus={false}
+                  showIndicators={false}
+                  className="justify-content-center  carousel img-fluid"
                 >
-                  {" "}
-                  <h1 className="recipe-title mt-2">{recipe.title}</h1>
-                  <div
-                    style={{
-                      color: "grey",
-                      textTransform: "uppercase"
-                    }}
-                    className="mr-auto recipe-text"
-                  >
-                    {recipe.user_name}
-                  </div>
-                  <div className="mt-4 recipe-description">
-                    {recipe.description}
-                  </div>
-                  <div className="ml-3 mt-5">
-                    <LikeButton
-                      className="ml-auto"
-                      recipes={recipe}
-                      setRecipe={setRecipe}
-                    />
-                  </div>
-                  {props.user && recipe && props.userId === recipe.user_id && (
-                    <div className="row ml-auto pr-3">
+                  {recipeImages &&
+                    recipeImages.map(img => {
+                      return (
+                        <div className="d-flex">
+                          <img
+                            className="img-fluid recipe-img "
+                            alt="blah"
+                            style={{
+                              width: "100%",
+                              height: "auto"
+                            }}
+                            src={`https://yeeeum.s3-us-west-1.amazonaws.com/${img.img_url}`}
+                          ></img>
+                        </div>
+                      );
+                    })}
+                </Carousel>
+              </>
+            </div>
+          </div>
+          <div class="col-md-4 col-xl-6 ml-auto order-md-1 my-auto recipe-header">
+            {recipe && (
+              <div
+                style={{ paddingLeft: "0px", paddingRight: "0px" }}
+                class="card card-body"
+              >
+                {" "}
+                <h1 className="recipe-title mt-2">{recipe.title}</h1>
+                <div
+                  style={{
+                    color: "grey",
+                    textTransform: "uppercase"
+                  }}
+                  className="mr-auto recipe-text"
+                >
+                  {recipe.user_name}
+                </div>
+                <div className="mt-4 recipe-description">
+                  {recipe.description}
+                </div>
+                <div className="ml-3 mt-5">
+                  <LikeButton
+                    className="ml-auto"
+                    recipes={recipe}
+                    setRecipe={setRecipe}
+                  />
+                </div>
+                {props.user && recipe && props.userId === recipe.user_id && (
+                  <div className="row ml-auto pr-3">
+                    <div
+                      href="#"
+                      className="delete-mobile mt-2 mr-2"
+                      onClick={toggle}
+                    >
+                      <DeleteIcon className="my-delete" />
+                    </div>
+                    <div>
                       <div
                         href="#"
-                        className="delete-mobile mt-2 mr-2"
-                        onClick={toggle}
+                        class="edit-mobile mt-2"
+                        onClick={() => {
+                          setEditable(!editable);
+                          setToggleIcon(!toggleIcon);
+                        }}
                       >
-                        <DeleteIcon className="my-delete" />
-                      </div>
-                      <div>
-                        <div
-                          href="#"
-                          class="edit-mobile mt-2"
-                          onClick={() => {
-                            setEditable(!editable);
-                            setToggleIcon(!toggleIcon);
-                          }}
-                        >
-                          {toggleIcon ? (
-                            <EditIcon className="my-edit" />
-                          ) : (
-                            <CloseIcon className="my-edit" />
-                          )}
-                        </div>
+                        {toggleIcon ? (
+                          <EditIcon className="my-edit" />
+                        ) : (
+                          <CloseIcon className="my-edit" />
+                        )}
                       </div>
                     </div>
-                  )}
-                </div>
-              )}
-            </div>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
-          <div class="col-12 col-lg-9 col-md-8 mx-auto">
-            <hr
-              className="mx-auto"
-              style={{
-                width: "100%",
-                borderTop: "0.1px solid #e3e3e3!important",
-                marginTop: "8vw"
-              }}
-            ></hr>
-          </div>
-          <div className="container-fluid">
-            <div className="col-xl-8 col-lg-8 col-md-10 col-sm-10 mx-auto pt-4">
-              {!editable && (
-                <>
-                  {recipe ? (
-                    <ul style={{ padding: "0px" }}>
-                      <h3 className="pb-3">Ingredients</h3>
-                      {recipe.ingredients.map((ingredient, index) => {
-                        return (
-                          <ul
-                            className="pt-1 pb-1"
-                            style={{ paddingLeft: "0px" }}
-                          >
-                            <div className="row">
-                              <Ingredient ingredient={ingredient} />
-                            </div>
-                          </ul>
-                        );
-                      })}
-                    </ul>
-                  ) : (
-                    <ul color="white"></ul>
-                  )}
-                </>
-              )}
-            </div>
+        </div>
+        <div class="col-12 col-lg-9 col-md-8 mx-auto">
+          <hr
+            className="mx-auto"
+            style={{
+              width: "100%",
+              borderTop: "0.1px solid #e3e3e3!important",
+              marginTop: "8vw"
+            }}
+          ></hr>
+        </div>
+        <div className="container-fluid">
+          <div className="col-xl-8 col-lg-8 col-md-10 col-sm-10 mx-auto pt-4">
             {!editable && (
               <>
                 {recipe ? (
-                  <div className="col-xl-8 col-lg-8 col-md-10 col-sm-10 mx-auto pt-3 mb-5">
-                    <h3 className="mb-4">Directions</h3>
-                    <div
-                      className="recipe-text"
-                      style={{ whiteSpace: "pre-wrap" }}
-                    >
-                      {recipe.directions}
-                    </div>
-                  </div>
+                  <ul style={{ padding: "0px" }}>
+                    <h3 className="pb-3">Ingredients</h3>
+                    {recipe.ingredients.map((ingredient, index) => {
+                      return (
+                        <ul
+                          className="pt-1 pb-1"
+                          style={{ paddingLeft: "0px" }}
+                        >
+                          <div className="row">
+                            <Ingredient ingredient={ingredient} />
+                          </div>
+                        </ul>
+                      );
+                    })}
+                  </ul>
                 ) : (
-                  <ul color="white">.</ul>
+                  <ul color="white"></ul>
                 )}
               </>
             )}
-            {!editable && (
-              <>
-                <div
-                  style={{ padding: "0px" }}
-                  className="col-xl-8 col-lg-8 col-sm-10 col-md-10 pb-1 mx-auto"
-                >
-                  <h3 className="pl-3">
-                    Reviews{" "}
-                    <span
-                      className="recipe-text"
-                      style={{
-                        fontSize: "60%",
-                        fontWeight: "bold"
-                      }}
-                    >
-                      ({comments.length})
-                    </span>
-                  </h3>
-
-                  <Comments
-                    props={props}
-                    get_comments={get_comments}
-                    userImg={props.userImg}
-                    fbId={props.fbId}
-                  />
+          </div>
+          {!editable && (
+            <>
+              {recipe ? (
+                <div className="col-xl-8 col-lg-8 col-md-10 col-sm-10 mx-auto pt-3 mb-5">
+                  <h3 className="mb-4">Directions</h3>
+                  <div
+                    className="recipe-text"
+                    style={{ whiteSpace: "pre-wrap" }}
+                  >
+                    {recipe.directions}
+                  </div>
                 </div>
-                <div className="col-xl-8 col-lg-8 col-sm-10 col-md-10 mx-auto mt-5">
-                  {comments.map(comment => {
-                    return (
-                      <>
-                        {!comment.deleted && (
-                          <div className="   mx-auto">
-                            <section id="app" class="comments">
-                              <article>
-                                {!comment.img && comment.fb_img && (
-                                  <img
-                                    alt="profilepicture"
-                                    className="profile-photo"
-                                    src={`https://graph.facebook.com/${comment.fb_img}/picture?type=square`}
-                                  ></img>
-                                )}
+              ) : (
+                <ul color="white">.</ul>
+              )}
+            </>
+          )}
+          {!editable && (
+            <>
+              <div
+                style={{ padding: "0px" }}
+                className="col-xl-8 col-lg-8 col-sm-10 col-md-10 pb-1 mx-auto"
+              >
+                <h3 className="pl-3">
+                  Reviews{" "}
+                  <span
+                    className="recipe-text"
+                    style={{
+                      fontSize: "60%",
+                      fontWeight: "bold"
+                    }}
+                  >
+                    ({comments.length})
+                  </span>
+                </h3>
 
-                                {comment.img && (
-                                  <img
-                                    alt="profilepicture"
-                                    className="profile-photo"
-                                    src={`https://yeeeum.s3-us-west-1.amazonaws.com/${comment.img}`}
-                                  ></img>
-                                )}
+                <Comments
+                  props={props}
+                  get_comments={get_comments}
+                  userImg={props.userImg}
+                  fbId={props.fbId}
+                />
+              </div>
+              <div className="col-xl-8 col-lg-8 col-sm-10 col-md-10 mx-auto mt-5">
+                {comments.map(comment => {
+                  return (
+                    <>
+                      {!comment.deleted && (
+                        <div className="   mx-auto">
+                          <section id="app" class="comments">
+                            <article>
+                              {!comment.img && comment.fb_img && (
+                                <img
+                                  alt="profilepicture"
+                                  className="profile-photo"
+                                  src={`https://graph.facebook.com/${comment.fb_img}/picture?type=square`}
+                                ></img>
+                              )}
 
-                                {!comment.img && !comment.fb_img && (
-                                  <img
-                                    alt="profilepicture"
-                                    className="profile-photo"
-                                    src={"/assets/img/default.png"}
-                                  ></img>
-                                )}
-                                <div className="row">
-                                  <h5
-                                    className="comment-user-name"
-                                    onClick={() => {
-                                      userProfile(comment.user_id);
+                              {comment.img && (
+                                <img
+                                  alt="profilepicture"
+                                  className="profile-photo"
+                                  src={`https://yeeeum.s3-us-west-1.amazonaws.com/${comment.img}`}
+                                ></img>
+                              )}
+
+                              {!comment.img && !comment.fb_img && (
+                                <img
+                                  alt="profilepicture"
+                                  className="profile-photo"
+                                  src={"/assets/img/default.png"}
+                                ></img>
+                              )}
+                              <div className="row">
+                                <h5
+                                  className="comment-user-name"
+                                  onClick={() => {
+                                    userProfile(comment.user_id);
+                                  }}
+                                >
+                                  {comment.user_name}
+                                </h5>
+
+                                <time className="mt-1">
+                                  <Moment fromNow>{comment.created}</Moment>
+                                </time>
+                              </div>
+
+                              {comment.user_id === props.userId && (
+                                <span className="text-right float-right">
+                                  <button
+                                    onClick={() => delete_comment(comment.id)}
+                                    style={{
+                                      border: "none",
+                                      marginTop: "-30px",
+                                      outline: "none",
+                                      color: "grey"
                                     }}
                                   >
-                                    {comment.user_name}
-                                  </h5>
-
-                                  <time className="mt-1">
-                                    <Moment fromNow>{comment.created}</Moment>
-                                  </time>
-                                </div>
-
-                                {comment.user_id === props.userId && (
-                                  <span className="text-right float-right">
-                                    <button
-                                      onClick={() => delete_comment(comment.id)}
-                                      style={{
-                                        border: "none",
-                                        marginTop: "-30px",
-                                        outline: "none",
-                                        color: "grey"
-                                      }}
-                                    >
-                                      <DeleteIcon />
-                                    </button>
-                                  </span>
-                                )}
-                                <p>{comment.body}</p>
-                              </article>
-                            </section>
-                          </div>
-                        )}
-                      </>
-                    );
-                  })}
-                </div>
-              </>
-            )}
-          </div>
-          {editable && (
-            <EditRecipe
-              setEditable={setEditable}
-              get_post={get_post}
-              setToggleIcon={setToggleIcon}
-            />
-          )}
-          {recipe && props.user && props.userId === recipe.user_id && (
-            <>
-              <div className="row">
-                <div className="col-8">
-                  <div href="#" class="delete" onClick={toggle}>
-                    <DeleteIcon className="my-delete" />
-                  </div>
-                  <div>
-                    <div
-                      href="#"
-                      class="edit"
-                      onClick={() => {
-                        setEditable(!editable);
-                        setToggleIcon(!toggleIcon);
-                      }}
-                    >
-                      {toggleIcon ? (
-                        <EditIcon className="my-edit" />
-                      ) : (
-                        <CloseIcon className="my-edit" />
+                                    <DeleteIcon />
+                                  </button>
+                                </span>
+                              )}
+                              <p>{comment.body}</p>
+                            </article>
+                          </section>
+                        </div>
                       )}
-                    </div>
-                  </div>
-                </div>
-                <Modal isOpen={modal} toggle={toggle}>
-                  <ModalHeader className="delete-modal" toggle={toggle}>
-                    Delete
-                  </ModalHeader>
-                  <ModalBody className="delete-modal-body">
-                    Do you want to remove this recipe?
-                  </ModalBody>
-                  <ModalFooter>
-                    <Button
-                      color="danger"
-                      className="delete-modal"
-                      onClick={() => delete_recipe()}
-                    >
-                      Delete
-                    </Button>{" "}
-                    <Button
-                      color="secondary"
-                      className="delete-modal"
-                      onClick={toggle}
-                    >
-                      Cancel
-                    </Button>
-                  </ModalFooter>
-                </Modal>
+                    </>
+                  );
+                })}
               </div>
             </>
           )}
-        </main>
-      </div>
+        </div>
+        {editable && (
+          <EditRecipe
+            setEditable={setEditable}
+            get_post={get_post}
+            setToggleIcon={setToggleIcon}
+          />
+        )}
+        {recipe && props.user && props.userId === recipe.user_id && (
+          <>
+            <div className="row">
+              <div className="col-8">
+                <div href="#" class="delete" onClick={toggle}>
+                  <DeleteIcon className="my-delete" />
+                </div>
+                <div>
+                  <div
+                    href="#"
+                    class="edit"
+                    onClick={() => {
+                      setEditable(!editable);
+                      setToggleIcon(!toggleIcon);
+                    }}
+                  >
+                    {toggleIcon ? (
+                      <EditIcon className="my-edit" />
+                    ) : (
+                      <CloseIcon className="my-edit" />
+                    )}
+                  </div>
+                </div>
+              </div>
+              <Modal isOpen={modal} toggle={toggle}>
+                <ModalHeader className="delete-modal" toggle={toggle}>
+                  Delete
+                </ModalHeader>
+                <ModalBody className="delete-modal-body">
+                  Do you want to remove this recipe?
+                </ModalBody>
+                <ModalFooter>
+                  <Button
+                    color="danger"
+                    className="delete-modal"
+                    onClick={() => delete_recipe()}
+                  >
+                    Delete
+                  </Button>{" "}
+                  <Button
+                    color="secondary"
+                    className="delete-modal"
+                    onClick={toggle}
+                  >
+                    Cancel
+                  </Button>
+                </ModalFooter>
+              </Modal>
+            </div>
+          </>
+        )}
+      </main>
     </motion.div>
   );
 }

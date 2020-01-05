@@ -1,0 +1,7 @@
+.MuiIconButton-root {
+  padding: 8px !important;
+}
+
+.MuiAppBar-root {
+  z-index: 3 !important;
+}

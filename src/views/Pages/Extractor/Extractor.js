@@ -10,7 +10,6 @@ import {
   Col
 } from "reactstrap";
 import classnames from "classnames";
-import DefaultHeader from "../../../containers/DefaultLayout/DefaultHeader";
 import RecipeCard from "../../../components/RecipeCard/RecipeCard";
 import { motion } from "framer-motion";
 import "./Extractor.css";
@@ -91,10 +90,10 @@ export default function Extractor(props) {
 
   const pageVariants = {
     initial: {
-      opacity: 0
+      // opacity: 0
     },
     in: {
-      opacity: 1
+      // opacity: 1
     },
     out: {
       // opacity: 0
@@ -122,11 +121,6 @@ export default function Extractor(props) {
       variants={pageVariants}
       transition={pageTransition}
     >
-      <AppHeader fixed display="xl">
-        <Suspense fallback={loading()}>
-          <DefaultHeader onLogout={e => this.signOut(e)} props={props} />
-        </Suspense>
-      </AppHeader>
       <main className="main">
         <div className="col-11 col-xl-9 col-lg-10 mx-auto pt-5">
           <Nav className="mb-3 mt-4" tabs>

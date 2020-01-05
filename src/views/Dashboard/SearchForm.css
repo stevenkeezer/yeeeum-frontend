@@ -31,7 +31,7 @@
   }
 }
 
-@media (max-width: 778px) {
+@media (max-width: 992px) {
   .search-form {
     display: none;
   }

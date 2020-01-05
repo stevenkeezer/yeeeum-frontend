@@ -1,8 +1,7 @@
 import React, { Suspense, useEffect, useState } from "react";
 import { AppHeader, AppSidebar, AppSidebarHeader } from "@coreui/react";
-import DefaultHeader from "../../../containers/DefaultLayout/DefaultHeader";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import RecipeCard from "./RecipeCard";
+import RecipeCard from "../../../components/RecipeCard/RecipeCard";
 import { motion } from "framer-motion";
 import "./Favorites.css";
 
@@ -28,28 +27,61 @@ export default function Favorites(props) {
     }
   };
 
+  const replace_post = async id => {
+    const response = await fetch(process.env.REACT_APP_BURL + `replace_post`, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `Token ${localStorage.getItem("token")}`
+      },
+      body: JSON.stringify(id)
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+
+      let recipesCopy = JSON.parse(JSON.stringify(favorites));
+
+      const hasRecipeId = recipe => recipe.id === id;
+      recipesCopy[recipesCopy.findIndex(hasRecipeId)] = data;
+      setFavorites(recipesCopy);
+    }
+  };
+
+  const likeButton = async id => {
+    const recipeId = {
+      recipe_id: id
+    };
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Token ${localStorage.getItem("token")}`
+      },
+      body: JSON.stringify(recipeId)
+    };
+    const response = await fetch(process.env.REACT_APP_BURL + "like", options);
+    if (response.ok) {
+      const data = await response.json();
+      replace_post(id);
+    }
+  };
+
   useEffect(() => {
     getFavPosts();
   }, []);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setHideSpinner(false);
-    }, 2000);
-    return () => clearTimeout(timer);
-  }, []);
-
   const pageVariants = {
     initial: {
-      opacity: 0
+      // opacity: 0
       // x: "-100vw"
     },
     in: {
-      opacity: 1
+      // opacity: 1
       // x: 0
     },
     out: {
-      opacity: 0
+      // opacity: 0
       // x: "100vw"
       // scale: 1
     }
@@ -65,18 +97,12 @@ export default function Favorites(props) {
     type: "tween",
     transition: "linear",
     ease: "anticipate",
-    duration: 0.8,
+    // duration: 2,
     scale: 0.8
   };
 
   return (
     <div>
-      <AppHeader fixed display="xl">
-        <Suspense fallback={loading()}>
-          <DefaultHeader onLogout={e => this.signOut(e)} props={props} />
-        </Suspense>
-      </AppHeader>
-
       <motion.div
         style={style}
         exit="out"
@@ -86,15 +112,36 @@ export default function Favorites(props) {
         transition={pageTransition}
       >
         <main className="main">
-          <div className="col-11 col-xl-9 col-lg-10 mx-auto pt-4">
-            <h3
-              style={{ marginLeft: "-7px", fontWeight: "bold" }}
-              className="pt-5 pb-3 favorites-header"
+          {favorites.length > 0 ? (
+            <div
+              className="d-flex justify-content-center align-items-center"
+              style={{
+                width: "100%",
+                imageRendering: "high-quality",
+                textAlign: "center",
+                verticalAlign: "center",
+                height: "240px",
+                backgroundColor: "white",
+                backgroundImage: `url(https://yeeeum.s3-us-west-1.amazonaws.com/${
+                  favorites[Math.floor(Math.random() * favorites.length)]
+                    .images[0].img_url
+                }`,
+                backgroundSize: "cover",
+                backgroundPosition: "top right",
+                backgroundRepeat: "no-repeat",
+                color: "white"
+              }}
             >
-              Your Favorites
-            </h3>
-            <div className="row">
-              {favorites.length < 1 && (
+              <span>
+                All <br></br> 4 Recipes <br></br>Collected.
+              </span>
+            </div>
+          ) : (
+            <div>hi</div>
+          )}
+          <div className="col-11 col-xl-9 col-lg-10 mx-auto pt-4">
+            <div className="row mt-5">
+              {favorites.length < 0 && (
                 <div className="d-flex mx-auto">
                   <div className="d-flex justify-content-center">
                     {hideSpinner ? (
@@ -111,7 +158,8 @@ export default function Favorites(props) {
               )}
               <RecipeCard
                 className="mx-auto"
-                favorites={favorites}
+                recipes={favorites}
+                likeButton={likeButton}
                 setFavorites={setFavorites}
                 getFavPosts={getFavPosts}
               />

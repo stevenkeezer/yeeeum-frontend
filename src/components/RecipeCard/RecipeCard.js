@@ -101,9 +101,9 @@ export default function RecipeCard(props) {
                   </Link>
                 </div>
                 <figcaption className="info-wrap">
-                  <div className="row mt-2 ">
+                  <div className="mt-2 d-flex">
                     <div
-                      className="col-9 "
+                      className="w-100"
                       style={{
                         paddingLeft: "0!important",
                         paddingRight: "0!important"
@@ -120,7 +120,6 @@ export default function RecipeCard(props) {
                           >
                             {r.title}
                           </Link>
-                          <br />
                           <div className="pt-1">
                             <Link
                               className="author-name"

@@ -32,6 +32,7 @@ export default function SearchForm(props) {
         if (response.ok) {
           const data = await response.json();
           props.returnSearchResults(data);
+          props.toggle();
           history.push("/search");
         }
       }}

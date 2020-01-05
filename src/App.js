@@ -1,11 +1,18 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Route, Switch, useLocation } from "react-router-dom";
+import { AppHeader, AppSidebar } from "@coreui/react";
 import { AnimatePresence } from "framer-motion";
+import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
 
 import "./App.scss";
 import "./App.css";
-import { AppSidebar } from "@coreui/react";
 import Sidebar from "./views/Sidebar/Sidebar";
+import AppNavBar from "./components/AppNavBar/AppNavBar";
+import { Fab } from "@material-ui/core";
+
+import { ToastContainer, toast } from "react-toastify";
+import Transition from "react-transition-group/Transition";
+import "react-toastify/dist/ReactToastify.css";
 
 const loading = () => <div className="animated fadeIn pt-3 text-center"></div>;
 
@@ -23,6 +30,7 @@ const Page500 = React.lazy(() => import("./views/Pages/Page500"));
 const Favorites = React.lazy(() => import("./views/Pages/Favorites/Favorites"));
 const Profile = React.lazy(() => import("./views/Pages/Profile/Profile"));
 const Search = React.lazy(() => import("./views/Dashboard/SearchResults"));
+
 const User = React.lazy(() => import("./views/Pages/User/User"));
 const Extractor = React.lazy(() => import("./views/Pages/Extractor/Extractor"));
 
@@ -79,8 +87,57 @@ function App() {
 
   const location = useLocation();
 
+  const Fade = ({ children, position, ...props }) => (
+    <Transition
+      {...props}
+      timeout={{
+        enter: 800,
+        exit: 3000
+      }}
+      onEnter={node =>
+        node.classList.add("toast-enter--top-right", "toastify-animated")
+      }
+      onEntered={node =>
+        node.classList.remove("toastify-animated", "toast-enter--top-right")
+      }
+      onExit={node => {
+        node.classList.add("fadeOut");
+      }}
+    >
+      {children}
+    </Transition>
+  );
+
+  const toastOptions = {
+    position: "bottom-right",
+    autoClose: 5000,
+    hideProgressBar: true,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true
+  };
+
+  const handleToast = () => {
+    toast("Your recipe has been removed", toastOptions);
+  };
+
+  const fabStyle = {
+    position: "fixed",
+    width: "110px",
+    height: "6.4%",
+    right: "25px",
+    bottom: "15px",
+    backgroundColor: "#919191",
+    textTransform: "none",
+    fontWeight: "bold",
+    zIndex: "30"
+  };
   return (
     <>
+      <Fab style={fabStyle} variant="extended">
+        <HelpOutlineIcon className="mr-1" />
+        <span>Help</span>
+      </Fab>
       <AppSidebar fixed display="lg">
         <Sidebar
           fbId={fbId}
@@ -96,7 +153,21 @@ function App() {
           returnSearchResults={returnSearchResults}
         />
       </AppSidebar>
-
+      <AppNavBar
+        fixed
+        fbId={fbId}
+        user={user}
+        setUser={setUser}
+        userId={userId}
+        setUserId={setUserId}
+        setUserImg={setUserImg}
+        userImg={userImg}
+        setFbId={setFbId}
+        searchResults={searchResults}
+        setSearchResults={setSearchResults}
+        returnSearchResults={returnSearchResults}
+      />
+      <ToastContainer />
       <React.Suspense fallback={loading()} style={{ position: "relative" }}>
         <AnimatePresence>
           <Switch location={location} key={location.pathname}>
@@ -320,6 +391,7 @@ function App() {
                   fbId={fbId}
                   setUser={setUser}
                   userId={userId}
+                  handleToast={handleToast}
                   setUserImg={setUserImg}
                   user={user}
                   userImg={userImg}

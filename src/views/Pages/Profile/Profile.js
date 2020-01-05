@@ -1,6 +1,4 @@
 import React, { Suspense, useEffect, useState } from "react";
-import { AppHeader } from "@coreui/react";
-import DefaultHeader from "../../../containers/DefaultLayout/DefaultHeader";
 import { motion } from "framer-motion";
 import RecipeCard from "../../../components/RecipeCard/RecipeCard";
 import PhotoLibraryIcon from "@material-ui/icons/PhotoLibrary";
@@ -86,11 +84,11 @@ export default function Profile(props) {
 
   const pageVariants = {
     initial: {
-      opacity: 0
+      // opacity: 0
       // x: "-100vw"
     },
     in: {
-      opacity: 1
+      // opacity: 1
       // x: 0
     },
     out: {
@@ -142,12 +140,6 @@ export default function Profile(props) {
 
   return (
     <div>
-      <AppHeader fixed display="xl">
-        <Suspense fallback={loading()}>
-          <DefaultHeader onLogout={e => this.signOut(e)} props={props} />
-        </Suspense>
-      </AppHeader>
-
       <motion.div
         style={style}
         exit="out"

@@ -21,6 +21,12 @@
   src: url("../../assets/fonts/AvenirNextLTProDemi.otf") format("opentype");
 }
 
+@font-face {
+  font-family: "AvenirNextLTProLight";
+  src: url("../../assets/fonts/AvenirNextLTProLight.otf");
+  src: url("../../assets/fonts/AvenirNextLTProLight.otf") format("opentype");
+}
+
 .saved-recipes {
   font-family: "AvenirNextLTProDemi";
 }
@@ -114,7 +120,7 @@
 .nav-link {
   padding: 5px !important;
   font-size: 0.83rem;
-  font-family: "AvenirNextLTProThin", sans-serif;
+  font-family: "AvenirNextLTProLight", sans-serif;
   color: #707070;
   transition: color 0.4s ease;
   border: none !important;

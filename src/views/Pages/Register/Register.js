@@ -36,7 +36,7 @@ function Register() {
     type: "tween",
     transition: "linear",
     ease: "anticipate",
-    duration: 1,
+    duration: 0.8,
     scale: 0.8
   };
   return (

@@ -74,7 +74,9 @@ export default function RecipeField(props) {
         props.createRecipe(values);
       }}
       render={({ values, handleSubmit, setFieldValue }) => (
-        <div className="col-xl-6 col-lg-9 col-sm-10 col-md-8 mx-auto justify-content-center d-flex">
+        <div
+          className="col-xl-6 col-lg-9 col-sm-10 col-md-8 mx-auto justify-content-center d-flex"
+        >
           <Form style={{ width: "100%" }} onSubmit={handleSubmit}>
             <div className="row mt-3">
               <RestaurantIcon
