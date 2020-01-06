@@ -117,7 +117,7 @@ body {
 
 @media (max-width: 500px) {
   .banner-container {
-    margin-top: 19vw;
+    margin-top: 24vw;
     margin-right: 0;
   }
 
@@ -132,8 +132,9 @@ body {
   .join-newsletter-btn {
     padding: 0.4rem 0.4rem;
     margin-bottom: 0.5rem;
-    display: hidden;
+    display: none;
   }
+
   .banner-img {
     margin-left: 0px !important;
     background-position: calc(50% - 90px) 10% !important;
