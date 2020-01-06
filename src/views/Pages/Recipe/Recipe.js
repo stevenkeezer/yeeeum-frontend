@@ -323,7 +323,7 @@ export default function Recipe(props) {
                   showThumbs={false}
                   showStatus={false}
                   showIndicators={false}
-                  className="justify-content-center  carousel img-fluid"
+                  className="justify-content-center  img-fluid"
                 >
                   {recipeImages &&
                     recipeImages.map(img => {

@@ -258,7 +258,7 @@ export default function PrimarySearchAppBar(props) {
                   <img
                     alt="profilepicture"
                     className="img-avatar"
-                    src="./assets/img/default-s.png"
+                    src="/assets/img/default-s.png"
                   ></img>
                 )}
               </IconButton>
