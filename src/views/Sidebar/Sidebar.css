@@ -132,7 +132,7 @@
   border: none !important;
   outline: none !important;
   font-weight: bold;
-  letter-spacing: -0.009rem !important;
+  letter-spacing: -0.09rem !important;
 }
 
 .sidebar-login-button {
@@ -299,7 +299,7 @@ html:not([dir="rtl"]) .sidebar-show.sidebar-fixed .app-footer {
     top: 0;
     left: 0;
     bottom: 0;
-    z-index: 133018;
+    z-index: 1018;
     width: 100vw;
     height: 100%;
     content: "";
