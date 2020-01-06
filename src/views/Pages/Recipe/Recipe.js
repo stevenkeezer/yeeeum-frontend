@@ -319,29 +319,29 @@ export default function Recipe(props) {
                 ></img>
               )}
               <>
-                {/* <Carousel
+                <Carousel
                   showThumbs={false}
                   showStatus={false}
                   showIndicators={false}
                   className="justify-content-center  carousel img-fluid"
-                > */}
-                {recipeImages &&
-                  recipeImages.map(img => {
-                    return (
-                      <div className="d-flex">
-                        <img
-                          className="img-fluid recipe-img "
-                          alt="blah"
-                          style={{
-                            width: "100%",
-                            height: "auto"
-                          }}
-                          src={`https://yeeeum.s3-us-west-1.amazonaws.com/${img.img_url}`}
-                        ></img>
-                      </div>
-                    );
-                  })}
-                {/* </Carousel> */}
+                >
+                  {recipeImages &&
+                    recipeImages.map(img => {
+                      return (
+                        <div className="d-flex">
+                          <img
+                            className="img-fluid recipe-img "
+                            alt="blah"
+                            style={{
+                              width: "100%"
+                              // height: "auto"
+                            }}
+                            src={`https://yeeeum.s3-us-west-1.amazonaws.com/${img.img_url}`}
+                          ></img>
+                        </div>
+                      );
+                    })}
+                </Carousel>
               </>
             </div>
           </div>
