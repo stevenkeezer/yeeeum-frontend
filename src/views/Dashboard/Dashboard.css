@@ -132,11 +132,10 @@ body {
   .join-newsletter-btn {
     padding: 0.4rem 0.4rem;
     margin-bottom: 0.5rem;
-    display: none;
+    display: hidden;
   }
   .banner-img {
     margin-left: 0px !important;
-    margin-top: 10%;
     background-position: calc(50% - 90px) 10% !important;
   }
   .foryou {
