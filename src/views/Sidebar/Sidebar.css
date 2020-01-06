@@ -282,8 +282,9 @@ html:not([dir="rtl"]) .sidebar-show.sidebar-fixed .app-footer {
     position: absolute;
     top: 0;
     left: 0;
+    bottom: 0;
     z-index: 1018;
-    width: 100%;
+    width: 100vw;
     height: 100%;
     content: "";
     background: rgba(0, 0, 0, 0.4);
