@@ -35,7 +35,9 @@
   box-shadow: 0 0 2em rgba(0, 0, 0, 0.047);
   height: 100% !important;
   position: fixed;
-  min-height: 100vh;
+  /* min-height: 100vh; */
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .sidebar .nav-link:hover {

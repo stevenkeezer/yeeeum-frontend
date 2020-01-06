@@ -17,7 +17,7 @@ export default function RecipeCard(props) {
 
   return (
     <>
-      {/* {props.recipes.length < 1 && (
+      {props.recipes.length < 1 && (
         <div className="d-flex mx-auto justify-content-center align-self-center">
           <CircularProgress
             style={{
@@ -26,7 +26,7 @@ export default function RecipeCard(props) {
             }}
           />
         </div>
-      )} */}
+      )}
 
       {props.recipes.map((r, i) => {
         if (i === 1) {
