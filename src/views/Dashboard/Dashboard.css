@@ -136,6 +136,7 @@ body {
   }
   .banner-img {
     margin-left: 0px !important;
+    margin-top: 10%;
     background-position: calc(50% - 90px) 10% !important;
   }
   .foryou {
