@@ -132,7 +132,7 @@
   border: none !important;
   outline: none !important;
   font-weight: bold;
-  letter-spacing: 0rem !important;
+  letter-spacing: -0.009rem !important;
 }
 
 .sidebar-login-button {
