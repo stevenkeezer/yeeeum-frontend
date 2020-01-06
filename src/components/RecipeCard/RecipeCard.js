@@ -12,8 +12,8 @@ export default function RecipeCard(props) {
   const [imgLoaded, setImgLoaded] = useState(false);
 
   useEffect(() => {
-    props.getPosts && props.getPosts();
-  }, [props.page]);
+    // props.getPosts && props.getPosts();
+  }, []);
 
   return (
     <>
