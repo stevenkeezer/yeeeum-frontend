@@ -271,18 +271,7 @@ html:not([dir="rtl"]) .sidebar-show.sidebar-fixed .app-footer {
   margin-left: 0px;
 }
 
-@media (max-width: 575.98px) {
-  .sidebar-show .main::before,
-  .aside-menu-show .main::before {
-    height: 100%;
-    /* height: 100vh; */
-  }
-  .nav-link:active {
-    background-color: rgba(53, 53, 53, 0.08) !important;
-  }
-}
-
-@media (max-width: 499.98px) {
+@media (max-width: 475.98px) {
   .sidebar-show .main::before,
   .aside-menu-show .main::before {
     height: 100%;
@@ -312,6 +301,13 @@ html:not([dir="rtl"]) .sidebar-show.sidebar-fixed .app-footer {
 
   .sidebar {
     width: 250px;
+  }
+
+  .sidebar .nav {
+    width: 250px;
+    flex-direction: column;
+    min-height: 100%;
+    padding: 0;
   }
 
   html:not([dir="rtl"]) .sidebar {
