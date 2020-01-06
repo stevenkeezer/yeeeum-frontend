@@ -117,8 +117,9 @@ body {
 
 @media (max-width: 500px) {
   .banner-container {
-    margin-top: 24vw;
+    margin-top: 19vw;
     margin-right: 0;
+    height: 40px;
   }
 
   .banner-header {
