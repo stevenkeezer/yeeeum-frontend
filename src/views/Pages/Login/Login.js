@@ -12,7 +12,7 @@ function Login(props) {
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
-      history.push("/");
+      // history.push("/");
     }
   }, []);
 
