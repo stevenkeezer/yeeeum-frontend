@@ -5,3 +5,14 @@
 .MuiAppBar-root {
   z-index: 3 !important;
 }
+
+.navbar-toggler {
+  padding: 0rem 0.3rem;
+}
+
+@media (min-width: 600px) {
+  .MuiToolbar-gutters {
+    padding-left: 12px !important;
+    padding-right: 32px !important;
+  }
+}

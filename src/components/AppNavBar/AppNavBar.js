@@ -37,7 +37,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   menuButton: {
-    marginRight: theme.spacing(2)
+    marginRight: theme.spacing(0)
   },
   title: {
     color: "orange"
@@ -225,7 +225,7 @@ export default function PrimarySearchAppBar(props) {
                 onClick={toggle}
               >
                 <Badge color="secondary">
-                  <SearchIcon />
+                  <SearchIcon style={{ transform: "rotateY(180deg)" }} />
                 </Badge>
               </IconButton>
               <IconButton
