@@ -97,6 +97,9 @@
   text-align: center;
 }
 
+.logo-container {
+  margin-top: 4vw;
+}
 .nav-footer {
   font-size: 0.7rem;
   /* position: fixed; */
@@ -152,7 +155,7 @@
 }
 .logo-container {
   text-align: center;
-  margin-top: 35%;
+  /* margin-top: 35%; */
   margin-bottom: 23px;
 }
 .sidebar .nav-link.active {
@@ -250,6 +253,10 @@
 }
 
 @media (max-width: 576px) {
+  .profile-img-container {
+    text-align: left;
+    margin-left: 30px;
+  }
 }
 
 html:not([dir="rtl"]) .sidebar-sm-show.sidebar-fixed .main,
