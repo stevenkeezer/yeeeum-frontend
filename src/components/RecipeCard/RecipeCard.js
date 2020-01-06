@@ -13,7 +13,7 @@ export default function RecipeCard(props) {
 
   useEffect(() => {
     props.getPosts && props.getPosts();
-  }, [props.page]);
+  }, []);
 
   return (
     <>
