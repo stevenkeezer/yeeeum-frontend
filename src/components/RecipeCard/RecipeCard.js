@@ -12,7 +12,7 @@ export default function RecipeCard(props) {
   const [imgLoaded, setImgLoaded] = useState(false);
 
   useEffect(() => {
-    // props.getPosts && props.getPosts();
+    props.getPosts && props.getPosts();
   }, []);
 
   return (
@@ -21,7 +21,7 @@ export default function RecipeCard(props) {
         <div className="d-flex mx-auto justify-content-center align-self-center">
           <CircularProgress
             style={{
-              marginTop: "13%",
+              marginTop: "15%",
               color: "#00a287"
             }}
           />
