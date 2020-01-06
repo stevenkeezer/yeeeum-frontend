@@ -173,13 +173,14 @@ p {
 
 @media (max-width: 600px) {
   .banner-header {
-    font-size: 21px !important;
+    font-size: 19px !important;
     line-height: 0rem;
     margin-top: 0%;
     margin-bottom: 0%;
   }
   p {
     font-size: 14px !important;
+    display: none;
   }
   .banner-img {
     height: 200px !important;
