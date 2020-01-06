@@ -166,6 +166,7 @@ export default function Extractor(props) {
                       likeButton={likeButton}
                     />
                   </Row>
+                  hihihi
                 </Col>
               </Row>
             </TabPane>
@@ -179,6 +180,7 @@ export default function Extractor(props) {
                       setRecipes={setRecipes}
                     />
                   </Row>
+                  blublublu
                 </Col>
               </Row>
             </TabPane>
