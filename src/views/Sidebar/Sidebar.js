@@ -185,18 +185,7 @@ export default function Sidebar(props) {
               </span>
             </NavLink>
           </li>
-          <li className="nav-item">
-            <NavLink
-              to={"/extractor"}
-              activeClassName="is-active"
-              className="nav-link sidebar-link"
-            >
-              <span className="ml-4">R-Extractor</span>
-              <span style={{ color: "#f15924" }} className="badge">
-                NEW
-              </span>
-            </NavLink>
-          </li>
+
           {props.user && (
             <li className="nav-item">
               <NavLink
