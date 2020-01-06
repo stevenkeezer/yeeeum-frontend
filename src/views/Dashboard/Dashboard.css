@@ -123,6 +123,7 @@ body {
 
   .banner-header {
     font-size: 20px !important;
+    display: none;
   }
   p {
     font-size: 14px !important;
@@ -131,6 +132,7 @@ body {
   .join-newsletter-btn {
     padding: 0.4rem 0.4rem;
     margin-bottom: 0.5rem;
+    display: none;
   }
   .banner-img {
     margin-left: 0px !important;
