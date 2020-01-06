@@ -138,7 +138,7 @@ function App() {
         <HelpOutlineIcon className="mr-1" />
         <span>Help</span>
       </Fab>
-      <AppSidebar fixed display="lg">
+      <AppSidebar fixed display="lg" id="sidebar-container">
         <Sidebar
           fbId={fbId}
           user={user}

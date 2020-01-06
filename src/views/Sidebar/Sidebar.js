@@ -44,7 +44,7 @@ export default function Sidebar(props) {
   };
 
   return (
-    <div className="sidebar">
+    <div className="">
       <nav className="sidebar-nav">
         <div className="logo-container">
           <Link to={"/"} className="logo" style={{ textDecoration: "none" }}>
