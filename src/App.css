@@ -4,7 +4,7 @@ body {
   -moz-font-smoothing: antialiased;
   -ms-font-smoothing: antialiased;
   -o-font-smoothing: antialiased;
-  font-smoothing: antialiased;
+  font-smoothing: antialiased !important;
 }
 
 html,
@@ -15,4 +15,5 @@ body {
   padding: 0px;
   /* overflow-x: hidden; */
   -webkit-overflow-scrolling: touch;
+  text-rendering: optimizeLegibility;
 }
