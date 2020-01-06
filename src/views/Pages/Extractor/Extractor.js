@@ -19,7 +19,7 @@ export default function Extractor(props) {
 
   const getRecipes = async query => {
     const response = await fetch(
-      process.env.REACT_APP_BURL + `posts?category=${query}`,
+      process.env.REACT_APP_BURL + `posts?category=${query || "latest"}`,
       {
         method: "GET",
         headers: {
@@ -166,7 +166,6 @@ export default function Extractor(props) {
                       likeButton={likeButton}
                     />
                   </Row>
-                  hihihi
                 </Col>
               </Row>
             </TabPane>
@@ -180,7 +179,6 @@ export default function Extractor(props) {
                       setRecipes={setRecipes}
                     />
                   </Row>
-                  blublublu
                 </Col>
               </Row>
             </TabPane>

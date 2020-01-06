@@ -30,7 +30,7 @@ function Register() {
   };
 
   const style = {
-    position: "absolute"
+    // position: "absolute"
   };
   const pageTransition = {
     type: "tween",
@@ -56,19 +56,19 @@ function Register() {
       ></img>
       <div
         className="app flex-row align-items-center"
-        style={{
-          // backgroundImage: `url(assets/img/pizzabcg.jpg)`,
-          backgroundSize: "cover",
-          backgroundPosition: "top right",
-          width: "100vw",
-          backgroundColor: "#fbfbfb",
-          transform: "rotateY(180deg)",
-          backgroundRepeat: "no-repeat"
-        }}
+        // style={{
+        //   // backgroundImage: `url(assets/img/pizzabcg.jpg)`,
+        //   backgroundSize: "cover",
+        //   backgroundPosition: "top right",
+        //   width: "100vw",
+        //   backgroundColor: "#fbfbfb",
+        //   transform: "rotateY(180deg)",
+        //   backgroundRepeat: "no-repeat"
+        // }}
       >
         <div
           className="col-lg-6 mx-auto register-card text-center"
-          style={{ marginLeft: "0px!important", transform: "rotateY(180deg)" }}
+          // style={{ marginLeft: "0px!important", transform: "rotateY(180deg)" }}
         >
           <div className="row mx-auto">
             <div className="col-lg-12 order-lg-first">

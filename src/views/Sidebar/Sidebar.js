@@ -63,7 +63,7 @@ export default function Sidebar(props) {
         <div className="login-button">
           <Link to={"/login"}>
             {!props.user && (
-              <div className="p-3 pb-5">
+              <div className="p-3">
                 <button
                   className="btn-lg sidebar-login-button"
                   style={{
