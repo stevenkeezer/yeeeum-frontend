@@ -31,15 +31,14 @@
   font-family: "AvenirNextLTProDemi";
 }
 .sidebar {
-  background-color: red;
+  background-color: #ffffff;
   box-shadow: 0 0 2em rgba(0, 0, 0, 0.12);
   height: 100% !important;
   position: fixed;
-  /* min-height: 100vh; */
   height: 100%;
   min-height: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
+  /* overflow-y: auto; */
+  /* overflow-x: hidden; */
 }
 
 .sidebar .nav-link:hover {
