@@ -235,6 +235,7 @@ export default function PrimarySearchAppBar(props) {
                 aria-haspopup="true"
                 onClick={handleProfileMenuOpen}
                 color="black"
+                style={{ outline: "none" }}
               >
                 {!props.userImg &&
                   props.fbId &&
