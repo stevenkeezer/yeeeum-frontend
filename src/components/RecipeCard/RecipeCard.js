@@ -10,7 +10,6 @@ import { AnimatePresence, motion } from "framer-motion";
 
 export default function RecipeCard(props) {
   const [imgLoaded, setImgLoaded] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     props.getPosts && props.getPosts();
@@ -37,7 +36,7 @@ export default function RecipeCard(props) {
             key={r.id}
             className="col-lg-4 col-xl-3 col-md-6 product-div pb-4 pl-2 pr-2"
           >
-            {!r.deleted && (
+            {r && (
               <figure className="card">
                 <div className="img-wrap">
                   {imgLoaded && (
