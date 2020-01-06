@@ -328,17 +328,18 @@ export default function Recipe(props) {
                   {recipeImages &&
                     recipeImages.map(img => {
                       return (
-                        <div className="d-flex">
-                          <img
-                            className="img-fluid recipe-img "
-                            alt="blah"
-                            style={{
-                              width: "100%"
-                              // height: "auto"
-                            }}
-                            src={`https://yeeeum.s3-us-west-1.amazonaws.com/${img.img_url}`}
-                          ></img>
-                        </div>
+                        // <div className="d-flex">
+                        <img
+                          // className="img-fluid recipe-img "
+                          alt="blah"
+                          className="image-container"
+                          style={{
+                            width: "100%",
+                            height: "auto"
+                          }}
+                          src={`https://yeeeum.s3-us-west-1.amazonaws.com/${img.img_url}`}
+                        ></img>
+                        // </div>
                       );
                     })}
                 </Carousel>
