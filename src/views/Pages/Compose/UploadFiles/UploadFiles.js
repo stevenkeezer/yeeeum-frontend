@@ -6,9 +6,9 @@ import Facebook from "@uppy/facebook";
 import Webcam from "@uppy/webcam";
 import { Dashboard } from "@uppy/react";
 import { motion } from "framer-motion";
-import "../Compose.css";
 import "@uppy/dashboard/dist/style.css";
 import "@uppy/core/dist/style.css";
+import "../Compose.css";
 
 export default function Upload() {
   let history = useHistory();
@@ -102,6 +102,7 @@ export default function Upload() {
           <h3>Add Images</h3>
           <Dashboard
             uppy={uppyRef.current}
+            width="100%"
             plugins={["Webcam"]}
             metaFields={[
               { id: "name", name: "Name", placeholder: "File name" }
