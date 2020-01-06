@@ -44,7 +44,7 @@
 .sidebar .nav-link:hover {
   height: 100%;
 }
-@media (max-width: 575.98px) {
+@media (max-width: 990px) {
   .sidebar-show .main::before,
   .aside-menu-show .main::before {
     min-height: 100vh;
@@ -204,6 +204,9 @@
     margin-left: -205px;
     transition-delay: 0.2s;
   }
+  .nav-link {
+    font-size: 18px;
+  }
 }
 
 .sidebar {
@@ -257,10 +260,16 @@
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 990px) {
   .profile-img-container {
     text-align: left;
     margin-left: 30px;
+  }
+  .logo-container {
+    display: none;
+  }
+  #separator {
+    display: none;
   }
 }
 
