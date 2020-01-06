@@ -126,13 +126,13 @@
 .nav-link {
   padding: 5px !important;
   font-size: 0.83rem;
-  font-family: "AvenirNextLTProRegular", sans-serif;
+  font-family: "AvenirNextLTProLight", sans-serif;
   color: #707070;
   transition: color 0.4s ease;
   border: none !important;
   outline: none !important;
   font-weight: bold;
-  letter-spacing: -0.09rem !important;
+  letter-spacing: -0.009rem !important;
 }
 
 .sidebar-login-button {
