@@ -217,7 +217,7 @@ export default function PrimarySearchAppBar(props) {
             </Typography>
 
             <div className={classes.grow} />
-            <div className={classes.sectionDesktop}>
+            <div>
               <IconButton
                 aria-label="show 4 new mails"
                 color="black"
