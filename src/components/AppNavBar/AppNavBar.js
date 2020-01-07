@@ -216,54 +216,54 @@ export default function PrimarySearchAppBar(props) {
             </Typography>
 
             <div className={classes.grow} />
-            <div className={classes.sectionDesktop}>
-              <button onClick={() => alert("click")}>click</button>
-              <IconButton
-                aria-label="show 4 new mails"
-                color="black"
-                style={{ outline: "none" }}
-                onClick={toggle}
-              >
-                <Badge color="secondary">
-                  <SearchIcon style={{ transform: "rotateY(180deg)" }} />
-                </Badge>
-              </IconButton>
-              <IconButton
-                edge="end"
-                aria-label="account of current user"
-                aria-controls={menuId}
-                aria-haspopup="true"
-                onClick={handleProfileMenuOpen}
-                color="black"
-                style={{ outline: "none" }}
-              >
-                {!props.userImg &&
-                  props.fbId &&
-                  localStorage.getItem("login") && (
-                    <img
-                      alt="profilepicture"
-                      className="img-avatar"
-                      src={`https://graph.facebook.com/${props.fbId}/picture?type=square`}
-                    ></img>
-                  )}
 
-                {props.userImg && (
+            <button onClick={() => alert("click")}>click</button>
+            <IconButton
+              aria-label="show 4 new mails"
+              color="black"
+              style={{ outline: "none" }}
+              onClick={toggle}
+            >
+              <Badge color="secondary">
+                <SearchIcon style={{ transform: "rotateY(180deg)" }} />
+              </Badge>
+            </IconButton>
+            <IconButton
+              edge="end"
+              aria-label="account of current user"
+              aria-controls={menuId}
+              aria-haspopup="true"
+              onClick={handleProfileMenuOpen}
+              color="black"
+              style={{ outline: "none" }}
+            >
+              {!props.userImg &&
+                props.fbId &&
+                localStorage.getItem("login") && (
                   <img
                     alt="profilepicture"
                     className="img-avatar"
-                    src={`https://yeeeum.s3-us-west-1.amazonaws.com/${props.userImg}`}
+                    src={`https://graph.facebook.com/${props.fbId}/picture?type=square`}
                   ></img>
                 )}
 
-                {!props.user && (
-                  <img
-                    alt="profilepicture"
-                    className="img-avatar"
-                    src="/assets/img/default-s.png"
-                  ></img>
-                )}
-              </IconButton>
-            </div>
+              {props.userImg && (
+                <img
+                  alt="profilepicture"
+                  className="img-avatar"
+                  src={`https://yeeeum.s3-us-west-1.amazonaws.com/${props.userImg}`}
+                ></img>
+              )}
+
+              {!props.user && (
+                <img
+                  alt="profilepicture"
+                  className="img-avatar"
+                  src="/assets/img/default-s.png"
+                ></img>
+              )}
+            </IconButton>
+
             <div className={classes.sectionMobile}>
               <IconButton
                 aria-label="show more"
