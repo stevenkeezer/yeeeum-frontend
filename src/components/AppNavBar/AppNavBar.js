@@ -218,7 +218,7 @@ export default function PrimarySearchAppBar(props) {
 
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
-              <IconButton
+              <Button
                 aria-label="show 4 new mails"
                 color="black"
                 style={{ outline: "none" }}
@@ -227,13 +227,13 @@ export default function PrimarySearchAppBar(props) {
                 <Badge color="secondary">
                   <SearchIcon style={{ transform: "rotateY(180deg)" }} />
                 </Badge>
-              </IconButton>
+              </Button>
               <IconButton
                 edge="end"
                 aria-label="account of current user"
                 aria-controls={menuId}
                 aria-haspopup="true"
-                // onClick={handleProfileMenuOpen}
+                onClick={handleProfileMenuOpen}
                 color="black"
                 style={{ outline: "none" }}
               >
