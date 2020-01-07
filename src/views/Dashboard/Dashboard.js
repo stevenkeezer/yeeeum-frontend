@@ -170,7 +170,7 @@ function Dashboard(props) {
         style={{
           backgroundImage: `url(assets/img/banner.png)`,
           backgroundRepeat: "no-repeat",
-          backgroundSize: "contain",
+          backgroundSize: "cover",
           marginTop: "5vw",
           height: "460px",
           transform: "rotateY(180deg)",
