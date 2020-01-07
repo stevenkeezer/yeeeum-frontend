@@ -219,3 +219,9 @@ p {
     margin-top: 10%;
   }
 }
+
+@media (max-width: 640px) {
+  .banner-img {
+    background-attachment: initial;
+  }
+}
