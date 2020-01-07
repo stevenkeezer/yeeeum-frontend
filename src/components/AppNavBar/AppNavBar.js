@@ -216,8 +216,6 @@ export default function PrimarySearchAppBar(props) {
             </Typography>
 
             <div className={classes.grow} />
-
-            <button onClick={() => alert("click")}>click</button>
             <IconButton
               aria-label="show 4 new mails"
               color="black"

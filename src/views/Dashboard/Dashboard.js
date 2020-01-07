@@ -173,8 +173,8 @@ function Dashboard(props) {
           backgroundSize: "contain",
           marginTop: "5vw",
           height: "460px",
-          transform: "rotateY(180deg)"
-          // zIndex: "-10"
+          transform: "rotateY(180deg)",
+          zIndex: "-10"
         }}
       ></div>
 
