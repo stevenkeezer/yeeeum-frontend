@@ -217,7 +217,7 @@ export default function PrimarySearchAppBar(props) {
             </Typography>
 
             <div className={classes.grow} />
-            <div>
+            <div className={classes.sectionDesktop}>
               <IconButton
                 aria-label="show 4 new mails"
                 color="black"
@@ -233,7 +233,7 @@ export default function PrimarySearchAppBar(props) {
                 aria-label="account of current user"
                 aria-controls={menuId}
                 aria-haspopup="true"
-                onClick={handleProfileMenuOpen}
+                // onClick={handleProfileMenuOpen}
                 color="black"
                 style={{ outline: "none" }}
               >
