@@ -222,6 +222,6 @@ p {
 
 @media (max-width: 640px) {
   .banner-img {
-    background-attachment: fixed;
+    background-attachment: initial;
   }
 }
