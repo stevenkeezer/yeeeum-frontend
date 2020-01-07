@@ -166,11 +166,11 @@ function Dashboard(props) {
         <div className="col-xs-12"></div>
       </div>
       <div
-        className="col-lg-12 img-fluid banner-img"
+        className="col-lg-12 img-fluid "
         style={{
           backgroundImage: `url(assets/img/banner.png)`,
           backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
+          backgroundSize: "contain",
           marginTop: "5vw",
           height: "460px",
           transform: "rotateY(180deg)",
