@@ -166,7 +166,7 @@ function Dashboard(props) {
         <div className="col-xs-12"></div>
       </div>
       <div
-        className="col-lg-12 img-fluid "
+        className="col-lg-12 img-fluid banner-img"
         style={{
           backgroundImage: `url(assets/img/banner.png)`,
           backgroundRepeat: "no-repeat",

@@ -211,13 +211,13 @@ export default function PrimarySearchAppBar(props) {
                 <MenuIcon />
               </IconButton>
             </AppSidebarToggler>
-
             <Typography className={classes.title} variant="h6" noWrap>
               <img width="70px" src="/assets/img/logo.png"></img>
             </Typography>
 
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
+              <button onClick={() => alert("click")}>click</button>
               <IconButton
                 aria-label="show 4 new mails"
                 color="black"
