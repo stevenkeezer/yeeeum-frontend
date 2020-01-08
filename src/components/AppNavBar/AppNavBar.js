@@ -204,7 +204,7 @@ export default function PrimarySearchAppBar(props) {
         >
           <Toolbar variant="dense">
             {/* <AppSidebarToggler className="" display="xl" mobile> */}
-            <IconButton
+            {/* <IconButton
               edge="start"
               // className={classes.menuButton}
               color="black"
@@ -214,10 +214,10 @@ export default function PrimarySearchAppBar(props) {
                 display: "hidden",
                 color: "white"
               }}
-            >
-              <MenuIcon onClick={() => clickHandler()} />
-              {/* <div style={{ paddingLeft: "25px" }}></div> */}
-            </IconButton>
+            > */}
+            {/* <MenuIcon onClick={() => clickHandler()} /> */}
+            {/* <div style={{ paddingLeft: "25px" }}></div> */}
+            {/* </IconButton> */}
             {/* </AppSidebarToggler> */}
             <Typography className={classes.title} variant="h6" noWrap>
               <img width="70px" src="/assets/img/logo.png"></img>
