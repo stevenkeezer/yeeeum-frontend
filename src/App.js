@@ -202,7 +202,12 @@ function App() {
           returnSearchResults={returnSearchResults}
         />
       </AppSidebar>
-      <Menu isOpen={isOpen} styles={sidebarStyles} pageWrapId={"page-wrap"}>
+      <Menu
+        width={250}
+        isOpen={isOpen}
+        styles={sidebarStyles}
+        pageWrapId={"page-wrap"}
+      >
         <Sidebar
           fbId={fbId}
           user={user}
