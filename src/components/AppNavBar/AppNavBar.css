@@ -12,7 +12,11 @@
 
 @media (min-width: 600px) {
   .MuiToolbar-gutters {
-    padding-left: 12px !important;
+    padding-left: 19px !important;
     padding-right: 32px !important;
   }
+}
+
+.MuiToolbar-gutters {
+  padding-left: 33px !important;
 }

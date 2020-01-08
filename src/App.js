@@ -7,6 +7,7 @@ import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
 import "./App.scss";
 import "./App.css";
 import Sidebar from "./views/Sidebar/Sidebar";
+import { scaleDown as Menu } from "react-burger-menu";
 import AppNavBar from "./components/AppNavBar/AppNavBar";
 import { Fab } from "@material-ui/core";
 
@@ -47,6 +48,7 @@ function App() {
   const [userImg, setUserImg] = useState(null);
   const [fbId, setFbId] = useState(null);
   const [searchResults, setSearchResults] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
 
   const existingToken = localStorage.getItem("token");
   const accessToken =
@@ -132,6 +134,53 @@ function App() {
     fontWeight: "bold",
     zIndex: "30"
   };
+
+  var sidebarStyles = {
+    bmBurgerButton: {
+      position: "fixed",
+      width: "18px",
+      height: "12px",
+      left: "19px",
+      top: "18px",
+      color: "#bababa"
+    },
+    bmBurgerBars: {
+      background: "#373a47"
+    },
+    bmBurgerBarsHover: {
+      background: "#a90000"
+    },
+    bmCrossButton: {
+      height: "24px",
+      width: "24px"
+    },
+    bmCross: {
+      background: "#bdc3c7"
+    },
+    bmMenuWrap: {
+      position: "fixed",
+      height: "100%"
+    },
+    bmMenu: {
+      background: "#ffffff",
+      padding: "2.5em 1.5em 0",
+      fontSize: "1.15em"
+    },
+    bmMorphShape: {
+      fill: "#373a47"
+    },
+    bmItemList: {
+      color: "#b8b7ad",
+      padding: "0.8em"
+    },
+    bmItem: {
+      display: "inline-block"
+    },
+    bmOverlay: {
+      background: "rgba(0, 0, 0, 0.3)"
+    }
+  };
+
   return (
     <>
       <Fab style={fabStyle} variant="extended">
@@ -153,287 +202,306 @@ function App() {
           returnSearchResults={returnSearchResults}
         />
       </AppSidebar>
-      <AppNavBar
-        fixed
-        fbId={fbId}
-        user={user}
-        setUser={setUser}
-        userId={userId}
-        setUserId={setUserId}
-        setUserImg={setUserImg}
-        userImg={userImg}
-        setFbId={setFbId}
-        searchResults={searchResults}
-        setSearchResults={setSearchResults}
-        returnSearchResults={returnSearchResults}
-      />
-      <ToastContainer />
-      <React.Suspense fallback={loading()} style={{ position: "relative" }}>
-        {/* <AnimatePresence> */}
-        <Switch location={location} key={location.pathname}>
-          <Route
-            path="/upload_files"
-            name="Upload Images"
-            render={props => (
-              <UploadFiles
-                fbId={fbId}
-                user={user}
-                setUser={setUser}
-                userId={userId}
-                setUserId={setUserId}
-                setUserImg={setUserImg}
-                userImg={userImg}
-                setFbId={setFbId}
-                searchResults={searchResults}
-                setSearchResults={setSearchResults}
-                returnSearchResults={returnSearchResults}
-              />
-            )}
-          />
-          <Route
-            path="/reset_token/:token"
-            name="Password Reset Page"
-            render={props => (
-              <PasswordReset
-                fbId={fbId}
-                user={user}
-                setUser={setUser}
-                userId={userId}
-                setUserId={setUserId}
-                setUserImg={setUserImg}
-                userImg={userImg}
-                setFbId={setFbId}
-                searchResults={searchResults}
-                setSearchResults={setSearchResults}
-                returnSearchResults={returnSearchResults}
-              />
-            )}
-          />
-          <Route
-            path="/extractor"
-            name="Extractor Page"
-            render={props => (
-              <Extractor
-                fbId={fbId}
-                user={user}
-                setUser={setUser}
-                userId={userId}
-                setUserId={setUserId}
-                setUserImg={setUserImg}
-                userImg={userImg}
-                setFbId={setFbId}
-                searchResults={searchResults}
-                setSearchResults={setSearchResults}
-                returnSearchResults={returnSearchResults}
-              />
-            )}
-          />
-          <Route
-            path="/user/:id"
-            name="User Profile Page"
-            render={props => (
-              <User
-                fbId={fbId}
-                user={user}
-                setUser={setUser}
-                userId={userId}
-                setUserId={setUserId}
-                setUserImg={setUserImg}
-                userImg={userImg}
-                setFbId={setFbId}
-                searchResults={searchResults}
-                setSearchResults={setSearchResults}
-                returnSearchResults={returnSearchResults}
-              />
-            )}
-          />
-          <Route
-            exact
-            path="/login"
-            name="Login Page"
-            render={props => (
-              <Login
-                user={user}
-                fbId={fbId}
-                userId={userId}
-                setUser={setUser}
-                userImg={userImg}
-                setFbId={setFbId}
-                setUserId={setUserId}
-                setUserImg={setUserImg}
-                getUserInfo={getUserInfo}
-                searchResults={searchResults}
-                setSearchResults={setSearchResults}
-                returnSearchResults={returnSearchResults}
-              />
-            )}
-          />
-          <Route
-            exact
-            path="/reset_request"
-            name="Reset Password Page"
-            render={props => (
-              <ResetRequest
-                fbId={fbId}
-                user={user}
-                setUser={setUser}
-                userId={userId}
-                setUserImg={setUserImg}
-                userImg={userImg}
-                setFbId={setFbId}
-                searchResults={searchResults}
-                setSearchResults={setSearchResults}
-                returnSearchResults={returnSearchResults}
-              />
-            )}
-          />
-          <Route
-            exact
-            path="/search"
-            name="Search Page"
-            render={props => (
-              <Search
-                fbId={fbId}
-                user={user}
-                setFbId={setFbId}
-                setUser={setUser}
-                userId={userId}
-                setUserImg={setUserImg}
-                userImg={userImg}
-                searchResults={searchResults}
-                setSearchResults={setSearchResults}
-                returnSearchResults={returnSearchResults}
-              />
-            )}
-          />
-          <Route
-            exact
-            path="/register"
-            name="Register Page"
-            render={props => (
-              <Register
-                setUser={setUser}
-                userId={userId}
-                setUserImg={setUserImg}
-                user={user}
-                userImg={userImg}
-                fbId={fbId}
-                setFbId={setFbId}
-                searchResults={searchResults}
-                setSearchResults={setSearchResults}
-                returnSearchResults={returnSearchResults}
-              />
-            )}
-          />
-          <Route
-            exact
-            path="/favorites"
-            name="Favorites Page"
-            render={props => (
-              <Favorites
-                setUser={setUser}
-                userId={userId}
-                setUserImg={setUserImg}
-                user={user}
-                userImg={userImg}
-                fbId={fbId}
-                setFbId={setFbId}
-                searchResults={searchResults}
-                setSearchResults={setSearchResults}
-                returnSearchResults={returnSearchResults}
-              />
-            )}
-          />
-          <Route
-            exact
-            path="/profile"
-            name="User Page"
-            render={props => (
-              <Profile
-                setUser={setUser}
-                userId={userId}
-                setUserImg={setUserImg}
-                user={user}
-                userImg={userImg}
-                fbId={fbId}
-                setFbId={setFbId}
-                searchResults={searchResults}
-                setSearchResults={setSearchResults}
-                returnSearchResults={returnSearchResults}
-              />
-            )}
-          />
-          <Route
-            exact
-            path="/compose"
-            name="Compose Page"
-            render={props => (
-              <Compose
-                userId={userId}
-                setUser={setUser}
-                setUserImg={setUserImg}
-                user={user}
-                userImg={userImg}
-                fbId={fbId}
-                setFbId={setFbId}
-                searchResults={searchResults}
-                setSearchResults={setSearchResults}
-                returnSearchResults={returnSearchResults}
-              />
-            )}
-          />
-          <Route
-            exact
-            path="/recipe/:id"
-            name="Recipe Page"
-            render={props => (
-              <Recipe
-                fbId={fbId}
-                setUser={setUser}
-                userId={userId}
-                handleToast={handleToast}
-                setUserImg={setUserImg}
-                user={user}
-                userImg={userImg}
-                setFbId={setFbId}
-                searchResults={searchResults}
-                setSearchResults={setSearchResults}
-                returnSearchResults={returnSearchResults}
-              />
-            )}
-          />
-          <Route
-            exact
-            path="/404"
-            name="Page 404"
-            render={props => <Page404 {...props} />}
-          />
-          <Route
-            exact
-            path="/500"
-            name="Page 500"
-            render={props => <Page500 {...props} />}
-          />
-          <Route
-            path="/"
-            name="Home"
-            render={props => (
-              <Home
-                fbId={fbId}
-                user={user}
-                userId={userId}
-                setFbId={setFbId}
-                userImg={userImg}
-                setUser={setUser}
-                setUserImg={setUserImg}
-                setSearchResults={setSearchResults}
-                returnSearchResults={returnSearchResults}
-              />
-            )}
-          />
-        </Switch>
-        {/* </AnimatePresence> */}
-      </React.Suspense>
+      <Menu isOpen={isOpen} styles={sidebarStyles} pageWrapId={"page-wrap"}>
+        <Sidebar
+          fbId={fbId}
+          user={user}
+          setUser={setUser}
+          userId={userId}
+          setUserId={setUserId}
+          setUserImg={setUserImg}
+          userImg={userImg}
+          setFbId={setFbId}
+          searchResults={searchResults}
+          setSearchResults={setSearchResults}
+          returnSearchResults={returnSearchResults}
+        />
+      </Menu>
+      <main id="page-wrap">
+        <AppNavBar
+          fixed
+          fbId={fbId}
+          user={user}
+          setUser={setUser}
+          userId={userId}
+          setUserId={setUserId}
+          setUserImg={setUserImg}
+          userImg={userImg}
+          setFbId={setFbId}
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          searchResults={searchResults}
+          setSearchResults={setSearchResults}
+          returnSearchResults={returnSearchResults}
+        />
+        <ToastContainer />
+        <React.Suspense fallback={loading()} style={{ position: "relative" }}>
+          {/* <AnimatePresence> */}
+          <Switch location={location} key={location.pathname}>
+            <Route
+              path="/upload_files"
+              name="Upload Images"
+              render={props => (
+                <UploadFiles
+                  fbId={fbId}
+                  user={user}
+                  setUser={setUser}
+                  userId={userId}
+                  setUserId={setUserId}
+                  setUserImg={setUserImg}
+                  userImg={userImg}
+                  setFbId={setFbId}
+                  searchResults={searchResults}
+                  setSearchResults={setSearchResults}
+                  returnSearchResults={returnSearchResults}
+                />
+              )}
+            />
+            <Route
+              path="/reset_token/:token"
+              name="Password Reset Page"
+              render={props => (
+                <PasswordReset
+                  fbId={fbId}
+                  user={user}
+                  setUser={setUser}
+                  userId={userId}
+                  setUserId={setUserId}
+                  setUserImg={setUserImg}
+                  userImg={userImg}
+                  setFbId={setFbId}
+                  searchResults={searchResults}
+                  setSearchResults={setSearchResults}
+                  returnSearchResults={returnSearchResults}
+                />
+              )}
+            />
+            <Route
+              path="/extractor"
+              name="Extractor Page"
+              render={props => (
+                <Extractor
+                  fbId={fbId}
+                  user={user}
+                  setUser={setUser}
+                  userId={userId}
+                  setUserId={setUserId}
+                  setUserImg={setUserImg}
+                  userImg={userImg}
+                  setFbId={setFbId}
+                  searchResults={searchResults}
+                  setSearchResults={setSearchResults}
+                  returnSearchResults={returnSearchResults}
+                />
+              )}
+            />
+            <Route
+              path="/user/:id"
+              name="User Profile Page"
+              render={props => (
+                <User
+                  fbId={fbId}
+                  user={user}
+                  setUser={setUser}
+                  userId={userId}
+                  setUserId={setUserId}
+                  setUserImg={setUserImg}
+                  userImg={userImg}
+                  setFbId={setFbId}
+                  searchResults={searchResults}
+                  setSearchResults={setSearchResults}
+                  returnSearchResults={returnSearchResults}
+                />
+              )}
+            />
+            <Route
+              exact
+              path="/login"
+              name="Login Page"
+              render={props => (
+                <Login
+                  user={user}
+                  fbId={fbId}
+                  userId={userId}
+                  setUser={setUser}
+                  userImg={userImg}
+                  setFbId={setFbId}
+                  setUserId={setUserId}
+                  setUserImg={setUserImg}
+                  getUserInfo={getUserInfo}
+                  searchResults={searchResults}
+                  setSearchResults={setSearchResults}
+                  returnSearchResults={returnSearchResults}
+                />
+              )}
+            />
+            <Route
+              exact
+              path="/reset_request"
+              name="Reset Password Page"
+              render={props => (
+                <ResetRequest
+                  fbId={fbId}
+                  user={user}
+                  setUser={setUser}
+                  userId={userId}
+                  setUserImg={setUserImg}
+                  userImg={userImg}
+                  setFbId={setFbId}
+                  searchResults={searchResults}
+                  setSearchResults={setSearchResults}
+                  returnSearchResults={returnSearchResults}
+                />
+              )}
+            />
+            <Route
+              exact
+              path="/search"
+              name="Search Page"
+              render={props => (
+                <Search
+                  fbId={fbId}
+                  user={user}
+                  setFbId={setFbId}
+                  setUser={setUser}
+                  userId={userId}
+                  setUserImg={setUserImg}
+                  userImg={userImg}
+                  searchResults={searchResults}
+                  setSearchResults={setSearchResults}
+                  returnSearchResults={returnSearchResults}
+                />
+              )}
+            />
+            <Route
+              exact
+              path="/register"
+              name="Register Page"
+              render={props => (
+                <Register
+                  setUser={setUser}
+                  userId={userId}
+                  setUserImg={setUserImg}
+                  user={user}
+                  userImg={userImg}
+                  fbId={fbId}
+                  setFbId={setFbId}
+                  searchResults={searchResults}
+                  setSearchResults={setSearchResults}
+                  returnSearchResults={returnSearchResults}
+                />
+              )}
+            />
+            <Route
+              exact
+              path="/favorites"
+              name="Favorites Page"
+              render={props => (
+                <Favorites
+                  setUser={setUser}
+                  userId={userId}
+                  setUserImg={setUserImg}
+                  user={user}
+                  userImg={userImg}
+                  fbId={fbId}
+                  setFbId={setFbId}
+                  searchResults={searchResults}
+                  setSearchResults={setSearchResults}
+                  returnSearchResults={returnSearchResults}
+                />
+              )}
+            />
+            <Route
+              exact
+              path="/profile"
+              name="User Page"
+              render={props => (
+                <Profile
+                  setUser={setUser}
+                  userId={userId}
+                  setUserImg={setUserImg}
+                  user={user}
+                  userImg={userImg}
+                  fbId={fbId}
+                  setFbId={setFbId}
+                  searchResults={searchResults}
+                  setSearchResults={setSearchResults}
+                  returnSearchResults={returnSearchResults}
+                />
+              )}
+            />
+            <Route
+              exact
+              path="/compose"
+              name="Compose Page"
+              render={props => (
+                <Compose
+                  userId={userId}
+                  setUser={setUser}
+                  setUserImg={setUserImg}
+                  user={user}
+                  userImg={userImg}
+                  fbId={fbId}
+                  setFbId={setFbId}
+                  searchResults={searchResults}
+                  setSearchResults={setSearchResults}
+                  returnSearchResults={returnSearchResults}
+                />
+              )}
+            />
+            <Route
+              exact
+              path="/recipe/:id"
+              name="Recipe Page"
+              render={props => (
+                <Recipe
+                  fbId={fbId}
+                  setUser={setUser}
+                  userId={userId}
+                  handleToast={handleToast}
+                  setUserImg={setUserImg}
+                  user={user}
+                  userImg={userImg}
+                  setFbId={setFbId}
+                  searchResults={searchResults}
+                  setSearchResults={setSearchResults}
+                  returnSearchResults={returnSearchResults}
+                />
+              )}
+            />
+            <Route
+              exact
+              path="/404"
+              name="Page 404"
+              render={props => <Page404 {...props} />}
+            />
+            <Route
+              exact
+              path="/500"
+              name="Page 500"
+              render={props => <Page500 {...props} />}
+            />
+            <Route
+              path="/"
+              name="Home"
+              render={props => (
+                <Home
+                  fbId={fbId}
+                  user={user}
+                  userId={userId}
+                  setFbId={setFbId}
+                  userImg={userImg}
+                  setUser={setUser}
+                  setUserImg={setUserImg}
+                  setSearchResults={setSearchResults}
+                  returnSearchResults={returnSearchResults}
+                />
+              )}
+            />
+          </Switch>
+          {/* </AnimatePresence> */}
+        </React.Suspense>
+      </main>
     </>
   );
 }

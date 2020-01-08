@@ -200,21 +200,21 @@ export default function PrimarySearchAppBar(props) {
           }}
         >
           <Toolbar variant="dense">
-            <AppSidebarToggler className="" display="xl" mobile>
+            {/* <AppSidebarToggler className="" display="xl" mobile>
               <IconButton
                 edge="start"
-                className={classes.menuButton}
+                // className={classes.menuButton}
                 color="black"
-                aria-label="open drawer"
-                style={{ outline: "none" }}
+                // aria-label="open drawer"
+                style={{ outline: "none", display: "hidden" }}
               >
                 <MenuIcon />
-              </IconButton>
-            </AppSidebarToggler>
+                {/* <div style={{ paddingLeft: "25px" }}></div>  */}
+            {/* </IconButton> */} */}
+            {/* </AppSidebarToggler> */}
             <Typography className={classes.title} variant="h6" noWrap>
               <img width="70px" src="/assets/img/logo.png"></img>
             </Typography>
-
             <div className={classes.grow} />
             <IconButton
               aria-label="show 4 new mails"
@@ -261,7 +261,6 @@ export default function PrimarySearchAppBar(props) {
                 ></img>
               )}
             </IconButton>
-
             <div className={classes.sectionMobile}>
               <IconButton
                 aria-label="show more"

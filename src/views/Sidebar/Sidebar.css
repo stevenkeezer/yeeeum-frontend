@@ -296,9 +296,8 @@ html:not([dir="rtl"]) .sidebar-show.sidebar-fixed .app-footer {
 }
 
 @media (max-width: 992px) {
-  .sidebar-show .main::before,
-  .aside-menu-show .main::before {
-    position: absolute;
+  .sidebar-show .main::before {
+    position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
@@ -308,8 +307,8 @@ html:not([dir="rtl"]) .sidebar-show.sidebar-fixed .app-footer {
     content: "";
     background: rgba(0, 0, 0, 0.4);
     min-height: 100%;
-    -webkit-animation: opacity 0.6s;
-    animation: opacity 0.6s;
+    /* -webkit-animation: opacity 0.6s; */
+    transition: opacity 0.6s !important;
   }
 
   .sidebar {

@@ -177,7 +177,7 @@ function Dashboard(props) {
         }}
       ></div>
 
-      <div className="col-xl-10 col-lg-11 container mx-auto recipes-container ">
+      <div className="col-xl-10 col-lg-11 col-sm-12 container mx-auto recipes-container ">
         <div className="col-12">
           <h3
             className="foryou"
