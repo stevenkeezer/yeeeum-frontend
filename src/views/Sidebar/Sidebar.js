@@ -43,11 +43,22 @@ export default function Sidebar(props) {
     document.querySelector("body").className = "sidebar-lg-show sidebar-fixed";
   };
 
+  const clickHandler = () => {
+    props.setSidebarOpen(!props.sidebarOpen);
+  };
+
+  props.setSidebarOpen(false);
+
   return (
     <div className="">
       <nav className="sidebar-nav">
         <div className="logo-container">
-          <Link to={"/"} className="logo" style={{ textDecoration: "none" }}>
+          <Link
+            to={"/"}
+            className="logo"
+            style={{ textDecoration: "none" }}
+            isOpen={false}
+          >
             <img width="100px" src="/assets/img/logo.png"></img>
           </Link>
         </div>
@@ -61,7 +72,7 @@ export default function Sidebar(props) {
           }}
         ></hr>
         <div className="login-button">
-          <Link to={"/login"}>
+          <Link to={"/login"} onClick={() => clickHandler()}>
             {!props.user && (
               <div className="p-3">
                 <button
@@ -82,7 +93,7 @@ export default function Sidebar(props) {
             )}
           </Link>
         </div>
-        <Link to={"/profile"}>
+        <Link to={"/profile"} onClick={() => clickHandler()}>
           <div className="profile-img-container">
             {!props.userImg && props.fbId && localStorage.getItem("login") && (
               <div className="img-container" style={{ minHeight: "100px" }}>
@@ -158,7 +169,7 @@ export default function Sidebar(props) {
                 exact
                 activeClassName="is-active"
                 className="nav-link sidebar-link"
-                onClick={closeSidebar()}
+                onClick={() => clickHandler()}
               >
                 <span className="ml-4">{props.user.split(" ")[0]}'s Feed</span>
               </NavLink>
@@ -168,6 +179,7 @@ export default function Sidebar(props) {
                 exact
                 activeClassName="is-active"
                 className="nav-link sidebar-link"
+                onClick={() => clickHandler()}
               >
                 <span className="ml-4">Feed</span>
               </NavLink>
@@ -178,6 +190,7 @@ export default function Sidebar(props) {
               to={"/extractor"}
               activeClassName="is-active"
               className="nav-link sidebar-link"
+              onClick={() => clickHandler()}
             >
               <span className="ml-4">R-Extractor</span>
               <span style={{ color: "#f15924" }} className="badge">
@@ -193,13 +206,14 @@ export default function Sidebar(props) {
                 to={"/compose"}
                 activeClassName="is-active"
                 className="nav-link sidebar-link"
+                onClick={() => clickHandler()}
               >
                 <span className="ml-4">Compose</span>
               </NavLink>
             </li>
           )}
           {props.user && (
-            <li className="nav-item">
+            <li className="nav-item" onClick={() => clickHandler()}>
               <button
                 exact
                 onClick={logout}
@@ -211,7 +225,7 @@ export default function Sidebar(props) {
               </button>
             </li>
           )}
-          <li className="nav-item">
+          <li className="nav-item" onClick={() => clickHandler()}>
             <button
               exact={true}
               onClick={pushRegister}
@@ -237,6 +251,7 @@ export default function Sidebar(props) {
             </Link>
             <Link
               exact={true}
+              onClick={() => clickHandler()}
               className="nav-link sidebar-link-no-bcg ml-4"
               to={"/favorites"}
             >

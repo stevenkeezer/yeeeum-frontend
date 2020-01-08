@@ -210,7 +210,7 @@ export default function PrimarySearchAppBar(props) {
               >
                 <MenuIcon />
                 {/* <div style={{ paddingLeft: "25px" }}></div>  */}
-            {/* </IconButton> */} */}
+            {/* </IconButton> */}
             {/* </AppSidebarToggler> */}
             <Typography className={classes.title} variant="h6" noWrap>
               <img width="70px" src="/assets/img/logo.png"></img>

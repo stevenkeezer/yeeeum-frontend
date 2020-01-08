@@ -55,6 +55,7 @@
     "react-lazy-load": "^3.0.13",
     "react-lazyload": "^2.6.5",
     "react-moment": "^0.9.7",
+    "react-resize-detector": "^4.2.1",
     "react-responsive-carousel": "^3.1.51",
     "react-router": "^5.1.2",
     "react-router-config": "^5.0.1",

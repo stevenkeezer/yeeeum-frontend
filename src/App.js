@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useLayoutEffect } from "react";
 import { Route, Switch, useLocation } from "react-router-dom";
 import { AppHeader, AppSidebar } from "@coreui/react";
 import { AnimatePresence } from "framer-motion";
@@ -9,6 +9,7 @@ import "./App.css";
 import Sidebar from "./views/Sidebar/Sidebar";
 import { scaleDown as Menu } from "react-burger-menu";
 import AppNavBar from "./components/AppNavBar/AppNavBar";
+import ReactResizeDetector from "react-resize-detector";
 import { Fab } from "@material-ui/core";
 
 import { ToastContainer, toast } from "react-toastify";
@@ -48,7 +49,7 @@ function App() {
   const [userImg, setUserImg] = useState(null);
   const [fbId, setFbId] = useState(null);
   const [searchResults, setSearchResults] = useState([]);
-  const [isOpen, setIsOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const existingToken = localStorage.getItem("token");
   const accessToken =
@@ -181,11 +182,20 @@ function App() {
     }
   };
 
+  useEffect(() => {
+    window.addEventListener("resize", console.log("risizg"));
+  }, []);
+
   return (
     <>
       <Fab style={fabStyle} variant="extended">
         <HelpOutlineIcon className="mr-1" />
         <span>Help</span>
+        <button
+          onClick={() => {
+            setSidebarOpen(!sidebarOpen);
+          }}
+        ></button>
       </Fab>
       <AppSidebar fixed display="lg" id="sidebar-container">
         <Sidebar
@@ -193,6 +203,8 @@ function App() {
           user={user}
           setUser={setUser}
           userId={userId}
+          sidebarOpen={sidebarOpen}
+          setSidebarOpen={setSidebarOpen}
           setUserId={setUserId}
           setUserImg={setUserImg}
           userImg={userImg}
@@ -202,12 +214,26 @@ function App() {
           returnSearchResults={returnSearchResults}
         />
       </AppSidebar>
-      <Menu width={250} isOpen={isOpen} styles={sidebarStyles}>
+      <ReactResizeDetector
+        handleWidth
+        handleHeight
+        render={({ width, height }) => (
+          <span>{width > 600 ? setSidebarOpen(!sidebarOpen) : false}</span>
+        )}
+      />
+      <Menu
+        width={250}
+        isOpen={sidebarOpen}
+        styles={sidebarStyles}
+        display="sm"
+      >
         <Sidebar
           fbId={fbId}
           user={user}
           setUser={setUser}
           userId={userId}
+          sidebarOpen={sidebarOpen}
+          setSidebarOpen={setSidebarOpen}
           setUserId={setUserId}
           setUserImg={setUserImg}
           userImg={userImg}
@@ -227,8 +253,8 @@ function App() {
         setUserImg={setUserImg}
         userImg={userImg}
         setFbId={setFbId}
-        isOpen={isOpen}
-        setIsOpen={setIsOpen}
+        sidebarOpen={sidebarOpen}
+        setSidebarOpen={setSidebarOpen}
         searchResults={searchResults}
         setSearchResults={setSearchResults}
         returnSearchResults={returnSearchResults}

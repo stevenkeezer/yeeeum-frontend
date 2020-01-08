@@ -17,3 +17,9 @@ body {
   -webkit-overflow-scrolling: touch;
   text-rendering: optimizeLegibility;
 }
+
+@media (min-width: 600px) {
+  #menu {
+    display: none;
+  }
+}

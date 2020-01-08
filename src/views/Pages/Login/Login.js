@@ -8,6 +8,7 @@ import { useHistory } from "react-router-dom";
 import "./Login.css";
 
 function Login(props) {
+  console.log("Login Page");
   let history = useHistory();
 
   useEffect(() => {
