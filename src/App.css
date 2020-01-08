@@ -23,3 +23,11 @@ body {
     display: none;
   }
 }
+
+.bm-burger-menu {
+  outline: none;
+}
+
+.bm-burger-button > button {
+  outline: none;
+}

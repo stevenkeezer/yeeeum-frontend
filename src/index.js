@@ -7,14 +7,14 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import { BrowserRouter } from "react-router-dom";
+import { Router } from "react-router-dom";
 
 import { createBrowserHistory } from "history";
 const history = createBrowserHistory();
 ReactDOM.render(
-  <BrowserRouter history={history}>
+  <Router history={history}>
     <App />
-  </BrowserRouter>,
+  </Router>,
   document.getElementById("root")
 );
 

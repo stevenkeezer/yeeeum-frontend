@@ -141,12 +141,13 @@ function App() {
       position: "fixed",
       width: "18px",
       height: "12px",
-      left: "19px",
+      left: "23.5px",
       top: "18px",
       color: "#bababa"
     },
     bmBurgerBars: {
-      background: "#373a47"
+      background: "#373a47",
+      outline: "none"
     },
     bmBurgerBarsHover: {
       background: "#a90000"
@@ -182,20 +183,11 @@ function App() {
     }
   };
 
-  useEffect(() => {
-    window.addEventListener("resize", console.log("risizg"));
-  }, []);
-
   return (
     <>
       <Fab style={fabStyle} variant="extended">
         <HelpOutlineIcon className="mr-1" />
         <span>Help</span>
-        <button
-          onClick={() => {
-            setSidebarOpen(!sidebarOpen);
-          }}
-        ></button>
       </Fab>
       <AppSidebar fixed display="lg" id="sidebar-container">
         <Sidebar
@@ -249,6 +241,8 @@ function App() {
         user={user}
         setUser={setUser}
         userId={userId}
+        setSidebarOpen={setSidebarOpen}
+        sidebarOpen={sidebarOpen}
         setUserId={setUserId}
         setUserImg={setUserImg}
         userImg={userImg}
