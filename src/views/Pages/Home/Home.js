@@ -18,7 +18,10 @@ export default function home(props) {
     <div className="app">
       <AppSidebarHeader />
       <main className="main" style={{ position: "relative" }}>
-        <Container fluid>
+        <Container
+          fluid
+          style={{ backgroundImage: "linear-gradient(#f6f6f6, #ffffff)" }}
+        >
           <Suspense fallback={loading()}>
             <Dashboard returnSearchResults={returnSearchResults} />
           </Suspense>

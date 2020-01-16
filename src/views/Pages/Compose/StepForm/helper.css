@@ -14,9 +14,11 @@
   src: url("/assets/fonts/AvenirNextLTProBold.otf") format("opentype");
 }
 
+.main-compose {
+  font-family: "AvenirNextLTProRegular";
+}
 * {
   box-sizing: border-box;
-  font-family: "AvenirNextLTProRegular";
 }
 
 a {
@@ -26,7 +28,6 @@ a {
 code {
   background: #eee;
   padding: 0.1rem;
-  font-family: "Menlo";
   font-size: 13px;
   color: #ff00aa;
 }

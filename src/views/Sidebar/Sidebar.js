@@ -198,7 +198,7 @@ export default function Sidebar(props) {
               className="nav-link sidebar-link"
               onClick={() => clickHandler()}
             >
-              <span className="ml-4">R-Extractor</span>
+              <span className="ml-4">Browse</span>
               <span style={{ color: "#f15924" }} className="badge">
                 NEW
               </span>

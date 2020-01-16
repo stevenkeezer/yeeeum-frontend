@@ -102,8 +102,11 @@ export default function Compose(props) {
         transition={pageTransition}
       >
         <main
-          className="main"
-          style={{ backgroundColor: "#ededed", height: "100vh" }}
+          className="main main-compose"
+          style={{
+            backgroundColor: "#f6f6f6",
+            height: "100vh"
+          }}
         >
           <div className="col-xl-6 col-lg-6 col-sm-6 col-md-8 col-11 mb-3 mx-auto pt-5">
             <StepProgressBar progress={progress} createRecipe={createRecipe} />

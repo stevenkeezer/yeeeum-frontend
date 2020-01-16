@@ -90,7 +90,10 @@ export default function Upload() {
     scale: 0.8
   };
   return (
-    <main className="main vh-100" style={{ backgroundColor: "#ededed" }}>
+    <main
+      className="main vh-100"
+      style={{ backgroundImage: "linear-gradient(#f6f6f6, #ffffff)" }}
+    >
       <div className=" vh-100 mx-auto justify-content-center d-flex align-items-center col-lg-8">
         <motion.div
           style={style}

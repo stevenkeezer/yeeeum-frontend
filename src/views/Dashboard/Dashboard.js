@@ -122,7 +122,13 @@ function Dashboard(props) {
       variants={pageVariants}
       transition={pageTransition}
     >
-      <div style={{ marginTop: "30px", marginBottom: "3.5%" }}>
+      <div
+        style={{
+          paddingTop: "30px",
+          marginBottom: "3.5%"
+          // backgroundImage: "linear-gradient(#f6f6f6, #ffffff)"
+        }}
+      >
         <SearchForm returnSearchResults={returnSearchResults} />
       </div>
       <div className="banner-container col-xs-12 col-sm-12 col-lg-12">
