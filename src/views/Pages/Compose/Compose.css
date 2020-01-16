@@ -44,3 +44,45 @@ button {
 .uppy-StatusBar.is-waiting .uppy-StatusBar-actionBtn--upload {
   background-color: #0aa287 !important;
 }
+
+.block {
+  display: block;
+}
+
+.mbq {
+  margin-bottom: 0.25rem;
+}
+
+.mb1 {
+  margin-bottom: 1rem;
+}
+
+/* .progress-container {
+  background: #ccc;
+  height: 10px;
+  width: 99%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  border-radius: 10px;
+  position: fixed;
+  bottom: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+} */
+
+.indexedStep {
+  color: white;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  background-color: rgba(211, 211, 211, 0.8);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.indexedStep.accomplished {
+  background-color: #0aa287;
+}

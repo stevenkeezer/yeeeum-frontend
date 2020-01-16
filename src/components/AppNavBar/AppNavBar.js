@@ -285,6 +285,7 @@ export default function PrimarySearchAppBar(props) {
         {renderMobileMenu}
         {renderMenu}
       </div>
+
       <Modal isOpen={modal} toggle={toggle}>
         <ModalHeader toggle={toggle}>
           <SearchFormHeader
@@ -292,7 +293,7 @@ export default function PrimarySearchAppBar(props) {
             returnSearchResults={props.returnSearchResults}
           />
         </ModalHeader>
-        <ModalBody className="delete-modal-body"></ModalBody>
+        <ModalBody></ModalBody>
       </Modal>
     </>
   );

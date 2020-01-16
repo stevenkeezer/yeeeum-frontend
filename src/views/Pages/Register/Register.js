@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import EmailForm from "./RegistrationForm";
 import FacebookIcon from "@material-ui/icons/Facebook";
+import Timer from "react-compound-timer";
 import { motion } from "framer-motion";
 
 // import pizzabcg from "../../../../public/assets/img/pizzabcg.jpg";

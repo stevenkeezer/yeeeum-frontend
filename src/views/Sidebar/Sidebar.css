@@ -44,7 +44,7 @@
 .sidebar .nav-link:hover {
   height: 100%;
 }
-@media (max-width: 990px) {
+@media (max-width: 991px) {
   .sidebar-show .main::before,
   .aside-menu-show .main::before {
     min-height: 100vh;
@@ -55,12 +55,42 @@
   #separator {
     display: none;
   }
-  .profile-img-container {
-    margin-top: 20px;
-  }
 
   .login-button {
     padding-bottom: 0px !important;
+  }
+
+  .bm-menu,
+  .bm-item-list {
+    padding: 0px !important;
+  }
+
+  .nav {
+    display: block;
+  }
+
+  .logo-container {
+    margin-top: 0% !important;
+  }
+  .nav-item {
+    padding-top: 3.4px;
+    padding-bottom: 3.4px;
+  }
+  .nav-link > span {
+    /* margin-left: 28px !important; */
+  }
+  .saved-recipes {
+    font-size: 13.8px;
+    letter-spacing: 0.05rem;
+  }
+  .more {
+    display: none;
+  }
+  .logo-container {
+    margin-bottom: 18.5px !important;
+  }
+  .nav-item > .sidebar-link-no-bcg {
+    padding: 8px !important;
   }
 }
 
@@ -83,7 +113,7 @@
 }
 
 .profile-img {
-  width: 27.4%;
+  width: 25.4%;
   margin-bottom: 27px;
   margin-top: 13px;
 }
@@ -101,7 +131,7 @@
 }
 
 .logo-container {
-  margin-top: 4vw;
+  margin-top: 34%;
 }
 .nav-footer {
   font-size: 0.7rem;
@@ -264,13 +294,7 @@
 @media (max-width: 990px) {
   .profile-img-container {
     text-align: left;
-    margin-left: 30px;
-  }
-  .logo-container {
-    display: none;
-  }
-  #separator {
-    display: none;
+    margin-left: 32px;
   }
 }
 

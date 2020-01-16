@@ -137,7 +137,7 @@ export default function Favorites(props) {
               </span>
             </div>
           ) : (
-            <div>hi</div>
+            <div></div>
           )}
           <div className="col-11 col-xl-9 col-lg-10 mx-auto pt-4">
             <div className="row mt-5">

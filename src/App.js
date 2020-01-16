@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useLayoutEffect } from "react";
 import { Route, Switch, useLocation } from "react-router-dom";
-import { AppHeader, AppSidebar } from "@coreui/react";
+import { AppSidebar } from "@coreui/react";
 import { AnimatePresence } from "framer-motion";
 import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
 
@@ -10,7 +10,10 @@ import Sidebar from "./views/Sidebar/Sidebar";
 import { scaleDown as Menu } from "react-burger-menu";
 import AppNavBar from "./components/AppNavBar/AppNavBar";
 import ReactResizeDetector from "react-resize-detector";
+import Timer from "react-compound-timer";
+import Sound from "react-sound";
 import { Fab } from "@material-ui/core";
+import { Modal, ModalHeader, ModalBody } from "reactstrap";
 
 import { ToastContainer, toast } from "react-toastify";
 import Transition from "react-transition-group/Transition";
@@ -50,6 +53,9 @@ function App() {
   const [fbId, setFbId] = useState(null);
   const [searchResults, setSearchResults] = useState([]);
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [playStatus, setPlayStatus] = useState(Sound.status.STOPPED);
+  const [modal, setModal] = useState(false);
+  const [initialTime, SetInitialTime] = useState(5000);
 
   const existingToken = localStorage.getItem("token");
   const accessToken =
@@ -87,6 +93,11 @@ function App() {
   useEffect(() => {
     getUserInfo();
   }, []);
+
+  const toggle = () => {
+    setPlayStatus(Sound.status.STOPPED);
+    setModal(!modal);
+  };
 
   const location = useLocation();
 
@@ -189,6 +200,7 @@ function App() {
         <HelpOutlineIcon className="mr-1" />
         <span>Help</span>
       </Fab>
+
       <AppSidebar fixed display="lg" id="sidebar-container">
         <Sidebar
           fbId={fbId}
@@ -201,6 +213,7 @@ function App() {
           setUserImg={setUserImg}
           userImg={userImg}
           setFbId={setFbId}
+          setModal={setModal}
           searchResults={searchResults}
           setSearchResults={setSearchResults}
           returnSearchResults={returnSearchResults}
@@ -213,6 +226,62 @@ function App() {
           <span>{width > 600 ? setSidebarOpen(!sidebarOpen) : false}</span>
         )}
       />
+      <main className="main">
+        <Modal isOpen={modal} toggle={toggle}>
+          <ModalHeader toggle={toggle}>Timer</ModalHeader>
+          <ModalBody>
+            <Timer
+              initialTime={initialTime}
+              startImmediately={false}
+              direction="backward"
+              timeToUpdate={990}
+              onStart={() => console.log("onStart hook")}
+              onResume={() => console.log("onResume hook")}
+              onPause={() => console.log("onPause hook")}
+              onStop={() => setPlayStatus(Sound.status.STOPPED)}
+              onReset={() => console.log("onReset hook")}
+              checkpoints={[
+                {
+                  time: 0,
+                  callback: () => {
+                    setPlayStatus(Sound.status.PLAYING);
+                    // alert("Checkpoint A");
+                  }
+                }
+              ]}
+            >
+              {({ start, resume, pause, stop, reset, timerState }) => (
+                <React.Fragment>
+                  <Sound
+                    url="../../assets/Sounds/glass_bubbles.mp3"
+                    playStatus={playStatus}
+                    // playFromPosition={300 /* in milliseconds */}
+                    loop={true}
+                    // onLoading={handleSongLoading}
+                    // onPlaying={handleSongPlaying}
+                    // onFinishedPlaying={handleSongFinishedPlaying}
+                  />
+                  <div>
+                    <Timer.Days /> days
+                    <Timer.Hours /> hours
+                    <Timer.Minutes /> minutes
+                    <Timer.Seconds /> seconds
+                  </div>
+                  <div>{timerState}</div>
+                  <br />
+                  <div>
+                    <button onClick={start}>Start</button>
+                    <button onClick={pause}>Pause</button>
+                    <button onClick={resume}>Resume</button>
+                    <button onClick={stop}>Stop</button>
+                    <button onClick={reset}>Reset</button>
+                  </div>
+                </React.Fragment>
+              )}
+            </Timer>
+          </ModalBody>
+        </Modal>
+      </main>
       <Menu
         width={250}
         isOpen={sidebarOpen}

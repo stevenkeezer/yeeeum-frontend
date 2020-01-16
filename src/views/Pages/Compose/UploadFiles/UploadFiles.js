@@ -78,7 +78,8 @@ export default function Upload() {
   };
 
   const style = {
-    position: "absolute"
+    position: "absolute",
+    width: "100%"
   };
 
   const pageTransition = {
@@ -89,8 +90,8 @@ export default function Upload() {
     scale: 0.8
   };
   return (
-    <main className="main vh-100">
-      <div className=" vh-100 mx-auto justify-content-center d-flex align-items-center mx-auto">
+    <main className="main vh-100" style={{ backgroundColor: "#ededed" }}>
+      <div className=" vh-100 mx-auto justify-content-center d-flex align-items-center col-lg-8">
         <motion.div
           style={style}
           exit="out"
@@ -100,15 +101,17 @@ export default function Upload() {
           transition={pageTransition}
         >
           <h3>Add Images</h3>
-          <Dashboard
-            uppy={uppyRef.current}
-            width="100%"
-            plugins={["Webcam"]}
-            metaFields={[
-              { id: "name", name: "Name", placeholder: "File name" }
-            ]}
-            {...options}
-          />
+          <div className="shadow">
+            <Dashboard
+              uppy={uppyRef.current}
+              width="100%"
+              plugins={["Webcam"]}
+              metaFields={[
+                { id: "name", name: "Name", placeholder: "File name" }
+              ]}
+              {...options}
+            />
+          </div>
         </motion.div>
       </div>
     </main>

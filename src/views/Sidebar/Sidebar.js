@@ -7,9 +7,15 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import KitchenIcon from "@material-ui/icons/Kitchen";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import WhatshotIcon from "@material-ui/icons/Whatshot";
+import AddIcon from "@material-ui/icons/Add";
+import LockIcon from "@material-ui/icons/Lock";
+import AlarmAddIcon from "@material-ui/icons/AlarmAdd";
 import { AppSidebarToggler } from "@coreui/react";
+import Sound from "react-sound";
+import Timer from "react-compound-timer";
 import Img from "react-image";
 import { useHistory } from "react-router-dom";
+
 import "./Sidebar.css";
 
 export default function Sidebar(props) {
@@ -212,31 +218,29 @@ export default function Sidebar(props) {
               </NavLink>
             </li>
           )}
-          {props.user && (
-            <li className="nav-item" onClick={() => clickHandler()}>
-              <button
-                exact
-                onClick={logout}
-                activeClassName="is-active"
-                className="nav-link sidebar-link"
-                style={{ border: "none!important", padding: "none!important" }}
-              >
-                <span className="ml-4">Logout</span>
-              </button>
-            </li>
-          )}
-          <li className="nav-item" onClick={() => clickHandler()}>
+          <li className="nav-item">
             <button
               exact={true}
-              onClick={pushRegister}
+              onClick={() => {
+                // pushRegister();
+                props.setModal(true);
+              }}
               activeClassName="is-active"
-              className="nav-link sidebar-link "
+              className="nav-link sidebar-link ml-4"
               style={{ border: "none!important", padding: "none!important" }}
               data-toggle="sidebar-show"
             >
-              <span className="ml-4">Get Started</span>
+              <AlarmAddIcon
+                style={{
+                  width: "20px",
+                  marginTop: "-4px",
+                  marginRight: "10px"
+                }}
+              />
+              Add Timer
             </button>
           </li>
+
           <li className="nav-item">
             <Link
               to="hi"
@@ -320,6 +324,32 @@ export default function Sidebar(props) {
               />
               Popular
             </Link>
+            <br></br>
+            {props.user && (
+              <li className="nav-item" onClick={() => clickHandler()}>
+                <button
+                  exact
+                  onClick={logout}
+                  activeClassName="is-active"
+                  className="nav-link sidebar-link "
+                  style={{
+                    border: "none!important",
+                    padding: "none!important"
+                  }}
+                >
+                  <LockIcon
+                    className="ml-4"
+                    fontSize="small"
+                    style={{
+                      width: "20px",
+                      marginTop: "-4px",
+                      marginRight: "10px"
+                    }}
+                  />
+                  Logout
+                </button>
+              </li>
+            )}
             <Link
               exact={true}
               className="nav-link sidebar-link-no-bcg ml-4"
