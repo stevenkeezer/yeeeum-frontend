@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { useHistory } from "react-router-dom";
 import Wizard from "../Compose/StepForm/Wizard";
+import Background from "../../../assets/img/so-white.png";
 
 import { AnimatePresence, motion } from "framer-motion";
 import StepProgressBar from "./StepProgressBar";
@@ -104,16 +105,34 @@ export default function Compose(props) {
         <main
           className="main main-compose"
           style={{
-            backgroundColor: "#f6f6f6",
+            backgroundImage: `url(${Background})`,
+            // backgroundSize: "100% 100%",
+            // backgroundSize: "contain",
+            // backgroundRepeat: "no-repeat",
+            // backgroundColor: "#f6f6f6",
             height: "100vh"
           }}
         >
-          <div className="col-xl-6 col-lg-6 col-sm-6 col-md-8 col-11 mb-3 mx-auto pt-5">
-            <StepProgressBar progress={progress} createRecipe={createRecipe} />
-          </div>
-          <div className="col-xl-7 col-lg-9 col-sm-10 col-md-8 mb-3 mx-auto">
-            <br></br>
-            <Wizard getProgress={getProgress} createRecipe={createRecipe} />
+          <div className="row  h-100 ">
+            <div className="col-12 mx-auto my-auto justify-content-center">
+              {" "}
+            </div>
+
+            <div className="col-xl-7 col-lg-9 col-sm-10 col-md-8 mx-auto justify-content-center">
+              <StepProgressBar
+                progress={progress}
+                createRecipe={createRecipe}
+              />
+              <div>
+                <br></br>
+                <Wizard
+                  getProgress={getProgress}
+                  createRecipe={createRecipe}
+                  userImg={props.userImg}
+                  user={props.user}
+                ></Wizard>
+              </div>
+            </div>
           </div>
         </main>
       </motion.div>

@@ -1,0 +1,28 @@
+@font-face {
+  font-family: "AvenirNextLTProRegular";
+  src: url("../../../../assets/fonts/AvenirNextLTProRegular.otf");
+  src: url("../../../../assets/fonts/AvenirNextLTProRegular.otf")
+    format("opentype");
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+.text-center > h5 {
+  font-family: "AvenirNextLTProRegular";
+  font-size: 1rem;
+}
+
+.col::-webkit-scrollbar {
+  display: none;
+}
+
+.sort-ingredients-container {
+  /* box-shadow: inset 10px 0 10px -5px red, inset -10px 0 10px -5px red; */
+  position: relative;
+  z-index: 1000;
+}

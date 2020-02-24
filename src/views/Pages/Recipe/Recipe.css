@@ -168,7 +168,7 @@ select,
 button {
   border: 1px solid #ccc;
   background: #ffffff;
-  border-radius: 6px;
+  /* border-radius: 6px; */
   /* margin-bottom: 8px; */
   box-sizing: border-box;
 }
@@ -196,11 +196,6 @@ button {
 }
 
 .col-sm-6 {
-  padding-left: 0px;
-  padding-right: 0px;
-}
-
-.col-lg-6 {
   padding-left: 0px;
   padding-right: 0px;
 }

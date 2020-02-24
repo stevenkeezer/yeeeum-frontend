@@ -10,6 +10,16 @@ const PageThree = props => (
       onChange={props.handleChange}
       value={props.values.directions}
     />
+    <label htmlFor="title" className="pt-2">
+      Add a short description
+    </label>
+    <input
+      id="description"
+      onChange={props.handleChange}
+      value={props.values.description}
+      className="mt-2"
+      placeholder="A delicous recipe handed down from my grandmother."
+    />
     <div className="text-right">
       <button
         type="button"

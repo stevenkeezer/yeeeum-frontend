@@ -139,6 +139,7 @@ export default function RecipeField(props) {
               placeholder="Chocolate Chip Cookies"
               type="title"
               name="title"
+              autoFocus={true}
               className="pb-2 text-center"
               component={TextField}
             />
@@ -225,6 +226,7 @@ export default function RecipeField(props) {
                       onClick={() => {
                         arrayHelpers.push({ amount: "", ingredient: "" });
                       }}
+                      
                     />
                   </div>
                 </div>

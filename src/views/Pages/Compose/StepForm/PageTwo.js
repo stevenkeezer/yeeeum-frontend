@@ -20,6 +20,7 @@ const PageTwo = props => (
                   class="ingredientsField pr-2 pl-3"
                   placeholder=""
                   id="amount"
+                  // autoFocus
                   style={{ width: "26%" }}
                   name={`ingredients.${index}.amount`}
                 />
@@ -74,9 +75,8 @@ const PageTwo = props => (
         onClick={props.navigateBack}
         disabled={props.pageIndex === 0}
       >
-        Back
+       Back
       </button>
-      {console.log(props.values.ingredients[0].amount)}
       <button
         type="button"
         className="stepButton"

@@ -48,15 +48,22 @@ class Wizard extends Component {
               {props => {
                 const { handleSubmit } = props;
                 return (
-                  <form
-                    onSubmit={handleSubmit}
-                    className="shadow p-4"
-                    style={{ backgroundColor: "white" }}
-                  >
-                    <h3 className="pb-2">Recipe Editor</h3>
-                    {wizProps.renderPage(props)}
-                    {this.props.getProgress(wizProps)}
-                  </form>
+                  <>
+                    <form
+                      onSubmit={handleSubmit}
+                      className="shadow"
+                      style={{ backgroundColor: "white", padding: "50px" }}
+                    >
+                      <h3 className="pb-2 font-demi">Recipe Editor</h3>
+                      <h3 style={{ fontSize: ".8rem" }}>
+                        Add your recipes, and take them anywhere!
+                        <br></br>
+                      </h3>
+                      <br></br>
+                      {wizProps.renderPage(props)}
+                      {this.props.getProgress(wizProps)}
+                    </form>
+                  </>
                 );
               }}
             </Formik>

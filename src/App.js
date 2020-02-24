@@ -10,11 +10,13 @@ import Sidebar from "./views/Sidebar/Sidebar";
 import { scaleDown as Menu } from "react-burger-menu";
 import AppNavBar from "./components/AppNavBar/AppNavBar";
 import ReactResizeDetector from "react-resize-detector";
+import RecipeTimer from "./components/RecipeTimer/RecipeTimer";
+import { CountdownCircleTimer } from "react-countdown-circle-timer";
+
 import Timer from "react-compound-timer";
 import Sound from "react-sound";
 import { Fab } from "@material-ui/core";
 import { Modal, ModalHeader, ModalBody } from "reactstrap";
-
 import { ToastContainer, toast } from "react-toastify";
 import Transition from "react-transition-group/Transition";
 import "react-toastify/dist/ReactToastify.css";
@@ -47,6 +49,7 @@ const ResetRequest = React.lazy(() =>
 );
 
 function App() {
+  const [time, setTime] = useState(null);
   const [user, setUser] = useState(null);
   const [userId, setUserId] = useState(null);
   const [userImg, setUserImg] = useState(null);
@@ -55,7 +58,10 @@ function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [playStatus, setPlayStatus] = useState(Sound.status.STOPPED);
   const [modal, setModal] = useState(false);
-  const [initialTime, SetInitialTime] = useState(5000);
+  const [initialTime, setInitialTime] = useState(5000);
+  const [isPlaying, setIsPlaying] = useState(true);
+
+  useEffect(() => {}, [time]);
 
   const existingToken = localStorage.getItem("token");
   const accessToken =
@@ -121,6 +127,8 @@ function App() {
       {children}
     </Transition>
   );
+
+  const renderTime = value => {};
 
   const toastOptions = {
     position: "bottom-right",
@@ -230,55 +238,28 @@ function App() {
         <Modal isOpen={modal} toggle={toggle}>
           <ModalHeader toggle={toggle}>Timer</ModalHeader>
           <ModalBody>
-            <Timer
-              initialTime={initialTime}
-              startImmediately={false}
-              direction="backward"
-              timeToUpdate={990}
-              onStart={() => console.log("onStart hook")}
-              onResume={() => console.log("onResume hook")}
-              onPause={() => console.log("onPause hook")}
-              onStop={() => setPlayStatus(Sound.status.STOPPED)}
-              onReset={() => console.log("onReset hook")}
-              checkpoints={[
-                {
-                  time: 0,
-                  callback: () => {
-                    setPlayStatus(Sound.status.PLAYING);
-                    // alert("Checkpoint A");
-                  }
-                }
-              ]}
-            >
-              {({ start, resume, pause, stop, reset, timerState }) => (
-                <React.Fragment>
-                  <Sound
-                    url="../../assets/Sounds/glass_bubbles.mp3"
-                    playStatus={playStatus}
-                    // playFromPosition={300 /* in milliseconds */}
-                    loop={true}
-                    // onLoading={handleSongLoading}
-                    // onPlaying={handleSongPlaying}
-                    // onFinishedPlaying={handleSongFinishedPlaying}
-                  />
-                  <div>
-                    <Timer.Days /> days
-                    <Timer.Hours /> hours
-                    <Timer.Minutes /> minutes
-                    <Timer.Seconds /> seconds
-                  </div>
-                  <div>{timerState}</div>
-                  <br />
-                  <div>
-                    <button onClick={start}>Start</button>
-                    <button onClick={pause}>Pause</button>
-                    <button onClick={resume}>Resume</button>
-                    <button onClick={stop}>Stop</button>
-                    <button onClick={reset}>Reset</button>
-                  </div>
-                </React.Fragment>
-              )}
-            </Timer>
+            <CountdownCircleTimer
+              // onComplete={() => {}}
+              renderTime={renderTime}
+              isPlaying={() => setIsPlaying(true)}
+              durationSeconds={time}
+              colors={[["#A30000"]]}
+            />
+
+            <React.Fragment>
+              {/* {console.log("recicitimer", <RecipeTimer />)} */}
+              <RecipeTimer setTime={setTime} />
+              <h1>{time}</h1>
+              <Sound
+                url="../../assets/Sounds/glass_bubbles.mp3"
+                playStatus={playStatus}
+                // playFromPosition={300 /* in milliseconds */}
+                loop={true}
+                // onLoading={handleSongLoading}
+                // onPlaying={handleSongPlaying}
+                // onFinishedPlaying={handleSongFinishedPlaying}
+              />
+            </React.Fragment>
           </ModalBody>
         </Modal>
       </main>

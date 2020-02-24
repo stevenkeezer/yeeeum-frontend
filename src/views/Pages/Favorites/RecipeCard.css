@@ -9,6 +9,18 @@
   src: url("../../assets/fonts/AvenirNextLTProRegular.otf");
   src: url("../../assets/fonts/AvenirNextLTProRegular.otf") format("opentype");
 }
+
+@font-face {
+  font-family: "AvenirNextLTProDemi";
+  src: url("../../assets/fonts/AvenirNextLTProDemi.otf");
+  src: url("../../assets/fonts/AvenirNextLTProDemi.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "AvenirNextLTProBold";
+  src: url("../../assets/fonts/AvenirNextLTProBold.otf");
+  src: url("../../assets/fonts/AvenirNextLTProBold.otf") format("opentype");
+}
 .recipes-container {
   margin-top: 4.5%;
   width: 100%;
@@ -90,9 +102,9 @@
 
 .sub-article-title {
   font-size: 0.98rem;
-  color: #232323 !important;
+  color: black;
   text-decoration: none;
-  font-family: "AvenirNextLTProMedium";
+  font-family: "AvenirNextLTProDemi";
 }
 
 .sub-article-title:hover {

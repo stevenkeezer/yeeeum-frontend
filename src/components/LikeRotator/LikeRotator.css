@@ -19,5 +19,7 @@
 }
 .like-number {
   color: #707070;
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
   font-family: "AvenirNextLTProBold";
 }

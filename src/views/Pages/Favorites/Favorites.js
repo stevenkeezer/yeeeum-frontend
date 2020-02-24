@@ -132,7 +132,7 @@ export default function Favorites(props) {
                 color: "white"
               }}
             >
-              <span>
+              <span className="current-recipes">
                 All <br></br> 4 Recipes <br></br>Collected.
               </span>
             </div>

@@ -102,10 +102,10 @@
 .sub-article-title {
   font-size: 0.98rem;
   color: #232323 !important;
-  font-family: "AvenirNextLTProMedium";
+  font-family: "AvenirNextLTProDemi";
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   word-break: break-all;
   overflow: hidden;
 }
@@ -131,6 +131,8 @@
 
 .author-name {
   font-size: 0.9rem;
+  font-family: "AvenirNextLTProDemi" !important;
+  color: #bababa !important;
 }
 
 .col-9 {
@@ -261,5 +263,6 @@
   }
 }
 .author-name {
-  font-family: "AvenirNextLTProRegular";
+  font-family: "AvenirNextLTProBold";
+  font-size: 13px;
 }

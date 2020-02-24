@@ -175,7 +175,7 @@ function Dashboard(props) {
           backgroundRepeat: "no-repeat",
           backgroundSize: "contain",
           marginTop: "5vw",
-          height: "460px",
+          height: "400px",
           transform: "rotateY(180deg)"
         }}
       ></div>

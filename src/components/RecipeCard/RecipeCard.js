@@ -58,7 +58,7 @@ export default function RecipeCard(props) {
 
                   <Link to={`/recipe/${r.id}`}>
                     <div
-                      className="image-container caption"
+                      className="image-container caption shadow-sm"
                       style={{
                         width: "100%",
                         paddingBottom: "90.78082192%"
@@ -111,7 +111,7 @@ export default function RecipeCard(props) {
                       {imgLoaded ? (
                         <Fragment>
                           <Link
-                            className="sub-article-title"
+                            className="sub-article-title pr-2"
                             to={`/recipe/${r.id}`}
                             style={{
                               textDecoration: "none"

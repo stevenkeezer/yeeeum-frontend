@@ -3,7 +3,11 @@
   src: url("../../../assets/fonts/AvenirNextLTProBold.otf");
   src: url("../../../assets/fonts/AvenirNextLTProBold.otf") format("opentype");
 }
-
+@font-face {
+  font-family: "AvenirNextLTProDemi";
+  src: url("../../../assets/fonts/AvenirNextLTProDemi.otf");
+  src: url("../../../assets/fonts/AvenirNextLTProDemi.otf") format("opentype");
+}
 @font-face {
   font-family: "AvenirNextLTProRegular";
   src: url("../../../assets/fonts/AvenirNextLTProRegular.otf");
@@ -11,10 +15,27 @@
     format("opentype");
 }
 
+@font-face {
+  font-family: "AvenirNextLTProMedium";
+  src: url("../../../assets/fonts/AvenirNextLTProMedium.otf");
+  src: url("../../../assets/fonts/AvenirNextLTProMedium.otf") format("opentype");
+}
+.browse-header {
+  font-family: "AvenirNextLTProMedium";
+  letter-spacing: 0.11rem;
+  font-weight: bold;
+  font-size: 2.8rem;
+  margin-top: -145px;
+  margin-bottom: 6%;
+}
 .tab-content {
   border: none;
+  padding: 0px !important;
 }
 
+.tab-pane {
+  padding: 0px !important;
+}
 .tab-item {
   text-transform: uppercase;
   color: #707070;
@@ -33,7 +54,35 @@
   font-family: "AvenirNextLTProBold" !important;
 }
 
+.popular-ingredient-header {
+  font-family: "AvenirNextLTProDemi" !important;
+}
 .nav-tabs {
   border: none;
   font-family: "AvenirNextLTProBold" !important;
+}
+
+.col-6 {
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+.col-lg-6 {
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+.text-uppercase {
+  color: #bababa;
+  font-family: "AvenirNextLTProDemi";
+  font-size: 0.8rem;
+}
+
+li > a {
+  font-family: "AvenirNextLTProRegular" !important;
+  color: #4a4a4a;
+}
+
+.footer-link {
+  font-size: 0.98rem !important;
 }

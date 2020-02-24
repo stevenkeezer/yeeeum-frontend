@@ -27,8 +27,25 @@
   src: url("../../assets/fonts/AvenirNextLTProLight.otf") format("opentype");
 }
 
+@font-face {
+  font-family: "o";
+  src: url("../../assets/fonts/o Demi.eot");
+  src: url("../../assets/fonts/o Demi.eot?#iefix") format("embedded-opentype"),
+    url("../../assets/fonts/o Demi.woff2") format("woff2"),
+    url("../../assets/fonts/o Demi.woff") format("woff"),
+    url("../../assets/fonts/o Demi.svg#o Demi") format("svg");
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0-10FFFF;
+}
 .saved-recipes {
-  font-family: "AvenirNextLTProDemi";
+  font-family: "o";
+  font-size: 0.78rem;
+  color: #232323;
+}
+.saved-recipes:hover {
+  text-decoration: none;
 }
 .sidebar {
   background-color: #ffffff !important;
@@ -40,9 +57,13 @@
   /* overflow-y: auto; */
   /* overflow-x: hidden; */
 }
+.sidebar-nav {
+  overflow-y: auto !important;
+}
 
 .sidebar .nav-link:hover {
   height: 100%;
+  text-decoration: none !important;
 }
 @media (max-width: 991px) {
   .sidebar-show .main::before,
@@ -95,17 +116,17 @@
 }
 
 .more {
-  position: absolute;
-  font-family: "AvenirNextLTProRegular";
+  font-family: "o";
   bottom: -10px;
-  right: 78px;
 }
+
 .sidebar .sidebar-nav {
   width: 100%;
   height: 100vh !important;
-  z-index: 4;
-  overflow-y: scroll !important;
-  /* position: relative !important; */
+}
+
+.nav {
+  /* overflow: scroll !important; */
 }
 
 .sidebar .nav {
@@ -113,10 +134,12 @@
 }
 
 .profile-img {
-  width: 25.4%;
+  width: 27.4%;
   margin-bottom: 27px;
-  margin-top: 13px;
+  margin-top: 10px;
+  outline: red;
 }
+
 .profile-load-img {
   margin-right: 0px auto;
   margin-left: 0px auto;
@@ -131,15 +154,18 @@
 }
 
 .logo-container {
-  margin-top: 34%;
+  margin-top: 35%;
 }
 .nav-footer {
   font-size: 0.7rem;
-  /* position: fixed; */
-  /* width: 100%; */
+  background-image: linear-gradient(rgba(255, 255, 255, 0.09) 0%, white 35%);
 
-  position: absolute;
+  position: fixed;
   bottom: 0 !important;
+  font-family: "o";
+  z-index: 1000;
+  color: black;
+  transition: color 0.4s ease;
 }
 
 @media (max-width: 500px) {
@@ -154,15 +180,16 @@
 }
 
 .nav-link {
-  padding: 5px !important;
-  font-size: 0.83rem;
-  font-family: "AvenirNextLTProLight", sans-serif;
+  padding: 4px !important;
+  padding-left: 8px !important;
   color: #707070;
+  font-size: 0.82rem;
+  font-family: "AvenirNextLTProLight", sans-serif;
   transition: color 0.4s ease;
   border: none !important;
   outline: none !important;
   font-weight: bold;
-  letter-spacing: -0.04rem !important;
+  letter-spacing: 0.01rem !important;
 }
 
 .sidebar-login-button {
@@ -190,7 +217,7 @@
 .logo-container {
   text-align: center;
   /* margin-top: 35%; */
-  margin-bottom: 23px;
+  margin-bottom: 25px;
 }
 .sidebar {
   color: #747474;
@@ -199,11 +226,11 @@
 
 @media (min-width: 992px) {
   .sidebar-fixed .sidebar {
-    width: 205px;
+    width: 204px;
   }
 
   html:not([dir="rtl"]) .sidebar {
-    margin-left: -205px;
+    margin-left: -204px;
   }
 }
 
@@ -212,7 +239,7 @@
   html:not([dir="rtl"]) .sidebar-lg-show.sidebar-fixed .app-footer,
   html:not([dir="rtl"]) .sidebar-show.sidebar-fixed .main,
   html:not([dir="rtl"]) .sidebar-show.sidebar-fixed .app-footer {
-    margin-left: 205px;
+    margin-left: 204px;
   }
 }
 
@@ -221,18 +248,18 @@
   html:not([dir="rtl"]) .sidebar-xl-show.sidebar-fixed .app-footer,
   html:not([dir="rtl"]) .sidebar-show.sidebar-fixed .main,
   html:not([dir="rtl"]) .sidebar-show.sidebar-fixed .app-footer {
-    margin-left: 205px;
+    margin-left: 204px;
   }
 }
 
 @media (max-width: 991.98px) {
   .sidebar {
-    width: 205px;
+    width: 204px;
     transition-delay: 0.2s;
   }
 
   html:not([dir="rtl"]) .sidebar {
-    margin-left: -205px;
+    margin-left: -204px;
     transition-delay: 0.2s;
   }
   .nav-link {
@@ -244,9 +271,8 @@
   flex-direction: none;
 }
 .is-active {
-  color: #292e34;
+  color: #232323;
   text-emphasis: none;
-  font-weight: 900;
   background: linear-gradient(
     to right,
     #00a287 0,
@@ -268,7 +294,7 @@
   html:not([dir="rtl"]) .sidebar-lg-show.sidebar-fixed .app-footer,
   html:not([dir="rtl"]) .sidebar-show.sidebar-fixed .main,
   html:not([dir="rtl"]) .sidebar-show.sidebar-fixed .app-footer {
-    margin-left: 205px;
+    margin-left: 204px;
   }
 }
 
@@ -277,17 +303,17 @@
   html:not([dir="rtl"]) .sidebar-xl-show.sidebar-fixed .app-footer,
   html:not([dir="rtl"]) .sidebar-show.sidebar-fixed .main,
   html:not([dir="rtl"]) .sidebar-show.sidebar-fixed .app-footer {
-    margin-left: 205px;
+    margin-left: 204px;
   }
 }
 
 @media (max-width: 991.98px) {
   .sidebar {
-    width: 205px;
+    width: 204px;
   }
 
   html:not([dir="rtl"]) .sidebar {
-    margin-left: -205px;
+    margin-left: -204px;
   }
 }
 

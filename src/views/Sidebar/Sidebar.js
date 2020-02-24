@@ -8,6 +8,7 @@ import KitchenIcon from "@material-ui/icons/Kitchen";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import WhatshotIcon from "@material-ui/icons/Whatshot";
 import AddIcon from "@material-ui/icons/Add";
+import Button from "@material-ui/core/Button";
 import LockIcon from "@material-ui/icons/Lock";
 import AlarmAddIcon from "@material-ui/icons/AlarmAdd";
 import { AppSidebarToggler } from "@coreui/react";
@@ -57,26 +58,27 @@ export default function Sidebar(props) {
 
   return (
     <div className="">
+      <div className="logo-container">
+        <Link
+          to={"/"}
+          className="logo"
+          style={{ textDecoration: "none" }}
+          isOpen={false}
+        >
+          <img width="100px" src="/assets/img/logo.png"></img>
+        </Link>
+      </div>
+      <hr
+        id="separator"
+        style={{
+          width: "23px",
+          height: "30px!important",
+          color: "lightgrey!important",
+          borderTop: "3px solid rgba(0, 0, 0, 0.1)"
+        }}
+      ></hr>
+
       <nav className="sidebar-nav">
-        <div className="logo-container">
-          <Link
-            to={"/"}
-            className="logo"
-            style={{ textDecoration: "none" }}
-            isOpen={false}
-          >
-            <img width="100px" src="/assets/img/logo.png"></img>
-          </Link>
-        </div>
-        <hr
-          id="separator"
-          style={{
-            width: "23px",
-            height: "30px!important",
-            color: "lightgrey!important",
-            borderTop: "3px solid rgba(0, 0, 0, 0.1)"
-          }}
-        ></hr>
         <div className="login-button">
           <Link to={"/login"} onClick={() => clickHandler()}>
             {!props.user && (
@@ -102,7 +104,7 @@ export default function Sidebar(props) {
         <Link to={"/profile"} onClick={() => clickHandler()}>
           <div className="profile-img-container">
             {!props.userImg && props.fbId && localStorage.getItem("login") && (
-              <div className="img-container" style={{ minHeight: "100px" }}>
+              <div className="img-container" style={{ minHeight: "103px" }}>
                 <Img
                   alt="profilepicture"
                   className="rounded-circle profile-img mx-auto"
@@ -123,7 +125,7 @@ export default function Sidebar(props) {
               </div>
             )}
             {props.userImg && (
-              <div className="img-container" style={{ minHeight: "100px" }}>
+              <div className="img-container" style={{ minHeight: "103px" }}>
                 <Img
                   alt="profilepicture"
                   className="rounded-circle profile-img"
@@ -219,7 +221,7 @@ export default function Sidebar(props) {
             </li>
           )}
           <li className="nav-item">
-            <button
+            {/* <button
               exact={true}
               onClick={() => {
                 // pushRegister();
@@ -238,25 +240,25 @@ export default function Sidebar(props) {
                 }}
               />
               Add Timer
-            </button>
+            </button> */}
           </li>
 
-          <li className="nav-item">
+          <li className="nav-item mt-3">
             <Link
-              to="hi"
-              className="nav-link sidebar-link-no-bcg ml-4 mt-3 mb-1"
+              exact={true}
+              onClick={() => clickHandler()}
+              className="pl-2 ml-4  saved-recipes"
+              style={{
+                textTransform: "uppercase",
+                color: "#22272c"
+              }}
             >
-              <strong
-                className="saved-recipes"
-                style={{ textTransform: "uppercase", color: "#22272c" }}
-              >
-                <span>Saved Recipes</span>
-              </strong>
+              SAVED RECIPES
             </Link>
             <Link
               exact={true}
               onClick={() => clickHandler()}
-              className="nav-link sidebar-link-no-bcg ml-4"
+              className="nav-link sidebar-link-no-bcg ml-4 mt-2"
               to={"/favorites"}
             >
               <FavoriteIcon
@@ -326,7 +328,11 @@ export default function Sidebar(props) {
             </Link>
             <br></br>
             {props.user && (
-              <li className="nav-item" onClick={() => clickHandler()}>
+              <li
+                className="nav-item"
+                style={{ marginBottom: "150px" }}
+                onClick={() => clickHandler()}
+              >
                 <button
                   exact
                   onClick={logout}
@@ -350,40 +356,58 @@ export default function Sidebar(props) {
                 </button>
               </li>
             )}
-            <Link
+
+            <div
               exact={true}
-              className="nav-link sidebar-link-no-bcg ml-4"
+              style={{ width: "205px" }}
+              className="nav-footer mx-auto mb-3"
               to={"/favorites"}
             >
               <div
                 style={{
                   textAlign: "center",
-                  marginTop: "10%",
+                  marginTop: "12%",
                   color: "#00a287",
-                  marginRight: "20px"
+                  width: "100%"
                 }}
+                className="w-100 col-12 mx-auto"
               >
-                <MoreHorizIcon fontSize="large" />
-                <br></br>
-                <span
-                  className="more"
-                  style={{ marginTop: "-20px!important", color: "grey" }}
+                <div className="col">
+                  <MoreHorizIcon fontSize="34px" />
+                  <br height={"10px"}></br>
+                </div>
+                <Button
+                  className="  more mb-4"
+                  href="#text-buttons"
+                  style={{
+                    marginTop: "-24px",
+                    textDecoration: "none",
+                    fontSize: ".75rem"
+                  }}
                 >
                   MORE
-                </span>
+                </Button>
+                <br></br>
+                <br></br>
               </div>
-            </Link>
+            </div>
           </li>
 
-          <li className="pl-2 mt-auto">
-            <div className="row nav-footer mx-auto">
+          <li className="pl-2 mt-auto ">
+            <div className="row  nav-footer mx-auto" style={{ padding: "2px" }}>
               <a className="p-1" href="https://coreui.io">
                 Privacy
               </a>
               <a className="p-1" href="https://coreui.io">
                 Terms
               </a>
-              <a className="p-1" href="https://coreui.io">
+              <a
+                className="p-1 pr-2"
+                href="https://coreui.io"
+                style={{
+                  bottom: "0"
+                }}
+              >
                 Internet Based Ads
               </a>
             </div>
