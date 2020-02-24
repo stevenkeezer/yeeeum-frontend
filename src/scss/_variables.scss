@@ -9,3 +9,17 @@ $sidebar-link-hover-color: white;
 $sidebar-nav-link-hover-bg: white;
 $sidebar-nav-link-active-icon-color: white;
 // $layout-transition-speed: 0.5s;
+// Here you can add other styles
+@font-face {
+  font-family: "o";
+  src: url("../assets/fonts/o Demi.eot");
+  src: url("../assets/fonts/o Demi.eot?#iefix") format("embedded-opentype"),
+    url("../assets/fonts/o Demi.woff2") format("woff2"),
+    url("../assets/fonts/o Demi.woff") format("woff"),
+    url("../assets/fonts/o Demi.svg#o Demi") format("svg");
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0-10FFFF;
+}
+$font-family-base: "o";

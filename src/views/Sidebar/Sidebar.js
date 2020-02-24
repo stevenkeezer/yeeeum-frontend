@@ -231,6 +231,16 @@ export default function Sidebar(props) {
             </li>
           )}
           <li className="nav-item">
+            <NavLink
+              to={"/blog"}
+              activeClassName="is-active"
+              className="nav-link sidebar-link"
+              onClick={() => clickHandler()}
+            >
+              <span className="ml-4">Blog</span>
+            </NavLink>
+          </li>
+          <li className="nav-item">
             {/* <button
               exact={true}
               onClick={() => {
@@ -337,6 +347,10 @@ export default function Sidebar(props) {
               Popular
             </Link>
             <br></br>
+            {/* <img
+              style={{ width: "100px" }}
+              src="/assets/img/appstore.png"
+            ></img> */}
             {props.user && (
               <li
                 className="nav-item"

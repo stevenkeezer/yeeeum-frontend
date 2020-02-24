@@ -378,5 +378,6 @@ html:not([dir="rtl"]) .sidebar-show.sidebar-fixed .app-footer {
 }
 
 .profile-button > img {
-  box-shadow: 0 0 1.8pt 2pt #056f43;
+  box-shadow: 0 0 2pt 1.3pt #056f43;
+  transition: all 0.23s ease-in-out;
 }

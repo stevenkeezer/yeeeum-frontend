@@ -154,7 +154,7 @@ export default function Profile(props) {
               <div className="pb-5 mt-3">
                 {!props.userImg && props.fbId && (
                   <img
-                    width="80px"
+                    width="70px"
                     alt=""
                     className="rounded-circle profile-circle"
                     src={`https://graph.facebook.com/${props.fbId}/picture?width=100&height=100`}
@@ -163,7 +163,7 @@ export default function Profile(props) {
 
                 {props.userImg && (
                   <img
-                    width="100px"
+                    width="80px"
                     alt=""
                     className="rounded-circle profile-circle"
                     src={`https://yeeeum.s3-us-west-1.amazonaws.com/${props.userImg}`}
