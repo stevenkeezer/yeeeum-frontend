@@ -176,7 +176,7 @@
 
 .nav-footer a {
   color: #707070;
-  font-family: "AvenirNextLTProDemi", sans-serif;
+  /* font-family: "AvenirNextLTProDemi", sans-serif; */
 }
 
 .nav-link {
@@ -184,7 +184,7 @@
   padding-left: 8px !important;
   color: #707070;
   font-size: 0.82rem;
-  font-family: "AvenirNextLTProLight", sans-serif;
+  /* font-family: "AvenirNextLTProLight", sans-serif; */
   transition: color 0.4s ease;
   border: none !important;
   outline: none !important;
@@ -207,7 +207,7 @@
   cursor: pointer;
   transition: all 0.2s ease;
   padding: 11px 24px;
-  font-family: "AvenirNextLTProRegular";
+  /* font-family: "AvenirNextLTProRegular"; */
   background-color: #fff;
 }
 
@@ -286,7 +286,7 @@
 }
 
 .login-button {
-  font-family: "AvenirNextLTProRegular";
+  /* font-family: "AvenirNextLTProRegular"; */
 }
 
 @media (min-width: 992px) {
@@ -375,4 +375,8 @@ html:not([dir="rtl"]) .sidebar-show.sidebar-fixed .app-footer {
   html:not([dir="rtl"]) .sidebar {
     margin-left: -250px;
   }
+}
+
+.profile-button > img {
+  box-shadow: 0 0 1.8pt 2pt #056f43;
 }

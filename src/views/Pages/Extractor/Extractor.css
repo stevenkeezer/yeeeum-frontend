@@ -77,11 +77,11 @@
   font-family: "AvenirNextLTProDemi";
   font-size: 0.8rem;
 }
-
+/* 
 li > a {
   font-family: "AvenirNextLTProRegular" !important;
   color: #4a4a4a;
-}
+} */
 
 .footer-link {
   font-size: 0.98rem !important;

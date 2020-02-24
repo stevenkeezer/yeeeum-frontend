@@ -7,13 +7,8 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import KitchenIcon from "@material-ui/icons/Kitchen";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import WhatshotIcon from "@material-ui/icons/Whatshot";
-import AddIcon from "@material-ui/icons/Add";
 import Button from "@material-ui/core/Button";
 import LockIcon from "@material-ui/icons/Lock";
-import AlarmAddIcon from "@material-ui/icons/AlarmAdd";
-import { AppSidebarToggler } from "@coreui/react";
-import Sound from "react-sound";
-import Timer from "react-compound-timer";
 import Img from "react-image";
 import { useHistory } from "react-router-dom";
 
@@ -101,10 +96,14 @@ export default function Sidebar(props) {
             )}
           </Link>
         </div>
-        <Link to={"/profile"} onClick={() => clickHandler()}>
-          <div className="profile-img-container">
-            {!props.userImg && props.fbId && localStorage.getItem("login") && (
-              <div className="img-container" style={{ minHeight: "103px" }}>
+        <div className="profile-img-container">
+          {!props.userImg && props.fbId && localStorage.getItem("login") && (
+            <div className="img-container" style={{ minHeight: "103px" }}>
+              <NavLink
+                activeClassName="profile-button"
+                to={"/profile"}
+                onClick={() => clickHandler()}
+              >
                 <Img
                   alt="profilepicture"
                   className="rounded-circle profile-img mx-auto"
@@ -121,11 +120,17 @@ export default function Sidebar(props) {
                     </ContentLoader>
                   }
                   src={`https://graph.facebook.com/${props.fbId}/picture?width=70&height=70 `}
-                ></Img>
-              </div>
-            )}
-            {props.userImg && (
-              <div className="img-container" style={{ minHeight: "103px" }}>
+                />
+              </NavLink>
+            </div>
+          )}
+          {props.userImg && (
+            <div className="img-container" style={{ minHeight: "103px" }}>
+              <NavLink
+                activeClassName="profile-button"
+                to={"/profile"}
+                onClick={() => clickHandler()}
+              >
                 <Img
                   alt="profilepicture"
                   className="rounded-circle profile-img"
@@ -143,10 +148,16 @@ export default function Sidebar(props) {
                   }
                   src={`https://yeeeum.s3-us-west-1.amazonaws.com/${props.userImg}`}
                 ></Img>
-              </div>
-            )}
-            {!props.userImg && !props.fbId && props.user && (
-              <div className="img-container" style={{ minHeight: "100px" }}>
+              </NavLink>
+            </div>
+          )}
+          {!props.userImg && !props.fbId && props.user && (
+            <div className="img-container" style={{ minHeight: "100px" }}>
+              <NavLink
+                activeClassName="profile-button"
+                to={"/profile"}
+                onClick={() => clickHandler()}
+              >
                 <Img
                   alt="profilepicture"
                   className="rounded-circle profile-img"
@@ -164,10 +175,10 @@ export default function Sidebar(props) {
                   }
                   src="assets/img/default.png"
                 ></Img>
-              </div>
-            )}
-          </div>
-        </Link>
+              </NavLink>
+            </div>
+          )}
+        </div>
 
         <ul className="nav">
           <li className="nav-item">
@@ -210,7 +221,6 @@ export default function Sidebar(props) {
           {props.user && (
             <li className="nav-item">
               <NavLink
-                exact
                 to={"/compose"}
                 activeClassName="is-active"
                 className="nav-link sidebar-link"
