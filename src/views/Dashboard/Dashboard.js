@@ -18,26 +18,29 @@ function Dashboard(props) {
   };
 
   const getPosts = async () => {
-    const existingToken = localStorage.getItem("token");
-    const accessToken =
-      window.location.search.split("=")[0] === "?api_key"
-        ? window.location.search.split("=")[1]
-        : null;
-    let token = accessToken || existingToken;
+    try {
+      const existingToken = localStorage.getItem("token");
+      const accessToken =
+        window.location.search.split("=")[0] === "?api_key"
+          ? window.location.search.split("=")[1]
+          : null;
+      let token = accessToken || existingToken;
 
-    const response = await fetch(process.env.REACT_APP_BURL + `posts`, {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-        Authorization: `Token ${token}`
-      },
-      body: JSON.stringify(page)
-    });
+      const response = await fetch(process.env.REACT_APP_BURL + `posts`, {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `Token ${token}`
+        },
+        body: JSON.stringify(page)
+      });
 
-    if (response.ok) {
+      console.log("response", response);
       const data = await response.json();
       window.history.replaceState({}, document.title, window.location.pathname);
       setRecipes([...recipes, ...data]);
+    } catch (error) {
+      getPosts();
     }
   };
 

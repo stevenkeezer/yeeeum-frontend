@@ -5,8 +5,6 @@ import ContentLoader from "react-content-loader";
 import Img from "react-image";
 import LikeRotator from "../LikeRotator/LikeRotator";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import Truncate from "react-truncate";
-import { AnimatePresence, motion } from "framer-motion";
 
 export default function RecipeCard(props) {
   const [imgLoaded, setImgLoaded] = useState(false);
