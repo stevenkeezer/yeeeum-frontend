@@ -8,9 +8,16 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { Router } from "react-router-dom";
-
+import WebFont from "webfontloader";
 import { createBrowserHistory } from "history";
 const history = createBrowserHistory();
+
+WebFont.load({
+  google: {
+    families: ["Titillium Web:300,400,700", "sans-serif"]
+  }
+});
+
 ReactDOM.render(
   <Router history={history}>
     <App />

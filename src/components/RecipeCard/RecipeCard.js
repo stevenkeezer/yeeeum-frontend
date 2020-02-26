@@ -15,7 +15,7 @@ export default function RecipeCard(props) {
 
   return (
     <>
-      {props.recipes.length < 1 && (
+      {!imgLoaded && (
         <div className="d-flex mx-auto justify-content-center align-self-center">
           <CircularProgress
             style={{
@@ -112,7 +112,8 @@ export default function RecipeCard(props) {
                             className="sub-article-title pr-2"
                             to={`/recipe/${r.id}`}
                             style={{
-                              textDecoration: "none"
+                              textDecoration: "none",
+                              wordBreak: "keep-all"
                             }}
                           >
                             {r.title}

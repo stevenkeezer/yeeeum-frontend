@@ -75,6 +75,7 @@
     "react-visibility-sensor": "^5.1.1",
     "reactstrap": "^8.0.0",
     "simple-line-icons": "^2.4.1",
+    "webfontloader": "^1.6.28",
     "yup": "^0.27.0"
   },
   "devDependencies": {
