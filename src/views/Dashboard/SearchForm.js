@@ -57,6 +57,7 @@ export default function SearchForm(props) {
                 fontWeight: "700",
                 color: "#f15924"
               }}
+              autocomplete="off"
               type="search"
               name="search"
               className="email-field"

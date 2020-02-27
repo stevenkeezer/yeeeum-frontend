@@ -123,7 +123,7 @@ export default function PageOne(props) {
           </div>
         </div>
 
-        <div className="text-right mt-2">
+        <div className="text-right mt-5">
           <button
             type="button"
             className="stepButton mt-2"

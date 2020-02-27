@@ -6,10 +6,12 @@ import LocalDiningIcon from "@material-ui/icons/LocalDining";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import KitchenIcon from "@material-ui/icons/Kitchen";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
+import FastfoodIcon from "@material-ui/icons/Fastfood";
 import WhatshotIcon from "@material-ui/icons/Whatshot";
 import Button from "@material-ui/core/Button";
 import LockIcon from "@material-ui/icons/Lock";
 import Img from "react-image";
+import AddIcon from "@material-ui/icons/Add";
 import { useHistory } from "react-router-dom";
 
 import "./Sidebar.css";
@@ -232,14 +234,40 @@ export default function Sidebar(props) {
           )}
           <li className="nav-item">
             <NavLink
-              to={"/blog"}
+              to={"/recipe"}
               activeClassName="is-active"
               className="nav-link sidebar-link"
               onClick={() => clickHandler()}
             >
-              <span className="ml-4">Blog</span>
+              <span className="ml-4">Articles</span>
             </NavLink>
           </li>
+          <li className="nav-item">
+            <NavLink
+              to={"/register"}
+              activeClassName="is-active"
+              className="nav-link sidebar-link"
+              onClick={() => clickHandler()}
+            >
+              <span className="ml-4">Yeeeum Pro</span>
+            </NavLink>
+          </li>
+          <NavLink
+            to={"/login"}
+            activeClassName="is-active"
+            className="nav-link "
+            onClick={() => clickHandler()}
+          >
+            <span className=" ml-4 compose-button">
+              <AddIcon
+                style={{
+                  width: "20px",
+                  marginTop: "-4px"
+                }}
+              />
+              Compose
+            </span>
+          </NavLink>
           <li className="nav-item">
             {/* <button
               exact={true}
@@ -275,6 +303,7 @@ export default function Sidebar(props) {
             >
               SAVED RECIPES
             </Link>
+
             <Link
               exact={true}
               onClick={() => clickHandler()}
@@ -293,7 +322,7 @@ export default function Sidebar(props) {
             <Link
               exact={true}
               to={"/favorites"}
-              className="nav-link sidebar-link-no-bcg ml-4"
+              className="nav-link sidebar-link-no-bcg ml-4 mt-1"
             >
               <LocalBarIcon
                 style={{
@@ -306,7 +335,7 @@ export default function Sidebar(props) {
             </Link>
             <Link
               exact={true}
-              className="nav-link sidebar-link-no-bcg ml-4"
+              className="nav-link sidebar-link-no-bcg ml-4 mt-1"
               to={"/favorites"}
             >
               <LocalDiningIcon
@@ -320,7 +349,7 @@ export default function Sidebar(props) {
             </Link>
             <Link
               exact={true}
-              className="nav-link sidebar-link-no-bcg ml-4"
+              className="nav-link sidebar-link-no-bcg ml-4 mt-1"
               to={"/favorites"}
             >
               <KitchenIcon
@@ -334,7 +363,21 @@ export default function Sidebar(props) {
             </Link>
             <Link
               exact={true}
-              className="nav-link sidebar-link-no-bcg ml-4"
+              className="nav-link sidebar-link-no-bcg ml-4 mt-1"
+              to={"/favorites"}
+            >
+              <FastfoodIcon
+                style={{
+                  width: "20px",
+                  marginTop: "-4px",
+                  marginRight: "10px"
+                }}
+              />
+              Quick Eats
+            </Link>
+            <Link
+              exact={true}
+              className="nav-link sidebar-link-no-bcg ml-4 mt-1"
               to={"/favorites"}
             >
               <WhatshotIcon
@@ -346,6 +389,7 @@ export default function Sidebar(props) {
               />
               Popular
             </Link>
+
             <br></br>
             {/* <img
               style={{ width: "100px" }}
@@ -397,16 +441,26 @@ export default function Sidebar(props) {
                 className="w-100 col-12 mx-auto"
               >
                 <div className="col">
-                  <MoreHorizIcon fontSize="34px" />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="28"
+                    height="28"
+                    viewBox="0 0 36 36"
+                    fill="#00a287"
+                  >
+                    <path d="M9 15c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3zm18 0c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3zm-9 0c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
+                  </svg>
+
                   <br height={"10px"}></br>
                 </div>
                 <Button
-                  className="  more mb-4"
+                  className="more mb-4"
                   href="#text-buttons"
                   style={{
                     marginTop: "-24px",
                     textDecoration: "none",
-                    fontSize: ".75rem"
+                    fontSize: ".75rem",
+                    fontWeight: "bold"
                   }}
                 >
                   MORE

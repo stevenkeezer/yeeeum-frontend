@@ -51,15 +51,13 @@ class Wizard extends Component {
                   <>
                     <form
                       onSubmit={handleSubmit}
-                      className="shadow"
-                      style={{ backgroundColor: "white", padding: "50px" }}
+                      className=""
+                      style={{
+                        backgroundColor: "#ffffff",
+                        // border: "25px solid rgba(211, 211, 211, 0.6)",
+                        borderRadius: "10px"
+                      }}
                     >
-                      <h3 className="pb-2 font-demi">Recipe Editor</h3>
-                      <h3 style={{ fontSize: ".8rem" }}>
-                        Add your recipes, and take them anywhere!
-                        <br></br>
-                      </h3>
-                      <br></br>
                       {wizProps.renderPage(props)}
                       {this.props.getProgress(wizProps)}
                     </form>

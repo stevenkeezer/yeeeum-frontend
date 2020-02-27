@@ -392,10 +392,10 @@ export default function Extractor(props) {
               style={{ marginBottom: "14vh", color: "#bababa" }}
             >
               © 2020 Copyright:
-              <a href="https://mdbootstrap.com/education/bootstrap/">
+              <span href="https://mdbootstrap.com/education/bootstrap/">
                 {" "}
                 Yeeeum.com
-              </a>
+              </span>
             </div>
           </footer>
         </div>

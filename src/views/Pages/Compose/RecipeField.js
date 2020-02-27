@@ -226,7 +226,6 @@ export default function RecipeField(props) {
                       onClick={() => {
                         arrayHelpers.push({ amount: "", ingredient: "" });
                       }}
-                      
                     />
                   </div>
                 </div>

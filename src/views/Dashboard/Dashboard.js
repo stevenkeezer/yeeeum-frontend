@@ -127,12 +127,14 @@ function Dashboard(props) {
     >
       <div
         style={{
-          paddingTop: "30px",
+          paddingTop: "1.75%",
           marginBottom: "3.5%"
           // backgroundImage: "linear-gradient(#f6f6f6, #ffffff)"
         }}
       >
-        <SearchForm returnSearchResults={returnSearchResults} />
+        <div className="mx-auto" style={{ maxWidth: "1260px" }}>
+          <SearchForm returnSearchResults={returnSearchResults} />
+        </div>
       </div>
       <div className="banner-container col-xs-12 col-sm-12 col-lg-12">
         <div className="col-xl-4 col-lg-4  banner-sub-container">
@@ -151,9 +153,9 @@ function Dashboard(props) {
               fontSize: "16px",
               margin: "0px!important"
             }}
-            className="col-lg-11 col-sm-8 col-11 about "
+            className="col-lg-10 col-sm-8 col-11 about "
           >
-            <p style={{ fontSize: "16px" }}>
+            <p style={{ fontSize: "16px", lineHeight: "1.7rem" }}>
               Yeeeum is a recipe application designed with busy people in mind.
               Store your own recipes and save your favorites.
             </p>
@@ -183,7 +185,7 @@ function Dashboard(props) {
         }}
       ></div>
 
-      <div className="col-xl-10 col-lg-11 col-sm-12 container mx-auto recipes-container p-5">
+      <div className="col-xl-9 col-lg-11 col-sm-12 container mx-auto recipes-container p-5">
         <div className="col-12">
           <h3
             className="foryou"

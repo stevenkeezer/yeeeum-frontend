@@ -1,7 +1,15 @@
 @font-face {
   font-family: "AvenirNextLTProRegular";
-  src: url("../../assets/fonts/AvenirNextLTProRegular.otf");
+  src: local() url("../../assets/fonts/AvenirNextLTProRegular.otf");
   src: url("../../assets/fonts/AvenirNextLTProRegular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "AvenirNextLTProDemi";
+  src: local("AvenirNextLTProDemi")
+    url("../../assets/fonts/AvenirNextLTProDemi.otf");
+  src: local("AvenirNextLTProDemi")
+    url("../../assets/fonts/AvenirNextLTProDemi.otf") format("opentype");
 }
 
 .email-field {
@@ -44,5 +52,5 @@
 }
 
 .search-form-font {
-  font-family: "AvenirNextLTProRegular" !important;
+  font-family: "AvenirNextLTProDemi";
 }

@@ -7,6 +7,7 @@ function StepProgressBar(props) {
     <ProgressBar
       filledBackground="linear-gradient(to right, #fefb72, #f0bb31)"
       percent={props.progress}
+      width={"100%"}
     >
       <Step transition="scale">
         {({ accomplished, index }) => (
