@@ -16,7 +16,6 @@
   src: url("../../assets/fonts/AvenirNextLTProDemi.otf") format("opentype");
 }
 .recipes-container {
-  margin-top: 4.5%;
   width: 100%;
   min-height: 700px;
 }

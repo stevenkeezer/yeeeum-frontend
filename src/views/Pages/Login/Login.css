@@ -28,3 +28,12 @@
     display: none;
   }
 }
+.MuiInputBase-root,
+.MuiInput-root {
+  background-color: transparent;
+  /* border: 1px solid black; */
+  padding: 5px;
+  /* -webkit-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.28);
+  -moz-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.28);
+  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.28); */
+}

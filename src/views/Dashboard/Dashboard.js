@@ -180,12 +180,12 @@ function Dashboard(props) {
           backgroundRepeat: "no-repeat",
           backgroundSize: "contain",
           marginTop: "5vw",
-          height: "400px",
+          height: "480px",
           transform: "rotateY(180deg)"
         }}
       ></div>
 
-      <div className="col-xl-9 col-lg-11 col-sm-12 container mx-auto recipes-container p-5">
+      <div className="col-xl-9 col-lg-11 col-sm-12 container mx-auto recipes-container pl-5">
         <div className="col-12">
           <h3
             className="foryou"

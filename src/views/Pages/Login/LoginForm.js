@@ -73,6 +73,7 @@ export default function LoginForm(props) {
               component={TextField}
               placeholder="Email"
             />
+
             <br></br>
             <Field
               style={{

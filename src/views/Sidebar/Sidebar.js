@@ -17,6 +17,8 @@ import { useHistory } from "react-router-dom";
 import "./Sidebar.css";
 
 export default function Sidebar(props) {
+  const [showMore, setShowMore] = useState(false);
+
   let history = useHistory();
   const logout = async () => {
     const response = await fetch(process.env.REACT_APP_BURL + "logout", {
@@ -223,7 +225,7 @@ export default function Sidebar(props) {
           {props.user && (
             <li className="nav-item">
               <NavLink
-                to={"/compose"}
+                to={"/login"}
                 activeClassName="is-active"
                 className="nav-link sidebar-link"
                 onClick={() => clickHandler()}
@@ -253,7 +255,7 @@ export default function Sidebar(props) {
             </NavLink>
           </li>
           <NavLink
-            to={"/login"}
+            to={"/compose"}
             activeClassName="is-active"
             className="nav-link "
             onClick={() => clickHandler()}
@@ -395,7 +397,7 @@ export default function Sidebar(props) {
               style={{ width: "100px" }}
               src="/assets/img/appstore.png"
             ></img> */}
-            {props.user && (
+            {showMore && props.user && (
               <li
                 className="nav-item"
                 style={{ marginBottom: "150px" }}
@@ -424,53 +426,47 @@ export default function Sidebar(props) {
                 </button>
               </li>
             )}
-
-            <div
-              exact={true}
-              style={{ width: "205px" }}
-              className="nav-footer mx-auto mb-3"
-              to={"/favorites"}
-            >
-              <div
-                style={{
-                  textAlign: "center",
-                  marginTop: "12%",
-                  color: "#00a287",
-                  width: "100%"
-                }}
-                className="w-100 col-12 mx-auto"
-              >
-                <div className="col">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="28"
-                    height="28"
-                    viewBox="0 0 36 36"
-                    fill="#00a287"
-                  >
-                    <path d="M9 15c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3zm18 0c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3zm-9 0c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
-                  </svg>
-
-                  <br height={"10px"}></br>
-                </div>
-                <Button
-                  className="more mb-4"
-                  href="#text-buttons"
-                  style={{
-                    marginTop: "-24px",
-                    textDecoration: "none",
-                    fontSize: ".75rem",
-                    fontWeight: "bold"
-                  }}
-                >
-                  MORE
-                </Button>
-                <br></br>
-                <br></br>
-              </div>
-            </div>
           </li>
+          <div style={{ width: "205px" }} className="nav-footer mx-auto mb-3">
+            <div
+              style={{
+                textAlign: "center",
+                marginTop: "12%",
+                color: "#00a287",
+                width: "100%"
+              }}
+              className="w-100 col-12 mx-auto"
+            >
+              <div className="col mt-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="28"
+                  height="28"
+                  viewBox="0 0 36 36"
+                  fill="#00a287"
+                >
+                  <path d="M9 15c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3zm18 0c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3zm-9 0c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
+                </svg>
 
+                <br height={"10px"}></br>
+              </div>
+              <Button
+                onClick={() => setShowMore(!showMore)}
+                className="more mb-4"
+                style={{
+                  outline: "none",
+                  marginTop: "-24px",
+                  textDecoration: "none",
+                  fontSize: ".75rem",
+                  fontWeight: "bold",
+                  borderRadius: "15rem"
+                }}
+              >
+                MORE
+              </Button>
+            </div>
+            <div style={{ height: "12px" }}></div>
+          </div>
           <li className="pl-2 mt-auto ">
             <div className="row  nav-footer mx-auto" style={{ padding: "2px" }}>
               <a className="p-1" href="https://coreui.io">
