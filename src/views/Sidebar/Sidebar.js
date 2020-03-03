@@ -222,21 +222,20 @@ export default function Sidebar(props) {
             </NavLink>
           </li>
 
-          {props.user && (
-            <li className="nav-item">
-              <NavLink
-                to={"/login"}
-                activeClassName="is-active"
-                className="nav-link sidebar-link"
-                onClick={() => clickHandler()}
-              >
-                <span className="ml-4">Compose</span>
-              </NavLink>
-            </li>
-          )}
           <li className="nav-item">
             <NavLink
-              to={"/recipe"}
+              to={"/shop"}
+              activeClassName="is-active"
+              className="nav-link sidebar-link"
+              onClick={() => clickHandler()}
+            >
+              <span className="ml-4">Shop</span>
+            </NavLink>
+          </li>
+
+          <li className="nav-item">
+            <NavLink
+              to={"/articles"}
               activeClassName="is-active"
               className="nav-link sidebar-link"
               onClick={() => clickHandler()}
@@ -246,7 +245,7 @@ export default function Sidebar(props) {
           </li>
           <li className="nav-item">
             <NavLink
-              to={"/register"}
+              to={"/comingsoon3"}
               activeClassName="is-active"
               className="nav-link sidebar-link"
               onClick={() => clickHandler()}
@@ -469,14 +468,14 @@ export default function Sidebar(props) {
           </div>
           <li className="pl-2 mt-auto ">
             <div className="row  nav-footer mx-auto" style={{ padding: "2px" }}>
-              <a className="p-1" href="https://coreui.io">
+              <a className="pr-1" href="https://coreui.io">
                 Privacy
               </a>
-              <a className="p-1" href="https://coreui.io">
+              <a className="pl-1 pr-1" href="https://coreui.io">
                 Terms
               </a>
               <a
-                className="p-1 pr-2"
+                className="pl-1 pr-2"
                 href="https://coreui.io"
                 style={{
                   bottom: "0"

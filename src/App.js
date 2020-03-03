@@ -29,6 +29,9 @@ const Home = React.lazy(() => import("./views/Pages/Home/Home.js"));
 const Recipe = React.lazy(() => import("./views/Pages/Recipe/Recipe.js"));
 const Register = React.lazy(() => import("./views/Pages/Register"));
 const Compose = React.lazy(() => import("./views/Pages/Compose/Compose.js"));
+const ComingSoon = React.lazy(() =>
+  import("./views/Pages/ComingSoon/ComingSoon.js")
+);
 const UploadFiles = React.lazy(() =>
   import("./views/Pages/Compose/UploadFiles/UploadFiles.js")
 );
@@ -307,6 +310,45 @@ function App() {
       <React.Suspense fallback={loading()} style={{ position: "relative" }}>
         {/* <AnimatePresence> */}
         <Switch location={location} key={location.pathname}>
+          <Route
+            path="/shop"
+            name="coming soon"
+            render={props => (
+              <ComingSoon
+                fbId={fbId}
+                user={user}
+                setUser={setUser}
+                userId={userId}
+                setUserId={setUserId}
+                setUserImg={setUserImg}
+                userImg={userImg}
+                setFbId={setFbId}
+                searchResults={searchResults}
+                setSearchResults={setSearchResults}
+                returnSearchResults={returnSearchResults}
+              />
+            )}
+          />
+
+          <Route
+            path="/articles"
+            name="coming soon"
+            render={props => (
+              <ComingSoon
+                fbId={fbId}
+                user={user}
+                setUser={setUser}
+                userId={userId}
+                setUserId={setUserId}
+                setUserImg={setUserImg}
+                userImg={userImg}
+                setFbId={setFbId}
+                searchResults={searchResults}
+                setSearchResults={setSearchResults}
+                returnSearchResults={returnSearchResults}
+              />
+            )}
+          />
           <Route
             path="/upload_files"
             name="Upload Images"

@@ -22,7 +22,6 @@
   src: local("AvenirNextLTProDemi")
     url("../../assets/fonts/AvenirNextLTProDemi.otf") format("opentype");
 }
-
 @font-face {
   font-family: "AvenirNextLTProLight";
   src: local("AvenirNextLTProLight")

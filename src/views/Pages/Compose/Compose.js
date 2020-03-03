@@ -147,7 +147,7 @@ export default function Compose(props) {
                   borderRadius: "7px",
                   padding: "60px"
                 }}
-                className="col-xl-8 col-lg-9 col-sm-10 col-md-8  mx-auto ml-2 mt-4 justify-content-center shadow"
+                className="col-xl-6 col-lg-9 col-sm-10 col-md-8  mx-auto ml-2 mt-4 justify-content-center shadow"
               >
                 <div className="d-flex">
                   <div className="col p-0 pb-4">
