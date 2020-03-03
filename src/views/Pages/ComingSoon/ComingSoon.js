@@ -47,7 +47,7 @@ export default function ComingSoon() {
 
           <div class="p-t-50 p-b-60">
             <p class="m1-txt1 p-b-36">
-              This section is{" "}
+              This feature is{" "}
               <span class="m1-txt2" style={{ fontWeight: "bold" }}>
                 Coming Soon
               </span>
