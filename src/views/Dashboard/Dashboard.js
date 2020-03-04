@@ -4,12 +4,16 @@ import RecipeCard from "../../components/RecipeCard/RecipeCard";
 import SearchForm from "./SearchForm";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { motion } from "framer-motion";
+import { css } from "@emotion/core";
+// First way to import
+import { ClipLoader, BeatLoader } from "react-spinners";
 
 import "./Dashboard.css";
 
 function Dashboard(props) {
   const [page, setPage] = useState(1);
   const [recipes, setRecipes] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   window.onscroll = function(ev) {
     if (window.scrollY + window.innerHeight >= document.body.offsetHeight) {
@@ -39,6 +43,7 @@ function Dashboard(props) {
       const data = await response.json();
       window.history.replaceState({}, document.title, window.location.pathname);
       setRecipes([...recipes, ...data]);
+      setLoading(false);
     } catch (error) {
       getPosts();
     }
@@ -106,6 +111,12 @@ function Dashboard(props) {
 
   const style = {
     // position: "absolute"
+  };
+
+  const override = {
+    display: "block",
+    margin: "0 auto",
+    borderColor: "red"
   };
 
   const pageTransition = {
@@ -185,7 +196,10 @@ function Dashboard(props) {
         }}
       ></div>
 
-      <div className="col-xl-10 col-lg-11 col-sm-12 col-12 container mx-auto recipes-container">
+      <div
+        className="col-xl-10 col-lg-11 col-sm-12 col-12 container mx-auto recipes-container"
+        style={{ padding: 38 }}
+      >
         <div className="col-12">
           <h3
             className="foryou"
@@ -196,23 +210,22 @@ function Dashboard(props) {
         </div>
 
         <div className="row mx-auto">
-          {recipes ? (
-            <RecipeCard
-              recipes={recipes}
-              likeButton={likeButton}
-              getPosts={getPosts}
-              page={page}
+          <div className="sweet-loading mx-auto mt-5">
+            <BeatLoader
+              css={override}
+              size={13}
+              //size={"150px"} this also works
+              color={"rgba(8,161,135,0.6)"}
+              loading={loading}
             />
-          ) : (
-            <div className="d-flex mx-auto justify-content-center align-self-center">
-              <CircularProgress
-                style={{
-                  marginTop: "15%",
-                  color: "#00a287"
-                }}
-              />
-            </div>
-          )}
+          </div>
+
+          <RecipeCard
+            recipes={recipes}
+            likeButton={likeButton}
+            getPosts={getPosts}
+            page={page}
+          />
         </div>
       </div>
     </motion.div>
