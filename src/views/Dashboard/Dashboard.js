@@ -164,7 +164,7 @@ function Dashboard(props) {
               fontSize: "16px",
               margin: "0px!important"
             }}
-            className="col-lg-10 col-sm-8 col-11 about "
+            className="col-lg-12 col-8 about "
           >
             <p style={{ fontSize: "16px", lineHeight: "1.7rem" }}>
               Yeeeum is a recipe application designed with busy people in mind.

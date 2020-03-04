@@ -8,6 +8,8 @@
   src: url("../../assets/fonts/AvenirNextLTProRegular.otf");
   src: url("../../assets/fonts/AvenirNextLTProRegular.otf") format("opentype");
 }
+
+
 @font-face {
   font-family: "AvenirNextLTProBold";
   src: url("../../assets/fonts/AvenirNextLTProBold.otf");
@@ -26,6 +28,14 @@
   font-stretch: normal;
   unicode-range: U+0-10FFFF;
 } */
+
+@font-face {
+  font-family: "AvenirNextLTProRegular";
+  src: local("AvenirNextLTProRegular")
+    url("../../assets/fonts/AvenirNextLTProRegular.otf");
+  src: local("AvenirNextLTProRegular")
+    url("../../assets/fonts/AvenirNextLTProRegular.otf") format("opentype");
+}
 
 @font-face {
   font-family: "o";
@@ -93,6 +103,7 @@ body {
 .about {
   font-weight: 700;
   color: #4a4a4a;
+  font-family: "AvenirNextLTProRegular", sans-serif;
 }
 @media (max-width: 990px) {
   .banner-header {
