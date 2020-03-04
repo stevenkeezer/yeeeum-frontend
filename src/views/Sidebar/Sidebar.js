@@ -253,22 +253,24 @@ export default function Sidebar(props) {
               <span className="ml-4">Yeeeum Pro</span>
             </NavLink>
           </li>
-          <NavLink
-            to={"/compose"}
-            activeClassName="is-active"
-            className="nav-link "
-            onClick={() => clickHandler()}
-          >
-            <span className=" ml-4 compose-button">
-              <AddIcon
-                style={{
-                  width: "20px",
-                  marginTop: "-4px"
-                }}
-              />
-              Compose
-            </span>
-          </NavLink>
+          {props.user && (
+            <NavLink
+              to={"/compose"}
+              activeClassName="is-active"
+              className="nav-link "
+              onClick={() => clickHandler()}
+            >
+              <span className=" ml-4 compose-button">
+                <AddIcon
+                  style={{
+                    width: "20px",
+                    marginTop: "-4px"
+                  }}
+                />
+                Compose
+              </span>
+            </NavLink>
+          )}
           <li className="nav-item">
             {/* <button
               exact={true}
