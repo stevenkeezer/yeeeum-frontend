@@ -15,7 +15,7 @@ export default function RecipeCard(props) {
 
   return (
     <>
-      {!imgLoaded && (
+      {/* {!imgLoaded && (
         <div className="d-flex mx-auto justify-content-center align-self-center">
           <CircularProgress
             style={{
@@ -24,7 +24,7 @@ export default function RecipeCard(props) {
             }}
           />
         </div>
-      )}
+      )} */}
 
       {props.recipes.map((r, i) => {
         if (i === 1) {
@@ -32,7 +32,7 @@ export default function RecipeCard(props) {
         return (
           <div
             key={r.id}
-            className="col-lg-4 col-xl-3 col-md-6 product-div pb-4 pl-2 pr-2"
+            className="col-lg-4 col-xl-3  col-md-6 col-12 product-div pb-4 pl-2 pr-2"
           >
             {r && (
               <figure className="card">
@@ -69,7 +69,6 @@ export default function RecipeCard(props) {
                           minWidth: "100%",
                           width: "100%"
                         }}
-                        width="100%"
                         className="img-responsive transition"
                         src={
                           r.images.length > 0

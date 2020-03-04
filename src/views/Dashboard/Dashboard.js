@@ -2,7 +2,7 @@ import React, { Suspense, Fragment, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import RecipeCard from "../../components/RecipeCard/RecipeCard";
 import SearchForm from "./SearchForm";
-
+import CircularProgress from "@material-ui/core/CircularProgress";
 import { motion } from "framer-motion";
 
 import "./Dashboard.css";
@@ -185,7 +185,7 @@ function Dashboard(props) {
         }}
       ></div>
 
-      <div className="col-xl-9 col-lg-11 col-sm-12 container mx-auto recipes-container">
+      <div className="col-xl-10 col-lg-11 col-sm-12 col-12 container mx-auto recipes-container">
         <div className="col-12">
           <h3
             className="foryou"
@@ -196,12 +196,23 @@ function Dashboard(props) {
         </div>
 
         <div className="row mx-auto">
-          <RecipeCard
-            recipes={recipes}
-            likeButton={likeButton}
-            getPosts={getPosts}
-            page={page}
-          />
+          {recipes ? (
+            <RecipeCard
+              recipes={recipes}
+              likeButton={likeButton}
+              getPosts={getPosts}
+              page={page}
+            />
+          ) : (
+            <div className="d-flex mx-auto justify-content-center align-self-center">
+              <CircularProgress
+                style={{
+                  marginTop: "15%",
+                  color: "#00a287"
+                }}
+              />
+            </div>
+          )}
         </div>
       </div>
     </motion.div>
