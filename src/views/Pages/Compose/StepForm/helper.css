@@ -101,3 +101,18 @@ button.outline,
   border: 1px solid #aaa;
   color: #555;
 }
+.css-yk16xz-control {
+  background-color: #e8e8e8 !important;
+  border-color: white !important;
+
+  height: 55px;
+}
+
+.MuiFilledInput-underline:before {
+  border-color: white;
+  border: none;
+}
+
+.MuiFormLabel-root.Mui-focused {
+  background-color: transparent;
+}

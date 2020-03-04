@@ -34,9 +34,9 @@ class Wizard extends Component {
           <div>
             <Formik
               initialValues={initialValues}
-              validationSchema={Yup.object().shape({
-                title: Yup.string().required("Required")
-              })}
+              // validationSchema={Yup.object().shape({
+              //   title: Yup.string().required("Required")
+              // })}
               onSubmit={(values, { setSubmitting }) => {
                 setTimeout(() => {
                   setSubmitting(true);
@@ -52,11 +52,11 @@ class Wizard extends Component {
                     <form
                       onSubmit={handleSubmit}
                       className=""
-                      style={{
-                        backgroundColor: "#ffffff",
-                        // border: "25px solid rgba(211, 211, 211, 0.6)",
-                        borderRadius: "10px"
-                      }}
+                      style={
+                        {
+                          // borderRadius: "10px"
+                        }
+                      }
                     >
                       {wizProps.renderPage(props)}
                       {this.props.getProgress(wizProps)}

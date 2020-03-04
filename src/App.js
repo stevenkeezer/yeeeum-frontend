@@ -311,6 +311,25 @@ function App() {
         {/* <AnimatePresence> */}
         <Switch location={location} key={location.pathname}>
           <Route
+            path="/pro"
+            name="coming soon"
+            render={props => (
+              <ComingSoon
+                fbId={fbId}
+                user={user}
+                setUser={setUser}
+                userId={userId}
+                setUserId={setUserId}
+                setUserImg={setUserImg}
+                userImg={userImg}
+                setFbId={setFbId}
+                searchResults={searchResults}
+                setSearchResults={setSearchResults}
+                returnSearchResults={returnSearchResults}
+              />
+            )}
+          />
+          <Route
             path="/shop"
             name="coming soon"
             render={props => (

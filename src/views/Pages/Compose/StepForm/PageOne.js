@@ -3,6 +3,7 @@ import ScheduleIcon from "@material-ui/icons/Schedule";
 import RestaurantIcon from "@material-ui/icons/Restaurant";
 import DifficultySlider from "./DifficultySlider";
 import ServingSelector from "./ServingSelector";
+import { TextField } from "formik-material-ui";
 import { Formik, Form, Field, FieldArray, ErrorMessage } from "formik";
 
 export default function PageOne(props) {
@@ -18,16 +19,20 @@ export default function PageOne(props) {
     return (
       <>
         <Field
+          component={TextField}
+          variant="filled"
           type="text"
           id="title"
-          autoFocus={focus}
+          label="Title"
+          style={{ minWidth: "100%" }}
+          // autoFocus={focus}
+
           // ref={inputEl}
           onClick={() => setFocus(true)}
           name="title"
           onChange={props.handleChange}
           value={props.values.title}
-          className="mb-2 mt-2"
-          placeholder="Chicken Tortilla Soup"
+          className=""
         ></Field>
         {/* <button onClick={() => setFocus(false)}>Click</button> */}
       </>
@@ -37,89 +42,79 @@ export default function PageOne(props) {
   return (
     <div>
       <div className="page">
-        <label htmlFor="title">Title</label>
         <TextInputWithFocusButton />
 
-        <div className="row  flex-nowrap mb-2">
+        <div className="row flex-nowrap mb-3 mt-4 ">
           <div className="col">
             <div
-              className="row d-flex align-items-center pl-3 mt-3"
+              className="row d-flex align-items-center pl-3 "
               style={{ display: "inline-flex", alignItems: "center" }}
             >
-              <RestaurantIcon style={{ fontSize: "14px" }} className="mr-1" />
+              {/* <RestaurantIcon style={{ fontSize: "14px" }} className="mr-1" />
               <label htmlFor="servings" className="">
                 Servings
-              </label>
+              </label> */}
             </div>
             <div className="mt-2" onClick={() => setFocus(false)}>
               <ServingSelector />
             </div>
           </div>
           <div className="col">
-            <label style={{ whiteSpace: "nowrap" }} className="mt-3">
+            {/* <label style={{ whiteSpace: "nowrap" }} className="mt-3">
               Difficulty
-            </label>
+            </label> */}
             <DifficultySlider />
           </div>
         </div>
 
-        <div className="row flex-nowrap pt-2 ">
+        <div className="row flex-nowrap pt-4">
           <div className="col">
             <div
               className=""
               style={{ display: "inline-flex", alignItems: "center" }}
             >
-              <ScheduleIcon style={{ fontSize: "14px" }} />
-              <label className="ml-1" style={{ whiteSpace: "nowrap" }}>
-                Prep Time
-              </label>
+              {/* <ScheduleIcon style={{ fontSize: "14px" }} /> */}
             </div>
             <Field
+              component={TextField}
+              variant="filled"
+              type="text"
               id="preptime"
-              onClick={() => setFocus(false)}
+              label="Prep time"
+              style={{ color: "#dddddd" }}
+              onClick={() => setFocus(true)}
+              name="prep"
               onChange={props.handleChange}
               value={props.values.preptime}
-              className="mb-2 mt-1"
-              placeholder="10 Minutes"
-            />
+            ></Field>
           </div>
           <div className="col">
-            <div
-              className=""
-              style={{ display: "inline-flex", alignItems: "center" }}
-            >
-              <ScheduleIcon style={{ fontSize: "14px" }} />
-              <label className="ml-1" style={{ whiteSpace: "nowrap" }}>
-                Cook Time
-              </label>
-            </div>
             <Field
+              component={TextField}
+              variant="filled"
+              type="text"
               id="cooktime"
-              onClick={() => setFocus(false)}
+              label="Cook time"
+              style={{ color: "#dddddd" }}
+              onClick={() => setFocus(true)}
+              name="cook"
               onChange={props.handleChange}
               value={props.values.cooktime}
-              className="mb-2 mt-1"
-              placeholder="50 Minutes"
-            />
+            ></Field>
           </div>
           <div className="col">
-            <div
-              className=""
-              style={{ display: "inline-flex", alignItems: "center" }}
-            >
-              <ScheduleIcon style={{ fontSize: "14px" }} />
-              <label className="ml-1" style={{ whiteSpace: "nowrap" }}>
-                Total Time
-              </label>
-            </div>
             <Field
+              component={TextField}
+              variant="filled"
+              type="text"
               id="totaltime"
-              onClick={() => setFocus(false)}
+              label="Total time"
+              style={{ color: "#dddddd" }}
+              onClick={() => setFocus(true)}
+              name="total"
               onChange={props.handleChange}
               value={props.values.totaltime}
-              className="mb-2 mt-1"
-              placeholder="60 Minutes"
-            />
+            ></Field>
           </div>
         </div>
 

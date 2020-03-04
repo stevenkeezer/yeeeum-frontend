@@ -14,7 +14,7 @@ export default function ComingSoon() {
             backgroundImage: `url(${Background})`
           }}
         >
-          <div class="wsize2 flex-w flex-c-m cd100 js-tilt">
+          <div class="size2 flex-w flex-c-m cd100 js-tilt">
             {/* <div class="flex-col-c-m size6 bor2 m-l-10 m-r-10 m-t-15">
               <span class="l2-txt1 p-b-9 days">35</span>
               <span class="s2-txt4">Days</span>

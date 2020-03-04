@@ -70,7 +70,7 @@ export default function Sidebar(props) {
       <hr
         id="separator"
         style={{
-          width: "23px",
+          width: "10%",
           height: "30px!important",
           color: "lightgrey!important",
           borderTop: "3px solid rgba(0, 0, 0, 0.1)"
@@ -245,7 +245,7 @@ export default function Sidebar(props) {
           </li>
           <li className="nav-item">
             <NavLink
-              to={"/comingsoon3"}
+              to={"/pro"}
               activeClassName="is-active"
               className="nav-link sidebar-link"
               onClick={() => clickHandler()}
