@@ -6,7 +6,7 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import { motion } from "framer-motion";
 import { css } from "@emotion/core";
 // First way to import
-import { ClipLoader, BeatLoader } from "react-spinners";
+import { BeatLoader } from "react-spinners/BeatLoader";
 
 import "./Dashboard.css";
 
