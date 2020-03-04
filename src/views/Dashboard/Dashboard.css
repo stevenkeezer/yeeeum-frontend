@@ -145,7 +145,7 @@ body {
 }
 
 .button-container {
-  padding: 0px !important;
+  padding-left: 0px !important;
 }
 
 .search-field {

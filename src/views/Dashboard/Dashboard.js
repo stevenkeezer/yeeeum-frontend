@@ -176,7 +176,7 @@ function Dashboard(props) {
             style={{ lineHeight: "1.625" }}
           >
             <Link to={"/register"}>
-              <button href="#bottom" className="join-newsletter-btn ">
+              <button href="#bottom" className="join-newsletter-btn pt-2">
                 Get Started
               </button>
             </Link>
