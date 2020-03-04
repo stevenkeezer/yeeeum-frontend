@@ -166,7 +166,7 @@ h3 {
 }
 
 .MuiInputBase-input {
-  border: 1px solid #747474;
+  /* border: 1px solid #747474; */
   border-top-left-radius: 0.2rem !important;
   border-top-right-radius: 0.2rem !important;
   border-bottom: none;
@@ -205,5 +205,4 @@ textarea {
 }
 
 .MuiInputBase-input {
-  background-color: white !important;
 }
