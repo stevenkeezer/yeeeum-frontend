@@ -220,7 +220,12 @@ export default function PrimarySearchAppBar(props) {
             {/* </IconButton> */}
             {/* </AppSidebarToggler> */}
             <Typography className={classes.title} variant="h6" noWrap>
-              <img width="70px" src="/assets/img/logo.png"></img>
+              <div
+                className="brand-logo pl-2"
+                style={{ fontSize: 20, color: "#f15925" }}
+              >
+                Yeeeum
+              </div>
             </Typography>
             <div className={classes.grow} />
             <IconButton
@@ -253,11 +258,12 @@ export default function PrimarySearchAppBar(props) {
                 )}
 
               {props.userImg && (
-                <img
-                  alt="profilepicture"
-                  className="img-avatar"
-                  src={`https://yeeeum.s3-us-west-1.amazonaws.com/${props.userImg}`}
-                ></img>
+                <div
+                  className="avatar-small"
+                  style={{
+                    backgroundImage: `url(https://yeeeum.s3-us-west-1.amazonaws.com/${props.userImg})`
+                  }}
+                ></div>
               )}
 
               {!props.user && (

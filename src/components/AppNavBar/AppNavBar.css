@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Pacifico");
+
 .MuiIconButton-root {
   padding: 8px !important;
 }
@@ -19,4 +21,24 @@
 
 .MuiToolbar-gutters {
   padding-left: 55px !important;
+}
+
+.avatar-small {
+  width: 22px;
+  height: 22px;
+
+  -webkit-border-radius: 60px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 60px;
+  -moz-background-clip: padding;
+  border-radius: 60px;
+  background-clip: padding-box;
+  float: center;
+  background-size: cover;
+  background-position: center center;
+}
+
+.brand-logo {
+  font-family: "Pacifico", cursive;
+  font-weight: Bold;
 }
