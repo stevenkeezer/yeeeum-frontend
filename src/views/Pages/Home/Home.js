@@ -20,7 +20,7 @@ export default function home(props) {
       <main className="main" style={{ position: "relative" }}>
         <Container
           fluid
-          style={{ backgroundImage: "linear-gradient(#fbfbfb, #ffffff)" }}
+          // style={{ backgroundImage: "linear-gradient(#fbfbfb, red)" }}
         >
           <Suspense fallback={loading()}>
             <Dashboard returnSearchResults={returnSearchResults} />

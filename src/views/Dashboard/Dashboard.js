@@ -138,7 +138,7 @@ function Dashboard(props) {
     >
       <div
         style={{
-          paddingTop: "1.75%",
+          paddingTop: "2.5%",
           marginBottom: "3.5%"
           // backgroundImage: "linear-gradient(#f6f6f6, #ffffff)"
         }}

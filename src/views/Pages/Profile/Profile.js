@@ -162,12 +162,18 @@ export default function Profile(props) {
                 )}
 
                 {props.userImg && (
-                  <img
-                    width="80px"
-                    alt=""
-                    className="rounded-circle profile-circle"
-                    src={`https://yeeeum.s3-us-west-1.amazonaws.com/${props.userImg}`}
-                  ></img>
+                  // <img
+                  //   width="80px"
+                  //   alt=""
+                  //   className="rounded-circle profile-circle"
+                  //   src={`https://yeeeum.s3-us-west-1.amazonaws.com/${props.userImg}`}
+                  // ></img>
+                  <div
+                    className="avatar-large"
+                    style={{
+                      backgroundImage: `url(https://yeeeum.s3-us-west-1.amazonaws.com/${props.userImg})`
+                    }}
+                  ></div>
                 )}
 
                 {!props.userImg && !props.fbId && (

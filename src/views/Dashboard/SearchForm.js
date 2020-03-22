@@ -38,13 +38,16 @@ export default function SearchForm(props) {
     >
       {({ isSubmitting }) => (
         <Form className="search-form">
-          <div className="col-lg-6 col-md-6 col-sm-8 mx-auto ">
+          <div
+            className="col-lg-7 col-md-6 col-sm-8 mx-auto"
+            style={{ maxWidth: "630px" }}
+          >
             <SearchIcon
               style={{
                 position: "absolute",
                 marginTop: "16px",
                 marginLeft: "25px",
-                font: "60px",
+                fontSize: 28,
                 color: "#4a4a4a",
                 transform: "rotateY(180deg)"
               }}
@@ -52,8 +55,8 @@ export default function SearchForm(props) {
             <Field
               className="search-form-font"
               style={{
-                paddingLeft: "60px",
-                font: "1.35em",
+                paddingLeft: "68px",
+                fontSize: "1em",
                 fontWeight: "700",
                 color: "#f15924"
               }}

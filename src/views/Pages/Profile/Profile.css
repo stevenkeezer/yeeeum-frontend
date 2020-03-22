@@ -58,3 +58,18 @@
   width: 90%;
   text-align: center;
 }
+
+.avatar-large {
+  width: 70px;
+  height: 70px;
+  -webkit-border-radius: 60px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 60px;
+  -moz-background-clip: padding;
+  border-radius: 60px;
+  background-clip: padding-box;
+  margin: 7px 0 0 5px;
+  float: center;
+  background-size: cover;
+  background-position: center center;
+}

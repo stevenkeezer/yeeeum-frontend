@@ -64,7 +64,8 @@ export default function Sidebar(props) {
           style={{ textDecoration: "none" }}
           isOpen={false}
         >
-          <img width="100px" src="/assets/img/logo.png"></img>
+          {/* <img width="100px" src="/assets/img/logo.png"></img> */}
+          <div style={{ fontSize: 25, color: "#f15925" }}>Yeeeum</div>
         </Link>
       </div>
       <hr
@@ -80,7 +81,7 @@ export default function Sidebar(props) {
       <nav className="sidebar-nav">
         <div className="login-button">
           <Link to={"/login"} onClick={() => clickHandler()}>
-            {!props.user && (
+            {!localStorage.getItem("token") && (
               <div className="p-3">
                 <button
                   className="btn-lg sidebar-login-button"
@@ -129,15 +130,15 @@ export default function Sidebar(props) {
             </div>
           )}
           {props.userImg && (
-            <div className="img-container" style={{ minHeight: "103px" }}>
+            <div className="img-container" style={{ minHeight: "80px" }}>
               <NavLink
                 activeClassName="profile-button"
                 to={"/profile"}
                 onClick={() => clickHandler()}
               >
-                <Img
+                {/* <Img
                   alt="profilepicture"
-                  className="rounded-circle profile-img"
+                  className="rounded-circle"
                   loader={
                     <ContentLoader
                       className="profile-load-img"
@@ -151,7 +152,13 @@ export default function Sidebar(props) {
                     </ContentLoader>
                   }
                   src={`https://yeeeum.s3-us-west-1.amazonaws.com/${props.userImg}`}
-                ></Img>
+                ></Img> */}
+                <div
+                  className="avatar"
+                  style={{
+                    backgroundImage: `url(https://yeeeum.s3-us-west-1.amazonaws.com/${props.userImg})`
+                  }}
+                ></div>
               </NavLink>
             </div>
           )}
@@ -194,7 +201,11 @@ export default function Sidebar(props) {
                 className="nav-link sidebar-link"
                 onClick={() => clickHandler()}
               >
-                <span className="ml-4">{props.user.split(" ")[0]}'s Feed</span>
+                <span className="ml-4">
+                  {props.user.split(" ")[0][0].toUpperCase() +
+                    props.user.split(" ")[0].slice(1)}
+                  's Feed
+                </span>
               </NavLink>
             ) : (
               <NavLink
@@ -306,7 +317,6 @@ export default function Sidebar(props) {
             >
               SAVED RECIPES
             </Link>
-
             <Link
               exact={true}
               onClick={() => clickHandler()}
@@ -392,7 +402,22 @@ export default function Sidebar(props) {
               />
               Popular
             </Link>
-
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br> <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
             <br></br>
             {/* <img
               style={{ width: "100px" }}
@@ -427,8 +452,26 @@ export default function Sidebar(props) {
                 </button>
               </li>
             )}
+            {!showMore && props.user && (
+              <li
+                className="nav-item"
+                style={{ marginBottom: "150px" }}
+                onClick={() => clickHandler()}
+              >
+                <button
+                  exact
+                  onClick={logout}
+                  activeClassName="is-active"
+                  className="nav-link sidebar-link "
+                  style={{
+                    border: "none!important",
+                    padding: "none!important"
+                  }}
+                ></button>
+              </li>
+            )}
           </li>
-          <div style={{ width: "205px" }} className="nav-footer mx-auto mb-3">
+          <div style={{ width: "195px" }} className="nav-footer mx-auto ">
             <div
               style={{
                 textAlign: "center",
@@ -438,7 +481,7 @@ export default function Sidebar(props) {
               }}
               className="w-100 col-12 mx-auto"
             >
-              <div className="col mt-2">
+              <div className="col">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="28"
@@ -466,10 +509,14 @@ export default function Sidebar(props) {
                 MORE
               </Button>
             </div>
+            <br></br>
             <div style={{ height: "12px" }}></div>
           </div>
           <li className="pl-2 mt-auto ">
-            <div className="row  nav-footer mx-auto" style={{ padding: "2px" }}>
+            <div
+              className="row  nav-sub-footer mx-auto"
+              style={{ padding: "5px" }}
+            >
               <a className="pr-1" href="https://coreui.io">
                 Privacy
               </a>
