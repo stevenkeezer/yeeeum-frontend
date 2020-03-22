@@ -65,7 +65,9 @@ export default function Sidebar(props) {
           isOpen={false}
         >
           {/* <img width="100px" src="/assets/img/logo.png"></img> */}
-          <div style={{ fontSize: 25, color: "#f15925" }}>Yeeeum</div>
+          <div style={{ fontSize: 25, color: "#f15925", letterSpacing: 2 }}>
+            Yeeeum
+          </div>
         </Link>
       </div>
       <hr
@@ -402,30 +404,41 @@ export default function Sidebar(props) {
               />
               Popular
             </Link>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br> <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
+
             {/* <img
               style={{ width: "100px" }}
               src="/assets/img/appstore.png"
             ></img> */}
+            <li
+              className="nav-ite"
+              style={{ marginBottom: "150px" }}
+              onClick={() => clickHandler()}
+            >
+              <button
+                exact
+                onClick={logout}
+                activeClassName="is-active"
+                className="nav-link sidebar-link "
+                style={{
+                  border: "none!important",
+                  padding: "none!important"
+                }}
+              >
+                <LockIcon
+                  className="ml-4"
+                  fontSize="small"
+                  style={{
+                    width: "20px",
+                    marginTop: "-4px",
+                    marginRight: "10px"
+                  }}
+                />
+                Grilling{" "}
+              </button>
+            </li>
             {showMore && props.user && (
               <li
-                className="nav-item"
+                className="nav-ite"
                 style={{ marginBottom: "150px" }}
                 onClick={() => clickHandler()}
               >
