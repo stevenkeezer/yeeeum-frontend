@@ -254,7 +254,7 @@ function Dashboard(props) {
                 })}
             </div>
             {loading && (
-              <div className="sweet-loading mx-auto mt-5 ">
+              <div className="sweet-loading mx-auto mt-3 ">
                 <BeatLoader
                   css={override}
                   size={10}
