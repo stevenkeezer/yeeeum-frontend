@@ -1,8 +1,16 @@
-import React, { Suspense, Fragment, useState, useEffect } from "react";
+import React, {
+  Suspense,
+  Fragment,
+  useState,
+  useEffect,
+  useRef,
+  useCallback
+} from "react";
 import { Link } from "react-router-dom";
-import RecipeCard from "../../components/RecipeCard/RecipeCard";
+import RecipeItem from "../../components/RecipeItem/RecipeItem";
 import SearchForm from "./SearchForm";
 import CircularProgress from "@material-ui/core/CircularProgress";
+
 import { motion } from "framer-motion";
 import { css } from "@emotion/core";
 // First way to import
@@ -14,14 +22,27 @@ function Dashboard(props) {
   const [page, setPage] = useState(1);
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [hasMore, setHasMore] = useState(false);
 
-  window.onscroll = function(ev) {
-    if (window.scrollY + window.innerHeight >= document.body.offsetHeight) {
-      setPage(page + 1);
-    }
-  };
+  const lastRecipeRef = useCallback(node => {
+    if (loading) return;
+    if (observer.current) observer.current.disconnect();
+    observer.current = new IntersectionObserver(
+      entries => {
+        if (entries[0].isIntersecting && hasMore) {
+          setPage(page + 1);
+        }
+      },
+      [loading, hasMore]
+    );
+    if (node) observer.current.observe(node);
+    console.log("node", node);
+  });
+
+  const observer = useRef();
 
   const getPosts = async () => {
+    setLoading(true);
     try {
       const existingToken = localStorage.getItem("token");
       const accessToken =
@@ -43,6 +64,7 @@ function Dashboard(props) {
       const data = await response.json();
       window.history.replaceState({}, document.title, window.location.pathname);
       setRecipes([...recipes, ...data]);
+      setHasMore(data.length > 0);
       setLoading(false);
     } catch (error) {
       getPosts();
@@ -93,6 +115,10 @@ function Dashboard(props) {
     props.returnSearchResults(values);
   };
 
+  useEffect(() => {
+    getPosts();
+  }, [page]);
+
   const pageVariants = {
     initial: {
       // opacity: 0
@@ -128,107 +154,137 @@ function Dashboard(props) {
   };
 
   return (
-    <motion.div
-      style={style}
-      exit="out"
-      animate="in"
-      initial="initial"
-      variants={pageVariants}
-      transition={pageTransition}
-    >
-      <div
-        style={{
-          paddingTop: "2.5%",
-          marginBottom: "3.5%"
-          // backgroundImage: "linear-gradient(#f6f6f6, #ffffff)"
-        }}
+    <>
+      <motion.div
+        style={style}
+        exit="out"
+        animate="in"
+        initial="initial"
+        variants={pageVariants}
+        transition={pageTransition}
       >
-        <div className="mx-auto" style={{ maxWidth: "1260px" }}>
-          <SearchForm returnSearchResults={returnSearchResults} />
-        </div>
-      </div>
-      <div className="banner-container col-xs-12 col-sm-12 col-lg-12">
-        <div className="col-xl-4 col-lg-4  banner-sub-container">
-          <h3
-            style={{
-              lineHeight: "3rem",
-              letterSpacing: "-.1rem"
-            }}
-            className="banner-header"
-          >
-            Discover Fresh Recipes For Summer
-          </h3>
-          <div
-            style={{
-              padding: "0px",
-              fontSize: "16px",
-              margin: "0px!important"
-            }}
-            className="col-lg-12 col-8 about "
-          >
-            <p style={{ fontSize: "16px", lineHeight: "1.7rem" }}>
-              Yeeeum is a recipe application designed with busy people in mind.
-              Store your own recipes and save your favorites.
-            </p>
-          </div>
-          <div
-            className="col-lg-4 button-container"
-            style={{ lineHeight: "1.625" }}
-          >
-            <Link to={"/register"}>
-              <button href="#bottom" className="join-newsletter-btn pt-2">
-                Get Started
-              </button>
-            </Link>
+        <div
+          style={{
+            paddingTop: "2.5%",
+            marginBottom: "3.5%"
+            // backgroundImage: "linear-gradient(#f6f6f6, #ffffff)"
+          }}
+        >
+          <div className="mx-auto" style={{ maxWidth: "1260px" }}>
+            <SearchForm returnSearchResults={returnSearchResults} />
           </div>
         </div>
-        <div className="col-xs-12"></div>
-      </div>
-      <div
-        className="col-lg-12 img-fluid banner-img"
-        style={{
-          backgroundImage: `url(assets/img/banner.png)`,
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "contain",
-          marginTop: "5vw",
-          height: "480px",
-          transform: "rotateY(180deg)"
-        }}
-      ></div>
-
-      <div
-        className="col-xl-10 col-lg-11 col-sm-12 col-12 container mx-auto recipes-container"
-        style={{ padding: 38 }}
-      >
-        <div className="col-12">
-          <h3
-            className="foryou"
-            style={{ marginBottom: "3%", marginLeft: "-8px" }}
-          >
-            Recipes For You
-          </h3>
+        <div className="banner-container col-xs-12 col-sm-12 col-lg-12">
+          <div className="col-xl-4 col-lg-4  banner-sub-container">
+            <h3
+              style={{
+                lineHeight: "3rem",
+                letterSpacing: "-.1rem"
+              }}
+              className="banner-header"
+            >
+              Discover Fresh Recipes For Summer
+            </h3>
+            <div
+              style={{
+                padding: "0px",
+                fontSize: "16px",
+                margin: "0px!important"
+              }}
+              className="col-lg-12 col-8 about "
+            >
+              <p style={{ fontSize: "16px", lineHeight: "1.7rem" }}>
+                Yeeeum is a recipe application designed with busy people in
+                mind. Store your own recipes and save your favorites.
+              </p>
+            </div>
+            <div
+              className="col-lg-4 button-container"
+              style={{ lineHeight: "1.625" }}
+            >
+              <Link to={"/register"}>
+                <button href="#bottom" className="join-newsletter-btn pt-2">
+                  Get Started
+                </button>
+              </Link>
+            </div>
+          </div>
+          <div className="col-xs-12"></div>
         </div>
+        <div
+          className="col-lg-12 img-fluid banner-img"
+          style={{
+            backgroundImage: `url(assets/img/banner.png)`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "contain",
+            marginTop: "5vw",
+            height: "480px",
+            transform: "rotateY(180deg)"
+          }}
+        ></div>
 
-        <div className="row mx-auto">
-          <div className="sweet-loading mx-auto mt-5">
-            <BeatLoader
-              css={override}
-              size={13}
-              //size={"150px"} this also works
-              color={"rgba(8,161,135,0.6)"}
-              loading={loading}
-            />
+        <div
+          className="col-xl-10 col-lg-11 col-sm-12 col-12 container mx-auto recipes-container  "
+          onScroll={() => console.log("hi")}
+          style={{ padding: 38 }}
+        >
+          <div className="col-12">
+            <h3
+              className="foryou"
+              style={{ marginBottom: "3%", marginLeft: "-8px" }}
+            >
+              Recipes For You
+            </h3>
           </div>
 
-          <RecipeCard
-            recipes={recipes}
-            likeButton={likeButton}
-            getPosts={getPosts}
-            page={page}
-          />
+          <div className="row mx-auto">
+            <div className="sweet-loading mx-auto mt-5">
+              <BeatLoader
+                css={override}
+                size={10}
+                //size={"150px"} this also works
+                color={"rgba(8,161,135,0.6)"}
+                loading={loading}
+              />
+            </div>
+
+            <div className="row">
+              {recipes &&
+                recipes.map((recipe, index) => {
+                  if (recipes.length === index + 1) {
+                    return (
+                      <RecipeItem
+                        lastRecipeRef={lastRecipeRef}
+                        recipe={recipe}
+                      />
+                    );
+                  } else {
+                    return <RecipeItem recipe={recipe} />;
+                  }
+                })}
+            </div>
+            {loading && recipes.length > 0 && (
+              <div className="sweet-loading mx-auto mt-5">
+                <BeatLoader
+                  css={override}
+                  size={10}
+                  //size={"150px"} this also works
+                  color={"rgba(8,161,135,0.6)"}
+                  loading={loading}
+                />
+              </div>
+            )}
+            {/* <RecipeCard
+              recipes={recipes}
+              likeButton={likeButton}
+              getPosts={getPosts}
+              page={page}
+              ref={lastRecipeRef}
+            /> */}
+          </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </>
   );
 }
 

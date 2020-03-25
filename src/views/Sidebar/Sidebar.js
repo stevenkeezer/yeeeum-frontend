@@ -84,7 +84,7 @@ export default function Sidebar(props) {
         <div className="login-button">
           <Link to={"/login"} onClick={() => clickHandler()}>
             {!localStorage.getItem("token") && (
-              <div className="p-3">
+              <div className="text-center">
                 <button
                   className="btn-lg sidebar-login-button"
                   style={{
@@ -93,7 +93,7 @@ export default function Sidebar(props) {
                     fontWeight: "bold",
                     backgroundColor: "#08a287",
                     borderRadius: "3.5rem",
-                    marginLeft: "9px",
+                    // marginLeft: "9px",
                     outline: "none"
                   }}
                 >
