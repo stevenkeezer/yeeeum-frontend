@@ -238,16 +238,6 @@ function Dashboard(props) {
           </div>
 
           <div className="row mx-auto">
-            <div className="sweet-loading mx-auto mt-5">
-              <BeatLoader
-                css={override}
-                size={10}
-                //size={"150px"} this also works
-                color={"rgba(8,161,135,0.6)"}
-                loading={loading}
-              />
-            </div>
-
             <div className="row">
               {recipes &&
                 recipes.map((recipe, index) => {
@@ -263,8 +253,8 @@ function Dashboard(props) {
                   }
                 })}
             </div>
-            {loading && recipes.length > 0 && (
-              <div className="sweet-loading mx-auto mt-5">
+            {loading && (
+              <div className="sweet-loading mx-auto mt-5 ">
                 <BeatLoader
                   css={override}
                   size={10}
