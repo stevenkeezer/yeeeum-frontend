@@ -259,7 +259,7 @@ function Dashboard(props) {
                   css={override}
                   size={10}
                   //size={"150px"} this also works
-                  color={"rgba(0,0,0,0.4)"}
+                  color={"rgba(0,0,0,0.36)"}
                   loading={loading}
                 />
               </div>
