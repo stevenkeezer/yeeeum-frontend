@@ -20,7 +20,6 @@
   min-height: 700px;
 }
 
-
 .card {
   border: none !important;
   background-color: transparent !important;
@@ -95,9 +94,9 @@
 }
 
 .sub-article-title {
-  font-size: 0.98rem;
+  font-size: 16px;
   color: #232323 !important;
-  font-family: "AvenirNextLTProDemi";
+  font-family: "AvenirNextLTProMedium";
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
@@ -125,9 +124,9 @@
 }
 
 .author-name {
-  font-size: 0.9rem;
-  font-family: "AvenirNextLTProDemi" !important;
-  color: #bababa !important;
+  font-size: 12px;
+  font-family: "AvenirNextLTProRegular" !important;
+  color: rgba(0, 0, 0, 0.5) !important;
 }
 
 .col-9 {
@@ -204,7 +203,7 @@
   line-height: 1em;
   font-weight: bold;
   font-size: 1em;
-  font-family: "AvenirNextLTProMedium";
+  /* font-family: "AvenirNextLTProMedium"; */
 }
 
 .caption .details .info {

@@ -148,8 +148,8 @@ function App() {
 
   const fabStyle = {
     position: "fixed",
-    width: "110px",
-    height: "6.4%",
+    width: "108px",
+    height: "6%",
     right: "25px",
     bottom: "15px",
     backgroundColor: "#919191",

@@ -59,7 +59,7 @@ export default function RecipeCard(props) {
                       className="image-container caption shadow-sm"
                       style={{
                         width: "100%",
-                        paddingBottom: "90.78082192%"
+                        paddingBottom: "100.78082192%"
                       }}
                     >
                       <Img
