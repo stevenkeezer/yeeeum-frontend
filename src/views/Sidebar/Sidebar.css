@@ -455,7 +455,7 @@ html:not([dir="rtl"]) .sidebar-show.sidebar-fixed .app-footer {
   border-radius: 60px;
   background-clip: padding-box;
   /* margin: 7px 0 0 5px; */
-  float: center;
+  /* float: center; */
   background-size: cover;
   background-position: center center;
 }
