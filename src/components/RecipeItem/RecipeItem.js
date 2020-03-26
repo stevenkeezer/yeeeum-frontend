@@ -5,7 +5,7 @@ import ContentLoader from "react-content-loader";
 import Img from "react-image";
 import LikeRotator from "../LikeRotator/LikeRotator";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import Fade from "react-reveal/Fade";
+import Reveal from "react-reveal/Reveal";
 
 export default function RecipeCard(props) {
   const [imgLoaded, setImgLoaded] = useState(false);
@@ -22,7 +22,7 @@ export default function RecipeCard(props) {
         style={{ paddingBottom: 50 }}
         className="col-lg-4 col-xl-3  col-md-6 col-12 product-div  pl-2 pr-2"
       >
-        <Fade>
+        <Reveal effect="fade" duration={100}>
           <figure className="card">
             <div className="img-wrap">
               <Link to={`/recipe/${props.recipe.id}`}>
@@ -120,7 +120,7 @@ export default function RecipeCard(props) {
               </div>
             </figcaption>
           </figure>
-        </Fade>
+        </Reveal>
       </div>
     </>
   );
