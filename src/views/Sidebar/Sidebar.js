@@ -140,7 +140,7 @@ export default function Sidebar(props) {
                 <div
                   className="avatar"
                   style={{
-                    backgroundImage: `url(https://yeeeum.s3-us-west-1.amazonaws.com/${props.userImg})`
+                    backgroundImage: `url('https://yeeeum.s3-us-west-1.amazonaws.com/${props.userImg}')`
                   }}
                 ></div>
               </NavLink>
