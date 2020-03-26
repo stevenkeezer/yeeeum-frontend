@@ -247,10 +247,13 @@ function Dashboard(props) {
                       <RecipeItem
                         lastRecipeRef={lastRecipeRef}
                         recipe={recipe}
+                        likeButton={likeButton}
                       />
                     );
                   } else {
-                    return <RecipeItem recipe={recipe} />;
+                    return (
+                      <RecipeItem recipe={recipe} likeButton={likeButton} />
+                    );
                   }
                 })}
             </div>
