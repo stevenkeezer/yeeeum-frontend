@@ -261,16 +261,23 @@ function Dashboard(props) {
             </div>
 
             {loading && (
-              <span className="sweet-loading mx-auto mt-5 ">
+              <div className="sweet-loading mx-auto text-center mt-5 pl-5 ">
                 <ClipLoader
                   // css={override}
                   size={35}
                   margin={1}
                   //size={"150px"} this also works
-                  color={"rgba(8, 161, 135, .27)"}
+                  color={"rgba(0, 0, 0, 0.2)"}
                   loading={loading}
                 />
-              </span>
+                <br></br>
+                <div
+                  class="loading-text text-center pb-3 pt-1"
+                  style={{ fontSize: 18 }}
+                >
+                  <span className="">Loading...</span>
+                </div>
+              </div>
             )}
             {/* <RecipeCard
               recipes={recipes}

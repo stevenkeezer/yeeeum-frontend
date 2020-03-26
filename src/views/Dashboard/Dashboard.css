@@ -38,6 +38,14 @@
 }
 
 @font-face {
+  font-family: "AvertaDemo-ExtraBoldItalic.otf";
+  src: local("AvertaDemo-ExtraBoldItalic.otf")
+    url("../../assets/fonts/AvertaDemo-ExtraBoldItalic.otf");
+  src: local("AvertaDemo-ExtraBoldItalic.otf")
+    url("../../assets/fonts/AvertaDemo-ExtraBoldItalic.otf") format("opentype");
+}
+
+@font-face {
   font-family: "o";
   src: url("../../assets/fonts/o Demi.eot");
   src: url("../../assets/fonts/o Demi.eot?#iefix") format("embedded-opentype"),
@@ -258,4 +266,9 @@ p {
   .banner-img {
     background-attachment: initial;
   }
+}
+
+.loading-text {
+  font-family: "AvertaDemo-ExtraBoldItalic";
+  color: rgba(0, 0, 0, 0.2);
 }

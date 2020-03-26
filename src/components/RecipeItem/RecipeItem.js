@@ -36,7 +36,7 @@ export default function RecipeCard(props) {
                   <Img
                     style={{
                       position: "relative",
-                      borderRadius: ".4rem",
+                      borderRadius: ".25rem",
                       minWidth: "100%",
                       width: "100%"
                     }}
