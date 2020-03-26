@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import RecipeItem from "../../components/RecipeItem/RecipeItem";
 import SearchForm from "./SearchForm";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import Fade from "react-reveal/Fade";
 
 import { motion } from "framer-motion";
 import { css } from "@emotion/core";
@@ -257,6 +258,7 @@ function Dashboard(props) {
                   }
                 })}
             </div>
+
             {loading && (
               <span className="sweet-loading mx-auto mt-5 ">
                 <ClipLoader

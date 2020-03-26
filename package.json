@@ -61,6 +61,7 @@
     "react-multi-toggle": "^1.1.0",
     "react-resize-detector": "^4.2.1",
     "react-responsive-carousel": "^3.1.51",
+    "react-reveal": "^1.2.2",
     "react-router": "^5.1.2",
     "react-router-config": "^5.0.1",
     "react-router-dom": "^5.1.2",
