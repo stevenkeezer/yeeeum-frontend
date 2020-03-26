@@ -229,7 +229,7 @@ function Dashboard(props) {
         <div
           className="col-xl-10 col-lg-11 col-sm-12 col-12 container mx-auto recipes-container  "
           onScroll={() => console.log("hi")}
-          style={{ paddingLeft: 59, paddingRight: 51 }}
+          style={{ paddingLeft: "4%", paddingRight: "3%" }}
         >
           <div className="col-12 pl-0">
             <h3
