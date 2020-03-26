@@ -137,23 +137,6 @@ export default function Sidebar(props) {
                 to={"/profile"}
                 onClick={() => clickHandler()}
               >
-                {/* <Img
-                  alt="profilepicture"
-                  className="rounded-circle"
-                  loader={
-                    <ContentLoader
-                      className="profile-load-img"
-                      height={160}
-                      width={400}
-                      speed={2}
-                      primaryColor="#f3f3f3"
-                      secondaryColor="#ecebeb"
-                    >
-                      <circle cx="200" cy="80" r="51" />
-                    </ContentLoader>
-                  }
-                  src={`https://yeeeum.s3-us-west-1.amazonaws.com/${props.userImg}`}
-                ></Img> */}
                 <div
                   className="avatar"
                   style={{
