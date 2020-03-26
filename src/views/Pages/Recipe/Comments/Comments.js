@@ -53,7 +53,7 @@ export default function Comments(props) {
                 <div
                   className="avatar2 "
                   style={{
-                    backgroundImage: `url(https://yeeeum.s3-us-west-1.amazonaws.com/${props.userImg})`
+                    backgroundImage: `url('https://yeeeum.s3-us-west-1.amazonaws.com/${props.userImg}')`
                   }}
                 ></div>
               )}

@@ -261,7 +261,7 @@ export default function PrimarySearchAppBar(props) {
                 <div
                   className="avatar-small"
                   style={{
-                    backgroundImage: `url(https://yeeeum.s3-us-west-1.amazonaws.com/${props.userImg})`
+                    backgroundImage: `url('https://yeeeum.s3-us-west-1.amazonaws.com/${props.userImg}')`
                   }}
                 ></div>
               )}

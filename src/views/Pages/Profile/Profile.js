@@ -171,7 +171,7 @@ export default function Profile(props) {
                   <div
                     className="avatar-large"
                     style={{
-                      backgroundImage: `url(https://yeeeum.s3-us-west-1.amazonaws.com/${props.userImg})`
+                      backgroundImage: `url('https://yeeeum.s3-us-west-1.amazonaws.com/${props.userImg}')`
                     }}
                   ></div>
                 )}
