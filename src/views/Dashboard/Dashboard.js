@@ -266,7 +266,7 @@ function Dashboard(props) {
                   size={35}
                   margin={1}
                   //size={"150px"} this also works
-                  color={"rgba(8, 161, 135, .7)"}
+                  color={"rgba(8, 161, 135, .27)"}
                   loading={loading}
                 />
               </span>

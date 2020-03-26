@@ -145,7 +145,7 @@ body {
 }
 
 .button-container {
-  padding-left: 0px !important;
+  padding: 0px !important;
 }
 
 .search-field {
@@ -242,9 +242,6 @@ p {
 @media screen and (max-width: 1200px) and (min-width: 891px) {
   .banner-img {
     margin-left: 35%;
-  }
-  .banner-container {
-    margin-left: 4%;
   }
 }
 
