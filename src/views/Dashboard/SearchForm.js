@@ -45,19 +45,19 @@ export default function SearchForm(props) {
             <SearchIcon
               style={{
                 position: "absolute",
-                marginTop: "16px",
-                marginLeft: "25px",
-                fontSize: 28,
-                color: "#4a4a4a",
+                marginTop: "12.5px",
+                marginLeft: "23px",
+                fontSize: 30,
+                color: "rgba(0,0,0,0.65)",
                 transform: "rotateY(180deg)"
               }}
             />
             <Field
               className="search-form-font"
               style={{
-                paddingLeft: "68px",
-                fontSize: "1em",
-                fontWeight: "700",
+                paddingLeft: "72px",
+                fontSize: "1.07em",
+                // fontWeight: "500",
                 color: "#f15924"
               }}
               autocomplete="off"

@@ -5,6 +5,13 @@
 }
 
 @font-face {
+  font-family: "AvenirNextLTProMedium";
+  src: local("AvenirNextLTProMedium")
+    url("../../assets/fonts/AvenirNextLTProMedium.otf");
+  src: local("AvenirNextLTProMedium")
+    url("../../assets/fonts/AvenirNextLTProMedium.otf") format("opentype");
+}
+@font-face {
   font-family: "AvenirNextLTProDemi";
   src: local("AvenirNextLTProDemi")
     url("../../assets/fonts/AvenirNextLTProDemi.otf");
@@ -26,7 +33,7 @@
 }
 .email-field {
   width: 100%;
-  height: 58px;
+  height: 57px;
   border-radius: 75px;
   padding: 0.6em 0.9em;
   -moz-box-sizing: border-box;
@@ -41,8 +48,8 @@
 }
 
 .email-field::placeholder {
-  color: #bababa;
-  font-size: 1.12em;
+  color: rgba(0, 0, 0, 0.37);
+  font-size: 1.15em;
 }
 
 @media (max-width: 1178px) {
@@ -64,5 +71,5 @@
 }
 
 .search-form-font {
-  font-family: "o";
+  font-family: "AvenirNextLTProMedium" !important;
 }

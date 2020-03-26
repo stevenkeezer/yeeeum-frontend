@@ -167,7 +167,7 @@ function Dashboard(props) {
       >
         <div
           style={{
-            paddingTop: "2.5%",
+            paddingTop: "2.49%",
             marginBottom: "3.5%"
             // backgroundImage: "linear-gradient(#f6f6f6, #ffffff)"
           }}
@@ -176,8 +176,8 @@ function Dashboard(props) {
             <SearchForm returnSearchResults={returnSearchResults} />
           </div>
         </div>
-        <div className="banner-container col-xs-12 col-sm-12 col-lg-12">
-          <div className="col-xl-4 col-lg-4  banner-sub-container">
+        <div className="banner-container col-xs-12 col-sm-12 pl-0 col-lg-12">
+          <div className="col-xl-4 col-lg-4 pl-0 banner-sub-container">
             <h3
               style={{
                 lineHeight: "3rem",
@@ -195,7 +195,7 @@ function Dashboard(props) {
               }}
               className="col-lg-12 col-8 about "
             >
-              <p style={{ fontSize: "15.5px", lineHeight: "1.7rem" }}>
+              <p style={{ fontSize: "15px", lineHeight: "1.64rem" }}>
                 Get organized and save time with a convenient recipe database
                 that's always at your fingertips. Now available on web, phone,
                 and tablet.
@@ -206,7 +206,7 @@ function Dashboard(props) {
               style={{ lineHeight: "1.625" }}
             >
               <Link to={"/register"}>
-                <button href="#bottom" className="join-newsletter-btn pt-2">
+                <button href="#bottom" className="join-newsletter-btn">
                   Get Started
                 </button>
               </Link>
@@ -221,20 +221,20 @@ function Dashboard(props) {
             backgroundRepeat: "no-repeat",
             backgroundSize: "contain",
             marginTop: "5vw",
-            height: "480px",
-            transform: "rotateY(180deg)"
+            height: "460px",
+            transform: "rotateY(180deg)",
+            zIndex: -1
           }}
         ></div>
 
         <div
-          className="col-xl-10 col-lg-11 col-sm-12 col-12 container mx-auto recipes-container  "
+          className="col-xl-10 col-lg-11 col-sm-12 col-12 container  mx-auto recipes-container  "
           onScroll={() => console.log("hi")}
-          style={{ paddingLeft: "4%", paddingRight: "3%" }}
         >
           <div className="col-12 pl-0">
             <h3
               className="foryou"
-              style={{ marginBottom: "3%", marginLeft: "-8px" }}
+              style={{ marginBottom: "4.8%", marginLeft: "-8px" }}
             >
               Recipes For You
             </h3>
