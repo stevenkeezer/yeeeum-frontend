@@ -20,11 +20,7 @@
   min-height: 700px;
 }
 
-.recipe-title {
-  font-family: "AvenirNextLTProDemi";
-  font-weight: bold;
-  font-size: 1rem;
-}
+
 .card {
   border: none !important;
   background-color: transparent !important;
