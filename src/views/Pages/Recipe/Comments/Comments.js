@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import "../Recipe.css";
 
 export default function Comments(props) {
   let { id } = useParams();
@@ -33,11 +34,11 @@ export default function Comments(props) {
       }}
     >
       {({ isSubmitting }) => (
-        <div className="col-12 p-3 mx-auto">
+        <div className="col-12 p-3  mx-auto">
           <hr style={{ border: "0.6px solid #e3e3e3" }}></hr>
 
           <Form>
-            <div className="d-flex align-self-center">
+            <div className="row pl-3">
               {!props.userImg && props.fbId && (
                 <img
                   width="50px"
@@ -49,13 +50,12 @@ export default function Comments(props) {
               )}
 
               {props.userImg && (
-                <img
-                  width="50px"
-                  alt=""
-                  style={{ alignSelf: "center" }}
-                  className="rounded-circle"
-                  src={`https://yeeeum.s3-us-west-1.amazonaws.com/${props.userImg}`}
-                ></img>
+                <div
+                  className="avatar2 "
+                  style={{
+                    backgroundImage: `url(https://yeeeum.s3-us-west-1.amazonaws.com/${props.userImg})`
+                  }}
+                ></div>
               )}
 
               {!props.userImg && !props.fbId && (
@@ -67,15 +67,18 @@ export default function Comments(props) {
                   width="50px"
                 ></img>
               )}
+
               <Field
                 className="recipe-text"
                 type="comment"
                 style={{
-                  width: "100%",
-                  height: "60px",
+                  width: "80%",
+                  marginTop: "11px",
+
+                  // height: "60px",
                   border: "none",
-                  outline: "none",
-                  paddingLeft: "2%"
+                  // outline: "none"
+                  paddingLeft: "20px"
                 }}
                 name="comment"
                 placeholder="Write your review or comment here"

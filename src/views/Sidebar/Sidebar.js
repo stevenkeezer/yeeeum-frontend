@@ -64,7 +64,6 @@ export default function Sidebar(props) {
           style={{ textDecoration: "none" }}
           isOpen={false}
         >
-          {/* <img width="100px" src="/assets/img/logo.png"></img> */}
           <div style={{ fontSize: 25, color: "#f15925", letterSpacing: 2 }}>
             Yeeeum
           </div>

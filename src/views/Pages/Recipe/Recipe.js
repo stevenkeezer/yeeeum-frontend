@@ -370,6 +370,7 @@ export default function Recipe(props) {
                   <LikeButton
                     className="ml-auto"
                     recipes={recipe}
+                    style={{ width: "10px" }}
                     setRecipe={setRecipe}
                   />
                 </div>

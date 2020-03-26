@@ -14,7 +14,8 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import { motion } from "framer-motion";
 import { css } from "@emotion/core";
 // First way to import
-import BeatLoader from "react-spinners/BeatLoader";
+import ClipLoader from "react-spinners/ClipLoader";
+import { HeartSpinner } from "react-spinners-kit";
 
 import "./Dashboard.css";
 
@@ -254,15 +255,16 @@ function Dashboard(props) {
                 })}
             </div>
             {loading && (
-              <div className="sweet-loading mx-auto mt-3 ">
-                <BeatLoader
-                  css={override}
-                  size={10}
+              <span className="sweet-loading mx-auto mt-5 ">
+                <ClipLoader
+                  // css={override}
+                  size={35}
+                  margin={1}
                   //size={"150px"} this also works
-                  color={"rgba(0,0,0,0.36)"}
+                  color={"rgba(8, 161, 135, .7)"}
                   loading={loading}
                 />
-              </div>
+              </span>
             )}
             {/* <RecipeCard
               recipes={recipes}

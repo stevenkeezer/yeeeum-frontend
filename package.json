@@ -69,6 +69,7 @@
     "react-slick": "^0.25.2",
     "react-sound": "^1.2.0",
     "react-spinners": "^0.8.0",
+    "react-spinners-kit": "^1.9.1",
     "react-step-progress-bar": "^1.0.3",
     "react-test-renderer": "^16.8.6",
     "react-toastify": "^5.5.0",
