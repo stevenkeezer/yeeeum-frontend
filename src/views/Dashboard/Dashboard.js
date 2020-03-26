@@ -261,7 +261,7 @@ function Dashboard(props) {
             </div>
 
             {loading && (
-              <div className="sweet-loading mx-auto text-center mt-5 pl-5 ">
+              <div className="sweet-loading mx-auto text-center mt-5 ">
                 <ClipLoader
                   // css={override}
                   size={35}
