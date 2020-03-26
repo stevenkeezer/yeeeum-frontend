@@ -195,9 +195,10 @@ function Dashboard(props) {
               }}
               className="col-lg-12 col-8 about "
             >
-              <p style={{ fontSize: "16px", lineHeight: "1.7rem" }}>
-                Yeeeum is a recipe application designed with busy people in
-                mind. Store your own recipes and save your favorites.
+              <p style={{ fontSize: "15.5px", lineHeight: "1.7rem" }}>
+                Get organized and save time with a convenient recipe database
+                that's always at your fingertips. Now available on web, phone,
+                and tablet.
               </p>
             </div>
             <div
@@ -230,7 +231,7 @@ function Dashboard(props) {
           onScroll={() => console.log("hi")}
           style={{ padding: 38 }}
         >
-          <div className="col-12">
+          <div className="col-12 pl-0">
             <h3
               className="foryou"
               style={{ marginBottom: "3%", marginLeft: "-8px" }}

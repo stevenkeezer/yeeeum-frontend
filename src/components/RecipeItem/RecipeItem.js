@@ -19,7 +19,8 @@ export default function RecipeCard(props) {
       <div
         key={props.recipe.id}
         ref={props.lastRecipeRef}
-        className="col-lg-4 col-xl-3  col-md-6 col-12 product-div pb-4 pl-2 pr-2"
+        style={{ paddingBottom: 50 }}
+        className="col-lg-4 col-xl-3  col-md-6 col-12 product-div  pl-2 pr-2"
       >
         <Fade>
           <figure className="card">

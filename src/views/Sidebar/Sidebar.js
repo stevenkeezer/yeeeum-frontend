@@ -72,10 +72,10 @@ export default function Sidebar(props) {
       <hr
         id="separator"
         style={{
-          width: "10%",
-          height: "30px!important",
-          color: "lightgrey!important",
-          borderTop: "3px solid rgba(0, 0, 0, 0.1)"
+          width: "12%",
+          height: "31px!important",
+          color: "#e3e3e3!important",
+          borderTop: "3px solid #e3e3e3"
         }}
       ></hr>
 
@@ -487,13 +487,13 @@ export default function Sidebar(props) {
             <div
               style={{
                 textAlign: "center",
-                marginTop: "12%",
+                marginTop: "33%",
                 color: "#00a287",
                 width: "100%"
               }}
               className="w-100 col-12 mx-auto"
             >
-              <div className="col">
+              <div className="col" style={{ marginLeft: 3.5 }}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="28"
@@ -511,19 +511,23 @@ export default function Sidebar(props) {
                 className="more mb-4"
                 style={{
                   outline: "none",
-                  marginTop: "-24px",
+                  marginTop: "-22px",
                   textDecoration: "none",
-                  fontSize: ".75rem",
+                  fontSize: ".73rem",
                   fontWeight: "bold",
-                  borderRadius: "15rem"
+                  borderRadius: "15rem",
+                  marginLeft: "8px",
+                  color: "rgba(0,0,0,0.7)",
+                  letterSpacing: ".08rem"
                 }}
               >
                 MORE
               </Button>
             </div>
             <br></br>
-            <div style={{ height: "12px" }}></div>
+            <div style={{ height: "52px" }}></div>
           </div>
+
           <li className="pl-2 mt-auto ">
             <div
               className="row  nav-sub-footer mx-auto"

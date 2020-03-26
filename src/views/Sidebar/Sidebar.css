@@ -29,6 +29,15 @@
   src: local("AvenirNextLTProDemi")
     url("../../assets/fonts/AvenirNextLTProDemi.otf") format("opentype");
 }
+
+@font-face {
+  font-family: "AvenirNextLTProBoldCondensed.otf";
+  src: local("AvenirNextLTProBoldCondensed.otf")
+    url("../../assets/fonts/AvenirNextLTProBoldCondensed.otf");
+  src: local("AvenirNextLTProBoldCondensed.otf")
+    url("../../assets/fonts/AvenirNextLTProBoldCondensed.otf")
+    format("opentype");
+}
 @font-face {
   font-family: "AvenirNextLTProLight";
   src: local("AvenirNextLTProLight")
@@ -53,9 +62,10 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 
 .saved-recipes {
-  font-family: "o";
-  font-size: 0.78rem;
+  font-family: "o" !important;
+  font-size: 0.76rem;
   color: #232323;
+  letter-spacing: 0.04rem;
 }
 .saved-recipes:hover {
   text-decoration: none;
@@ -257,7 +267,7 @@
 .logo-container {
   text-align: center;
   /* margin-top: 35%; */
-  margin-bottom: 25px;
+  margin-bottom: 26px;
 }
 .sidebar {
   color: #747474;
@@ -312,7 +322,7 @@
 }
 .is-active {
   transition: color 0.4s ease;
-  color: black;
+  color: #232323;
   text-emphasis: none;
   background: linear-gradient(
     to right,
@@ -323,7 +333,7 @@
 }
 
 .nav-link:hover {
-  color: black !important;
+  color: #232323 !important;
 }
 
 .login-button {
@@ -446,7 +456,7 @@ html:not([dir="rtl"]) .sidebar-show.sidebar-fixed .app-footer {
 }
 
 .avatar {
-  margin-top: 11px;
+  margin-top: 10px;
   width: 55px;
   height: 55px;
   -webkit-border-radius: 60px;
