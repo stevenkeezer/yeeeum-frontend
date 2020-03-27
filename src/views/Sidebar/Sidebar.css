@@ -375,6 +375,12 @@
   }
 }
 
+@media (max-width: 500px) {
+  .nav-sub-footer {
+    display: none;
+  }
+}
+
 html:not([dir="rtl"]) .sidebar-sm-show.sidebar-fixed .main,
 html:not([dir="rtl"]) .sidebar-sm-show.sidebar-fixed .app-footer,
 html:not([dir="rtl"]) .sidebar-show.sidebar-fixed .main,

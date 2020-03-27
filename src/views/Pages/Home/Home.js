@@ -19,10 +19,7 @@ export default function home(props) {
       <AppSidebarHeader />
 
       <main className="main">
-        <Container
-          fluid
-          // style={{ backgroundImage: "linear-gradient(#fbfbfb, red)" }}
-        >
+        <Container fluid>
           <Suspense fallback={loading()}>
             <Dashboard returnSearchResults={returnSearchResults} />
           </Suspense>
