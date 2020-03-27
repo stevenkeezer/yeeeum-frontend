@@ -40,7 +40,7 @@ body::-webkit-scrollbar-track {
 
   .fab {
     /* right: 25 !important; */
-    left: 0;
+    right: 0;
   }
 }
 
