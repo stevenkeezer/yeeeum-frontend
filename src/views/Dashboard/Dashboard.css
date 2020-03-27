@@ -283,3 +283,70 @@ p {
   font-family: "AvertaDemo-ExtraBoldItalic";
   color: rgba(0, 0, 0, 0.2);
 }
+
+html {
+  height: 100vh;
+}
+
+body {
+  margin: 0 0;
+  padding: 0 0;
+  height: 100%;
+}
+
+.section {
+  min-width: 400px;
+  text-align: center;
+  /*centriranje u inline-box-u*/
+}
+
+#scrollable-container {
+  overflow: auto;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.content-container {
+  height: 100%;
+  width: 400px;
+  margin: auto;
+  background-color: white;
+  opacity: 0.5;
+}
+
+#scroll-empty-space {
+  float: right;
+  height: 100%;
+  background-color: black;
+}
+
+#navbar-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background-color: yellowgreen;
+}
+
+#navbar-section .content-container {
+  display: inline-block;
+}
+
+#header-section {
+  background-color: #ff7a85;
+  height: 110px;
+}
+
+#data-section {
+  background-color: #62c4c4;
+  height: 550px;
+}
+
+#footer-section {
+  background-color: #fced05;
+  height: 110px;
+}

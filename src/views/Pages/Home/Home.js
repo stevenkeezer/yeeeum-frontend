@@ -17,7 +17,8 @@ export default function home(props) {
   return (
     <div className="app">
       <AppSidebarHeader />
-      <main className="main" style={{ position: "relative" }}>
+
+      <main className="main">
         <Container
           fluid
           // style={{ backgroundImage: "linear-gradient(#fbfbfb, red)" }}

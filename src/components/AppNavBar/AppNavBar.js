@@ -25,6 +25,7 @@ import {
   ModalFooter,
   Collapse,
   CardBody,
+  Nav,
   Card
 } from "reactstrap";
 import "../../containers/DefaultLayout/DefaultHeader.css";
@@ -203,22 +204,6 @@ export default function PrimarySearchAppBar(props) {
           }}
         >
           <Toolbar variant="dense">
-            {/* <AppSidebarToggler className="" display="xl" mobile> */}
-            {/* <IconButton
-              edge="start"
-              // className={classes.menuButton}
-              color="black"
-              // aria-label="open drawer"
-              style={{
-                outline: "none",
-                display: "hidden",
-                color: "white"
-              }}
-            > */}
-            {/* <MenuIcon onClick={() => clickHandler()} /> */}
-            {/* <div style={{ paddingLeft: "25px" }}></div> */}
-            {/* </IconButton> */}
-            {/* </AppSidebarToggler> */}
             <Typography className={classes.title} variant="h6" noWrap>
               <div
                 className="brand-logo pl-2"

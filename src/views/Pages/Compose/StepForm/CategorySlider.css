@@ -10,7 +10,7 @@ html {
 }
 
 .container::-webkit-scrollbar {
-  display: none;
+  /* display: none; */
 }
 .text-center > h5 {
   font-family: "AvenirNextLTProRegular";
@@ -18,7 +18,7 @@ html {
 }
 
 .col::-webkit-scrollbar {
-  display: none;
+  /* display: none; */
 }
 
 .sort-ingredients-container {

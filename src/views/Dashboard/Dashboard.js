@@ -279,13 +279,6 @@ function Dashboard(props) {
                 </div>
               </div>
             )}
-            {/* <RecipeCard
-              recipes={recipes}
-              likeButton={likeButton}
-              getPosts={getPosts}
-              page={page}
-              ref={lastRecipeRef}
-            /> */}
           </div>
         </div>
       </motion.div>
