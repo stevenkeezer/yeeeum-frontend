@@ -209,7 +209,7 @@ function App() {
     <>
       <Fab style={fabStyle} variant="extended">
         <HelpOutlineIcon className="mr-1" />
-        <span>Help</span>
+        <span className="fab-text">Help</span>
       </Fab>
 
       <AppSidebar fixed display="lg" id="sidebar-container">

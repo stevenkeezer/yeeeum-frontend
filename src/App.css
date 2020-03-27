@@ -27,6 +27,10 @@ body::-webkit-scrollbar-track {
   #menu {
     display: none;
   }
+
+  .fab-text {
+    display: none;
+  }
 }
 
 .bm-burger-menu {
