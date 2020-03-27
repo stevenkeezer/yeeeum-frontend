@@ -238,9 +238,9 @@ p {
     margin-top: 0%;
     margin-bottom: 0%;
   }
-  p {
+  .about > p {
     font-size: 14px !important;
-    /* display: none; */
+    display: none;
   }
   .banner-img {
     height: 200px !important;
