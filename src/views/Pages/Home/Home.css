@@ -1,7 +1,8 @@
 @media (max-width: 992px) {
   .main {
     overflow: auto;
-    top: 50;
+    position: absolute;
+    top: 50px;
     left: 0;
     right: 0;
     bottom: 0;
