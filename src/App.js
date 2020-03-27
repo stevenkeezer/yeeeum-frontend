@@ -152,7 +152,7 @@ function App() {
     height: "6%",
     paddingLeft: "1.7vw",
     paddingRight: "1.7vw",
-    right: "25px",
+    // left: "25px",
     bottom: "15px",
     backgroundColor: "#919191",
     textTransform: "none",
@@ -209,7 +209,7 @@ function App() {
 
   return (
     <>
-      <Fab style={fabStyle} variant="extended">
+      <Fab style={fabStyle} className="fab mr-4 ml-3" variant="extended">
         <HelpOutlineIcon className="" />
         <span className=" pl-1 fab-text">Help</span>
       </Fab>

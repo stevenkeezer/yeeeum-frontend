@@ -27,11 +27,20 @@ body::-webkit-scrollbar-track {
   #menu {
     display: none;
   }
+  .fab {
+    right: 0;
+    /* left: 25; */
+  }
 }
 
 @media (max-width: 600px) {
   .fab-text {
     display: none;
+  }
+
+  .fab {
+    /* right: 25 !important; */
+    left: 0;
   }
 }
 
