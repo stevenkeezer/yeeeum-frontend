@@ -16,7 +16,7 @@ body {
   -webkit-overflow-scrolling: touch;
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 body::-webkit-scrollbar-track {
