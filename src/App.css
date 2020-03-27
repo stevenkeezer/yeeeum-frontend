@@ -27,7 +27,9 @@ body::-webkit-scrollbar-track {
   #menu {
     display: none;
   }
+}
 
+@media (max-width: 600px) {
   .fab-text {
     display: none;
   }
