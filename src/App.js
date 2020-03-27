@@ -148,8 +148,10 @@ function App() {
 
   const fabStyle = {
     position: "fixed",
-    width: "108px",
+    width: "auto",
     height: "6%",
+    paddingLeft: "1.7vw",
+    paddingRight: "1.7vw",
     right: "25px",
     bottom: "15px",
     backgroundColor: "#919191",
@@ -208,8 +210,8 @@ function App() {
   return (
     <>
       <Fab style={fabStyle} variant="extended">
-        <HelpOutlineIcon className="mr-1" />
-        <span className="fab-text">Help</span>
+        <HelpOutlineIcon className="" />
+        <span className=" pl-1 fab-text">Help</span>
       </Fab>
 
       <AppSidebar fixed display="lg" id="sidebar-container">
