@@ -240,7 +240,7 @@ p {
   }
   p {
     font-size: 14px !important;
-    display: none;
+    /* display: none; */
   }
   .banner-img {
     height: 200px !important;
