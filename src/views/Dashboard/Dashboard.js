@@ -193,7 +193,7 @@ function Dashboard(props) {
           </div>
         </div>
         <div className="banner-container col-xs-12 col-sm-12 pl-0 pr-0 col-lg-12">
-          <div className="col-xl-4 col-lg-4 pl-0 pr-0 banner-sub-container">
+          <div className="col-xl-4 col-lg-4  banner-sub-container">
             <h3
               style={{
                 lineHeight: "3rem",

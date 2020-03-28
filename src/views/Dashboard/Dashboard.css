@@ -168,6 +168,9 @@ body {
   margin-top: 300px;
 }
 
+.banner-sub-container {
+  padding-right: 21.7px;
+}
 @media (max-width: 500px) {
   .banner-container {
     margin-top: 19vw;
