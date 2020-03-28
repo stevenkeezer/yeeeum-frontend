@@ -277,7 +277,7 @@ function Dashboard(props) {
             </div>
 
             {loading && (
-              <div className="sweet-loading mx-auto text-center mt-3">
+              <div className="sweet-loading mx-auto text-center mt-4">
                 <Lottie
                   options={options}
                   // style={{ width: 40, height: 40 }}
