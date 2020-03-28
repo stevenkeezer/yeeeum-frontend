@@ -11,6 +11,8 @@ import RecipeItem from "../../components/RecipeItem/RecipeItem";
 import SearchForm from "./SearchForm";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Fade from "react-reveal/Fade";
+import Lottie from "react-lottie";
+import animationData from "../../assets/loading.json";
 
 import { motion } from "framer-motion";
 import { css } from "@emotion/core";
@@ -155,6 +157,20 @@ function Dashboard(props) {
     // scale: 0.8
   };
 
+  const buttonStyle = {
+    display: "block",
+    margin: "10px auto"
+  };
+
+  const options = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice"
+    }
+  };
+
   return (
     <>
       <motion.div
@@ -261,21 +277,21 @@ function Dashboard(props) {
             </div>
 
             {loading && (
-              <div className="sweet-loading mx-auto text-center mt-5 ">
-                <ClipLoader
-                  // css={override}
-                  size={35}
-                  margin={1}
-                  //size={"150px"} this also works
-                  color={"rgba(0, 0, 0, 0.2)"}
-                  loading={loading}
+              <div className="sweet-loading mx-auto text-center mt-3">
+                <Lottie
+                  options={options}
+                  // style={{ width: 40, height: 40 }}
+                  height={75}
+                  width={75}
+                  isStopped={false}
+                  isPaused={false}
                 />
-                <br></br>
+
                 <div
                   class="loading-text text-center pb-3 pt-1"
                   style={{ fontSize: 18 }}
                 >
-                  <span className="">Loading...</span>
+                  <span className="pl-2">Loading...</span>
                 </div>
               </div>
             )}
