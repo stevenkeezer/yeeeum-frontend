@@ -79,7 +79,7 @@ export default function Sidebar(props) {
         }}
       ></hr>
 
-      <nav className="sidebar-nav">
+      <nav className="sidebar-nav" style={{}}>
         <div className="login-button">
           <Link to={"/login"} onClick={() => clickHandler()}>
             {!localStorage.getItem("token") && (
@@ -216,7 +216,6 @@ export default function Sidebar(props) {
               </span>
             </NavLink>
           </li>
-
           <li className="nav-item">
             <NavLink
               to={"/shop"}
@@ -227,7 +226,6 @@ export default function Sidebar(props) {
               <span className="ml-4">Shop</span>
             </NavLink>
           </li>
-
           <li className="nav-item">
             <NavLink
               to={"/articles"}
@@ -288,7 +286,6 @@ export default function Sidebar(props) {
               Add Timer
             </button> */}
           </li>
-
           <li className="nav-item mt-3">
             <Link
               exact={true}
@@ -389,7 +386,7 @@ export default function Sidebar(props) {
 
             <li
               className="nav-ite"
-              style={{ marginBottom: "100px" }}
+              style={{ marginBottom: "40px" }}
               onClick={() => clickHandler()}
             >
               <button
@@ -500,7 +497,7 @@ export default function Sidebar(props) {
               </li>
             </>
 
-            <div className="col mx-auto pb-5" style={{ width: "170px" }}>
+            <div className="col mx-auto" style={{ width: "170px" }}>
               <img
                 style={{ marginBottom: -90, marginTop: -40 }}
                 src="/assets/img/google-play-badge.svg"
@@ -526,23 +523,19 @@ export default function Sidebar(props) {
               </li>
             )}
           </li>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
 
-          <div style={{ width: "195px" }} className="nav-footer mx-auto ">
+          <br></br>
+          <div style={{ width: "202px" }} className="nav-footer mx-auto ">
             <div
               style={{
                 textAlign: "center",
-                marginTop: "33%",
+                marginTop: "30%",
                 color: "#00a287",
                 width: "100%"
               }}
               className="w-100 col-12 mx-auto"
             >
-              <div className="col" style={{ marginLeft: 3.5 }}>
+              <div className="col" style={{ marginLeft: 2 }}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="28"
@@ -560,12 +553,12 @@ export default function Sidebar(props) {
                 className="more mb-4"
                 style={{
                   outline: "none",
-                  marginTop: "-22px",
+                  marginTop: "-24px",
                   textDecoration: "none",
-                  fontSize: ".73rem",
+                  fontSize: ".75rem",
                   fontWeight: "bold",
                   borderRadius: "15rem",
-                  marginLeft: "8px",
+                  marginLeft: "5px",
                   color: "rgba(0,0,0,0.7)",
                   letterSpacing: ".08rem"
                 }}
@@ -574,9 +567,8 @@ export default function Sidebar(props) {
               </Button>
             </div>
             <br></br>
-            <div style={{ height: "52px" }}></div>
+            <div style={{ height: "47px" }}></div>
           </div>
-
           <li className="pl-2 mt-auto ">
             <div
               className="row  nav-sub-footer mx-auto"

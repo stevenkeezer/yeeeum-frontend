@@ -92,10 +92,10 @@
   text-decoration: none !important;
 }
 @media (max-width: 991px) {
-  .sidebar-show .main::before,
+  /* .sidebar-show .main::before,
   .aside-menu-show .main::before {
     min-height: 100vh;
-  }
+  } */
   .logo {
     display: none;
   }
@@ -346,6 +346,10 @@
   html:not([dir="rtl"]) .sidebar-show.sidebar-fixed .main,
   html:not([dir="rtl"]) .sidebar-show.sidebar-fixed .app-footer {
     margin-left: 204px;
+  }
+  .sidebar-nav {
+    height: 64.5vh !important;
+    padding-bottom: 0 !important;
   }
 }
 
