@@ -387,13 +387,9 @@ export default function Sidebar(props) {
               Popular
             </Link>
 
-            {/* <img
-              style={{ width: "100px" }}
-              src="/assets/img/appstore.png"
-            ></img> */}
             <li
               className="nav-ite"
-              style={{ marginBottom: "150px" }}
+              style={{ marginBottom: "100px" }}
               onClick={() => clickHandler()}
             >
               <button
@@ -418,41 +414,105 @@ export default function Sidebar(props) {
                 Grilling{" "}
               </button>
             </li>
-            {showMore && props.user && (
+
+            <>
               <li
                 className="nav-ite"
-                style={{ marginBottom: "150px" }}
+                style={{ marginBottom: "0px" }}
+                onClick={() => clickHandler()}
+              >
+                <button
+                  exact
+                  onClick={console.log("hi")}
+                  activeClassName="is-active"
+                  className="nav-link sidebar-link ml-4"
+                  style={{
+                    border: "none!important",
+                    padding: "none!important"
+                  }}
+                >
+                  {/* <LockIcon
+                      className="ml-4"
+                      fontSize="small"
+                      style={{
+                        width: "20px",
+                        marginTop: "-4px",
+                        marginRight: "10px"
+                      }}
+                    /> */}
+                  About
+                </button>
+              </li>
+
+              <li
+                className="nav-ite"
+                style={{ marginBottom: "10px" }}
+                onClick={() => clickHandler()}
+              >
+                <button
+                  exact
+                  onClick={console.log("hi")}
+                  activeClassName="is-active"
+                  className="nav-link sidebar-link ml-4"
+                  style={{
+                    border: "none!important",
+                    padding: "none!important"
+                  }}
+                >
+                  {/* <LockIcon
+                      className="ml-4"
+                      fontSize="small"
+                      style={{
+                        width: "20px",
+                        marginTop: "-4px",
+                        marginRight: "10px"
+                      }}
+                    /> */}
+                  Contact Us
+                </button>
+              </li>
+              <li
+                className="nav-ite"
+                style={{ marginBottom: "10px" }}
                 onClick={() => clickHandler()}
               >
                 <button
                   exact
                   onClick={logout}
                   activeClassName="is-active"
-                  className="nav-link sidebar-link "
+                  className="nav-link sidebar-link ml-4  "
                   style={{
                     border: "none!important",
                     padding: "none!important"
                   }}
                 >
-                  <LockIcon
-                    className="ml-4"
-                    fontSize="small"
-                    style={{
-                      width: "20px",
-                      marginTop: "-4px",
-                      marginRight: "10px"
-                    }}
-                  />
+                  {/* <LockIcon
+                      className="ml-4"
+                      fontSize="small"
+                      style={{
+                        width: "20px",
+                        marginTop: "-4px",
+                        marginRight: "10px"
+                      }}
+                    /> */}
                   Logout
                 </button>
               </li>
-            )}
+            </>
+
+            <div className="col mx-auto pb-5" style={{ width: "170px" }}>
+              <img
+                style={{ marginBottom: -90, marginTop: -40 }}
+                src="/assets/img/google-play-badge.svg"
+              ></img>
+              <img
+                style={{ padding: 0 }}
+                src="/assets/img/app-store-badge.svg"
+              ></img>
+            </div>
+
             {!showMore && props.user && (
-              <li
-                className="nav-item"
-                style={{ marginBottom: "150px" }}
-                onClick={() => clickHandler()}
-              >
+              <li className="nav-item" onClick={() => clickHandler()}>
                 <button
                   exact
                   onClick={logout}
@@ -466,6 +526,12 @@ export default function Sidebar(props) {
               </li>
             )}
           </li>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+
           <div style={{ width: "195px" }} className="nav-footer mx-auto ">
             <div
               style={{

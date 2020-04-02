@@ -277,7 +277,10 @@ function Dashboard(props) {
             </div>
 
             {loading && (
-              <div className="sweet-loading mx-auto text-center mt-4">
+              <div
+                style={{ marginTop: "10.5%" }}
+                className="sweet-loading mx-auto text-center "
+              >
                 <Lottie
                   options={options}
                   // style={{ width: 40, height: 40 }}
