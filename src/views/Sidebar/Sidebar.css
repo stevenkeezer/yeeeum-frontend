@@ -96,6 +96,7 @@
   .aside-menu-show .main::before {
     min-height: 100vh;
   } */
+
   .logo {
     display: none;
   }
@@ -191,7 +192,7 @@
 .nav-footer {
   font-size: 0.7rem;
   background-image: linear-gradient(rgba(255, 255, 255, 0.09) 0%, white 35%);
-  font-family: "AvenirNextLTProDemi", sans-serif;
+  font-family: "AvenirNextLTProRegular", sans-serif;
   position: fixed;
   bottom: 0 !important;
   font-family: "o";
@@ -203,7 +204,7 @@
 .nav-sub-footer {
   font-size: 0.7rem;
   background-image: none;
-  font-family: "AvenirNextLTProDemi", sans-serif;
+  font-family: "AvenirNextLTProRegular", sans-serif;
   position: fixed;
   bottom: 0 !important;
   font-family: "o";
@@ -315,8 +316,20 @@
   .nav-link {
     font-size: 18px;
   }
+
+  .more,
+  .dots {
+    display: none !important;
+  }
+
+  .nav-sub-footer {
+    margin-left: 30px !important;
+  }
 }
 
+.nav-sub-footer {
+  margin-left: 10px;
+}
 .sidebar {
   flex-direction: none;
 }

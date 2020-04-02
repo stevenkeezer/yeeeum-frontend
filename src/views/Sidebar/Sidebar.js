@@ -443,7 +443,7 @@ export default function Sidebar(props) {
 
               <li
                 className="nav-ite"
-                style={{ marginBottom: "10px" }}
+                style={{ marginBottom: "0px" }}
                 onClick={() => clickHandler()}
               >
                 <button
@@ -470,7 +470,61 @@ export default function Sidebar(props) {
               </li>
               <li
                 className="nav-ite"
-                style={{ marginBottom: "10px" }}
+                style={{ marginBottom: "-0px" }}
+                onClick={() => clickHandler()}
+              >
+                <button
+                  exact
+                  onClick={console.log("hi")}
+                  activeClassName="is-active"
+                  className="nav-link sidebar-link ml-4"
+                  style={{
+                    border: "none!important",
+                    padding: "none!important"
+                  }}
+                >
+                  {/* <LockIcon
+                      className="ml-4"
+                      fontSize="small"
+                      style={{
+                        width: "20px",
+                        marginTop: "-4px",
+                        marginRight: "10px"
+                      }}
+                    /> */}
+                  Copyright
+                </button>
+              </li>
+              <li
+                className="nav-ite"
+                style={{ marginBottom: "0px" }}
+                onClick={() => clickHandler()}
+              >
+                <button
+                  exact
+                  onClick={console.log("hi")}
+                  activeClassName="is-active"
+                  className="nav-link sidebar-link ml-4"
+                  style={{
+                    border: "none!important",
+                    padding: "none!important"
+                  }}
+                >
+                  {/* <LockIcon
+                      className="ml-4"
+                      fontSize="small"
+                      style={{
+                        width: "20px",
+                        marginTop: "-4px",
+                        marginRight: "10px"
+                      }}
+                    /> */}
+                  FAQs
+                </button>
+              </li>
+              <li
+                className="nav-ite"
+                style={{ marginTop: "25px" }}
                 onClick={() => clickHandler()}
               >
                 <button
@@ -492,19 +546,19 @@ export default function Sidebar(props) {
                         marginRight: "10px"
                       }}
                     /> */}
-                  Logout
+                  Log Out
                 </button>
               </li>
             </>
 
-            <div className="col mx-auto" style={{ width: "170px" }}>
+            <div className="col mx-auto" style={{ width: "165px" }}>
               <img
                 style={{ marginBottom: -90, marginTop: -40 }}
-                src="/assets/img/google-play-badge.svg"
+                src="/assets/img/app-store-badge.svg"
               ></img>
               <img
                 style={{ padding: 0 }}
-                src="/assets/img/app-store-badge.svg"
+                src="/assets/img/google-play-badge.svg"
               ></img>
             </div>
 
@@ -535,7 +589,7 @@ export default function Sidebar(props) {
               }}
               className="w-100 col-12 mx-auto"
             >
-              <div className="col" style={{ marginLeft: 2 }}>
+              <div className="col dots" style={{ marginLeft: 2 }}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="28"
@@ -569,12 +623,17 @@ export default function Sidebar(props) {
             <br></br>
             <div style={{ height: "47px" }}></div>
           </div>
-          <li className="pl-2 mt-auto ">
-            <div
-              className="row  nav-sub-footer mx-auto"
-              style={{ padding: "5px" }}
-            >
-              <a className="pr-1" href="https://coreui.io">
+
+          <div
+            className="nav-sub-footer d-flex text-center pb-2"
+            style={{ color: "rgba(0,0,0,0.7)" }}
+          >
+            <div className="">Privacy</div>
+            <div className="pl-2 pr-2">Terms</div>
+            <div className=""> Internet Based Ads</div>
+            {/* <div className="">Terms</div>
+            <div className="">Internet Based Ads</div> */}
+            {/* <a className="pr-1" href="https://coreui.io">
                 Privacy
               </a>
               <a className="pl-1 pr-1" href="https://coreui.io">
@@ -588,9 +647,8 @@ export default function Sidebar(props) {
                 }}
               >
                 Internet Based Ads
-              </a>
-            </div>
-          </li>
+              </a> */}
+          </div>
         </ul>
       </nav>
     </div>
