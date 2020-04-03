@@ -524,14 +524,14 @@ export default function Sidebar(props) {
               </li>
               <li
                 className="nav-ite"
-                style={{ marginTop: "25px" }}
+                style={{ marginTop: "25px", marginBottom: "35px" }}
                 onClick={() => clickHandler()}
               >
                 <button
                   exact
                   onClick={logout}
                   activeClassName="is-active"
-                  className="nav-link sidebar-link ml-4  "
+                  className="nav-link sidebar-link ml-4 "
                   style={{
                     border: "none!important",
                     padding: "none!important"
@@ -551,7 +551,10 @@ export default function Sidebar(props) {
               </li>
             </>
 
-            <div className="col mx-auto" style={{ width: "165px" }}>
+            <div
+              className="col mx-auto"
+              style={{ width: "165px", zIndex: -10 }}
+            >
               <img
                 style={{ marginBottom: -90, marginTop: -40 }}
                 src="/assets/img/app-store-badge.svg"
