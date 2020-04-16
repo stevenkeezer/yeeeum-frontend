@@ -24,8 +24,8 @@ export default function Sidebar(props) {
     const response = await fetch(process.env.REACT_APP_BURL + "logout", {
       headers: {
         "Content-type": "application/json",
-        Authorization: `Token ${localStorage.getItem("token")}`
-      }
+        Authorization: `Token ${localStorage.getItem("token")}`,
+      },
     });
     if (response.ok) {
       const data = await response.json();
@@ -75,7 +75,7 @@ export default function Sidebar(props) {
           width: "12%",
           height: "31px!important",
           color: "#e3e3e3!important",
-          borderTop: "3px solid #e3e3e3"
+          borderTop: "3px solid #e3e3e3",
         }}
       ></hr>
 
@@ -93,7 +93,7 @@ export default function Sidebar(props) {
                     backgroundColor: "#08a287",
                     borderRadius: "3.5rem",
                     // marginLeft: "9px",
-                    outline: "none"
+                    outline: "none",
                   }}
                 >
                   Sign Up / Log In
@@ -140,7 +140,7 @@ export default function Sidebar(props) {
                 <div
                   className="avatar"
                   style={{
-                    backgroundImage: `url('https://yeeeum.s3-us-west-1.amazonaws.com/${props.userImg}')`
+                    backgroundImage: `url('https://yeeeum.s3-us-west-1.amazonaws.com/${props.userImg}')`,
                   }}
                 ></div>
               </NavLink>
@@ -257,7 +257,7 @@ export default function Sidebar(props) {
                 <AddIcon
                   style={{
                     width: "20px",
-                    marginTop: "-4px"
+                    marginTop: "-4px",
                   }}
                 />
                 Compose
@@ -293,7 +293,7 @@ export default function Sidebar(props) {
               className="pl-2 ml-4  saved-recipes"
               style={{
                 textTransform: "uppercase",
-                color: "#22272c"
+                color: "#22272c",
               }}
             >
               SAVED RECIPES
@@ -308,7 +308,7 @@ export default function Sidebar(props) {
                 style={{
                   width: "20px",
                   marginTop: "-4px",
-                  marginRight: "10px"
+                  marginRight: "10px",
                 }}
               />
               Favorites
@@ -322,7 +322,7 @@ export default function Sidebar(props) {
                 style={{
                   width: "20px",
                   marginTop: "-4px",
-                  marginRight: "10px"
+                  marginRight: "10px",
                 }}
               />
               Drinks
@@ -336,7 +336,7 @@ export default function Sidebar(props) {
                 style={{
                   width: "20px",
                   marginTop: "-4px",
-                  marginRight: "10px"
+                  marginRight: "10px",
                 }}
               />
               Dinners
@@ -350,7 +350,7 @@ export default function Sidebar(props) {
                 style={{
                   width: "20px",
                   marginTop: "-4px",
-                  marginRight: "10px"
+                  marginRight: "10px",
                 }}
               />
               Yeeeums
@@ -364,7 +364,7 @@ export default function Sidebar(props) {
                 style={{
                   width: "20px",
                   marginTop: "-4px",
-                  marginRight: "10px"
+                  marginRight: "10px",
                 }}
               />
               Quick Eats
@@ -378,7 +378,7 @@ export default function Sidebar(props) {
                 style={{
                   width: "20px",
                   marginTop: "-4px",
-                  marginRight: "10px"
+                  marginRight: "10px",
                 }}
               />
               Popular
@@ -396,7 +396,7 @@ export default function Sidebar(props) {
                 className="nav-link sidebar-link "
                 style={{
                   border: "none!important",
-                  padding: "none!important"
+                  padding: "none!important",
                 }}
               >
                 <LockIcon
@@ -405,7 +405,7 @@ export default function Sidebar(props) {
                   style={{
                     width: "20px",
                     marginTop: "-4px",
-                    marginRight: "10px"
+                    marginRight: "10px",
                   }}
                 />
                 Grilling{" "}
@@ -422,10 +422,10 @@ export default function Sidebar(props) {
                   exact
                   onClick={console.log("hi")}
                   activeClassName="is-active"
-                  className="nav-link sidebar-link ml-4"
+                  className="nav-link sidebar-link ml-4 mt-4"
                   style={{
                     border: "none!important",
-                    padding: "none!important"
+                    padding: "none!important",
                   }}
                 >
                   {/* <LockIcon
@@ -453,7 +453,7 @@ export default function Sidebar(props) {
                   className="nav-link sidebar-link ml-4"
                   style={{
                     border: "none!important",
-                    padding: "none!important"
+                    padding: "none!important",
                   }}
                 >
                   {/* <LockIcon
@@ -480,7 +480,7 @@ export default function Sidebar(props) {
                   className="nav-link sidebar-link ml-4"
                   style={{
                     border: "none!important",
-                    padding: "none!important"
+                    padding: "none!important",
                   }}
                 >
                   {/* <LockIcon
@@ -507,7 +507,7 @@ export default function Sidebar(props) {
                   className="nav-link sidebar-link ml-4"
                   style={{
                     border: "none!important",
-                    padding: "none!important"
+                    padding: "none!important",
                   }}
                 >
                   {/* <LockIcon
@@ -534,7 +534,7 @@ export default function Sidebar(props) {
                   className="nav-link sidebar-link ml-4 "
                   style={{
                     border: "none!important",
-                    padding: "none!important"
+                    padding: "none!important",
                   }}
                 >
                   {/* <LockIcon
@@ -574,7 +574,7 @@ export default function Sidebar(props) {
                   className="nav-link sidebar-link "
                   style={{
                     border: "none!important",
-                    padding: "none!important"
+                    padding: "none!important",
                   }}
                 ></button>
               </li>
@@ -588,7 +588,7 @@ export default function Sidebar(props) {
                 textAlign: "center",
                 marginTop: "30%",
                 color: "#00a287",
-                width: "100%"
+                width: "100%",
               }}
               className="w-100 col-12 mx-auto"
             >
@@ -617,7 +617,7 @@ export default function Sidebar(props) {
                   borderRadius: "15rem",
                   marginLeft: "5px",
                   color: "rgba(0,0,0,0.7)",
-                  letterSpacing: ".08rem"
+                  letterSpacing: ".08rem",
                 }}
               >
                 MORE

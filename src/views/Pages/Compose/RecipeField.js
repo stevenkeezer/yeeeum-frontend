@@ -19,30 +19,30 @@ import "./RecipeField.css";
 import "@uppy/core/dist/style.css";
 import "@uppy/dashboard/dist/style.css";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   button: {
-    margin: theme.spacing(1)
+    margin: theme.spacing(1),
   },
   root: {
     display: "flex",
-    alignItems: "center"
+    alignItems: "center",
   },
   wrapper: {
     margin: theme.spacing(1),
-    position: "relative"
+    position: "relative",
   },
   buttonSuccess: {
     backgroundColor: green[500],
     "&:hover": {
-      backgroundColor: green[700]
-    }
+      backgroundColor: green[700],
+    },
   },
   fabProgress: {
     color: green[500],
     position: "absolute",
     top: -6,
     left: -6,
-    zIndex: 1
+    zIndex: 1,
   },
   buttonProgress: {
     color: green[500],
@@ -50,8 +50,8 @@ const useStyles = makeStyles(theme => ({
     top: "50%",
     left: "50%",
     marginTop: -12,
-    marginLeft: -12
-  }
+    marginLeft: -12,
+  },
 }));
 
 export default function RecipeField(props) {
@@ -63,7 +63,7 @@ export default function RecipeField(props) {
   const timer = React.useRef();
 
   const buttonClassname = clsx({
-    [classes.buttonSuccess]: success
+    [classes.buttonSuccess]: success,
   });
 
   const handleButtonClick = () => {
@@ -97,13 +97,13 @@ export default function RecipeField(props) {
         ingredients: [
           { amount: "", ingredient: "" },
           { amount: "", ingredient: "" },
-          { amount: "", ingredient: "" }
+          { amount: "", ingredient: "" },
         ],
         title: "",
         directions: "",
-        description: ""
+        description: "",
       }}
-      validate={values => {
+      validate={(values) => {
         const errors = {};
         if (values.title === "") {
           errors.title = "Please enter a title for this recipe.";
@@ -154,7 +154,7 @@ export default function RecipeField(props) {
               style={{
                 width: "100%",
                 height: "50px",
-                fontFamily: "AvenirNextLTProRegular"
+                fontFamily: "AvenirNextLTProRegular",
               }}
               placeholder="A delicous recipe from my grandmother..."
               type="description"
@@ -178,7 +178,7 @@ export default function RecipeField(props) {
             <FieldArray
               name="ingredients"
               type="ingredients"
-              render={arrayHelpers => (
+              render={(arrayHelpers) => (
                 <div>
                   {values.ingredients && values.ingredients.length > 0 ? (
                     values.ingredients.map((ingredient, index) => (
@@ -202,7 +202,7 @@ export default function RecipeField(props) {
                         <DeleteIcon
                           style={{
                             color: "grey",
-                            marginTop: "5px"
+                            marginTop: "5px",
                           }}
                           onClick={() => {
                             arrayHelpers.remove(index);
@@ -221,7 +221,7 @@ export default function RecipeField(props) {
                       style={{
                         marginTop: "-70px",
                         marginRight: "1%",
-                        color: "grey"
+                        color: "grey",
                       }}
                       onClick={() => {
                         arrayHelpers.push({ amount: "", ingredient: "" });
@@ -244,7 +244,7 @@ export default function RecipeField(props) {
               style={{
                 width: "100%",
                 height: "60px",
-                fontFamily: "AvenirNextLTProRegular"
+                fontFamily: "AvenirNextLTProRegular",
               }}
               type="directions"
               name="directions"

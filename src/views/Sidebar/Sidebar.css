@@ -482,3 +482,8 @@ html:not([dir="rtl"]) .sidebar-show.sidebar-fixed .app-footer {
   background-size: cover;
   background-position: center center;
 }
+
+.badge {
+  float: none !important;
+  padding-left: 0.5rem;
+}
