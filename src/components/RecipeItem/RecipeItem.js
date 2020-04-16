@@ -30,7 +30,7 @@ export default function RecipeCard(props) {
                   className="image-container caption shadow-sm"
                   style={{
                     width: "100%",
-                    paddingBottom: "100.78082192%"
+                    paddingBottom: "100%",
                   }}
                 >
                   <Img
@@ -38,7 +38,7 @@ export default function RecipeCard(props) {
                       position: "relative",
                       borderRadius: ".25rem",
                       minWidth: "100%",
-                      width: "100%"
+                      width: "100%",
                     }}
                     className="img-responsive transition"
                     src={
@@ -73,7 +73,7 @@ export default function RecipeCard(props) {
                   className="w-100"
                   style={{
                     paddingLeft: "0!important",
-                    paddingRight: "0!important"
+                    paddingRight: "0!important",
                   }}
                 >
                   {imgLoaded ? (
@@ -83,7 +83,7 @@ export default function RecipeCard(props) {
                         to={`/recipe/${props.recipe.id}`}
                         style={{
                           textDecoration: "none",
-                          wordBreak: "keep-all"
+                          wordBreak: "keep-all",
                         }}
                       >
                         {props.recipe.title}
@@ -94,7 +94,7 @@ export default function RecipeCard(props) {
                           style={{
                             color: "grey",
                             textTransform: "uppercase",
-                            textDecoration: "none"
+                            textDecoration: "none",
                           }}
                           to={`user/${props.recipe.user_id}`}
                         >

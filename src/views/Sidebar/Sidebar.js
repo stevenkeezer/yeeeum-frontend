@@ -582,11 +582,12 @@ export default function Sidebar(props) {
           </li>
 
           <br></br>
-          <div style={{ width: "202px" }} className="nav-footer mx-auto ">
+          <br></br>
+          <div style={{ width: "204px" }} className="nav-footer mx-auto ">
             <div
               style={{
                 textAlign: "center",
-                marginTop: "30%",
+                marginTop: "15%",
                 color: "#00a287",
                 width: "100%",
               }}

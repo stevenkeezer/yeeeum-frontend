@@ -20,7 +20,7 @@ export default function RecipeCard(props) {
           <CircularProgress
             style={{
               marginTop: "15%",
-              color: "#00a287"
+              color: "#00a287",
             }}
           />
         </div>
@@ -59,7 +59,7 @@ export default function RecipeCard(props) {
                       className="image-container caption shadow-sm"
                       style={{
                         width: "100%",
-                        paddingBottom: "100.78082192%"
+                        paddingBottom: "100%",
                       }}
                     >
                       <Img
@@ -67,13 +67,13 @@ export default function RecipeCard(props) {
                           position: "relative",
                           borderRadius: ".4rem",
                           minWidth: "100%",
-                          width: "100%"
+                          width: "100%",
                         }}
                         className="img-responsive transition"
                         src={
                           r.images.length > 0
                             ? `https://yeeeum.s3-us-west-1.amazonaws.com/${r.images[0].img_url}`
-                            : "./assets/img/food.png"
+                            : "/assets/img/food.png"
                         }
                         onLoad={() => setImgLoaded(true)}
                         loader={
@@ -102,7 +102,7 @@ export default function RecipeCard(props) {
                       className="w-100"
                       style={{
                         paddingLeft: "0!important",
-                        paddingRight: "0!important"
+                        paddingRight: "0!important",
                       }}
                     >
                       {imgLoaded ? (
@@ -112,7 +112,7 @@ export default function RecipeCard(props) {
                             to={`/recipe/${r.id}`}
                             style={{
                               textDecoration: "none",
-                              wordBreak: "keep-all"
+                              wordBreak: "keep-all",
                             }}
                           >
                             {r.title}
@@ -123,7 +123,7 @@ export default function RecipeCard(props) {
                               style={{
                                 color: "grey",
                                 textTransform: "uppercase",
-                                textDecoration: "none"
+                                textDecoration: "none",
                               }}
                               to={`user/${r.user_id}`}
                             >

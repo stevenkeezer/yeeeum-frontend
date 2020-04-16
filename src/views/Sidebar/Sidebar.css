@@ -191,7 +191,7 @@
 }
 .nav-footer {
   font-size: 0.7rem;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.09) 0%, white 35%);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.09) 0%, white 30%);
   font-family: "AvenirNextLTProRegular", sans-serif;
   position: fixed;
   bottom: 0 !important;

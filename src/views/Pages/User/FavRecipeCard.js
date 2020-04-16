@@ -9,17 +9,17 @@ import Truncate from "react-truncate";
 export default function RecipeCard(props) {
   const [imgLoaded, setImgLoaded] = useState(false);
 
-  const likeButton = async id => {
+  const likeButton = async (id) => {
     const recipeId = {
-      recipe_id: id
+      recipe_id: id,
     };
     const options = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Token ${localStorage.getItem("token")}`
+        Authorization: `Token ${localStorage.getItem("token")}`,
       },
-      body: JSON.stringify(recipeId)
+      body: JSON.stringify(recipeId),
     };
     const response = await fetch(process.env.REACT_APP_BURL + "like", options);
     if (response.ok) {
@@ -32,8 +32,8 @@ export default function RecipeCard(props) {
     const response = await fetch(process.env.REACT_APP_BURL + `get_likes`, {
       headers: {
         "Content-type": "application/json",
-        Authorization: `Token ${localStorage.getItem("token")}`
-      }
+        Authorization: `Token ${localStorage.getItem("token")}`,
+      },
     });
 
     if (response.ok) {
@@ -41,21 +41,21 @@ export default function RecipeCard(props) {
     }
   };
 
-  const replace_post = async id => {
+  const replace_post = async (id) => {
     const response = await fetch(process.env.REACT_APP_BURL + `replace_post`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
-        Authorization: `Token ${localStorage.getItem("token")}`
+        Authorization: `Token ${localStorage.getItem("token")}`,
       },
-      body: JSON.stringify(id)
+      body: JSON.stringify(id),
     });
 
     if (response.ok) {
       const data = await response.json();
 
       let recipesCopy = JSON.parse(JSON.stringify(props.favorites));
-      const hasRecipeId = recipe => recipe.id === id;
+      const hasRecipeId = (recipe) => recipe.id === id;
       recipesCopy.splice(recipesCopy.findIndex(hasRecipeId), 1);
       props.setFavorites(recipesCopy);
       props.getUserRecipes();
@@ -69,7 +69,7 @@ export default function RecipeCard(props) {
   return (
     <>
       {props.favorites &&
-        props.favorites.map(r => {
+        props.favorites.map((r) => {
           return (
             <>
               {!r.deleted && (
@@ -98,7 +98,7 @@ export default function RecipeCard(props) {
                           class="image-container caption"
                           style={{
                             width: "100%",
-                            paddingBottom: "90.78082192%"
+                            paddingBottom: "100%",
                           }}
                         >
                           <Img
@@ -106,7 +106,7 @@ export default function RecipeCard(props) {
                               position: "relative",
                               borderRadius: ".4rem",
                               minWidth: "100%",
-                              width: "100%"
+                              width: "100%",
                               // minHeight: "250px"
                             }}
                             width="100%"
@@ -114,7 +114,7 @@ export default function RecipeCard(props) {
                             src={
                               r.images.length > 0
                                 ? `https://yeeeum.s3-us-west-1.amazonaws.com/${r.images[0].img_url}`
-                                : "./assets/img/food.png"
+                                : "/assets/img/food.png"
                             }
                             onLoad={() => setImgLoaded(true)}
                             loader={
@@ -143,7 +143,7 @@ export default function RecipeCard(props) {
                           className="col-9 "
                           style={{
                             paddingLeft: "0!important",
-                            paddingRight: "0!important"
+                            paddingRight: "0!important",
                           }}
                         >
                           {imgLoaded && (
@@ -167,7 +167,7 @@ export default function RecipeCard(props) {
                                 style={{
                                   color: "grey",
                                   textTransform: "uppercase",
-                                  textDecoration: "none"
+                                  textDecoration: "none",
                                 }}
                                 to={`user/${r.user_id}`}
                               >
