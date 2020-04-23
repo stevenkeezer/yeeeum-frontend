@@ -4,7 +4,7 @@ import React, {
   useState,
   useEffect,
   useRef,
-  useCallback
+  useCallback,
 } from "react";
 import { Link } from "react-router-dom";
 import RecipeItem from "../../components/RecipeItem/RecipeItem";
@@ -28,11 +28,11 @@ function Dashboard(props) {
   const [loading, setLoading] = useState(true);
   const [hasMore, setHasMore] = useState(false);
 
-  const lastRecipeRef = useCallback(node => {
+  const lastRecipeRef = useCallback((node) => {
     if (loading) return;
     if (observer.current) observer.current.disconnect();
     observer.current = new IntersectionObserver(
-      entries => {
+      (entries) => {
         if (entries[0].isIntersecting && hasMore) {
           setPage(page + 1);
         }
@@ -59,9 +59,9 @@ function Dashboard(props) {
         method: "POST",
         headers: {
           "Content-type": "application/json",
-          Authorization: `Token ${token}`
+          Authorization: `Token ${token}`,
         },
-        body: JSON.stringify(page)
+        body: JSON.stringify(page),
       });
 
       console.log("response", response);
@@ -75,14 +75,14 @@ function Dashboard(props) {
     }
   };
 
-  const replace_post = async id => {
+  const replace_post = async (id) => {
     const response = await fetch(process.env.REACT_APP_BURL + `replace_post`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
-        Authorization: `Token ${localStorage.getItem("token")}`
+        Authorization: `Token ${localStorage.getItem("token")}`,
       },
-      body: JSON.stringify(id)
+      body: JSON.stringify(id),
     });
 
     if (response.ok) {
@@ -90,23 +90,24 @@ function Dashboard(props) {
 
       let recipesCopy = JSON.parse(JSON.stringify(recipes));
 
-      const hasRecipeId = recipe => recipe.id === id;
+      const hasRecipeId = (recipe) => recipe.id === id;
       recipesCopy[recipesCopy.findIndex(hasRecipeId)] = data;
       setRecipes(recipesCopy);
     }
   };
 
-  const likeButton = async id => {
+  const likeButton = async (id) => {
+    console.log("dasadfasdfasdfasdsh", id);
     const recipeId = {
-      recipe_id: id
+      recipe_id: id,
     };
     const options = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Token ${localStorage.getItem("token")}`
+        Authorization: `Token ${localStorage.getItem("token")}`,
       },
-      body: JSON.stringify(recipeId)
+      body: JSON.stringify(recipeId),
     };
     const response = await fetch(process.env.REACT_APP_BURL + "like", options);
     if (response.ok) {
@@ -115,7 +116,7 @@ function Dashboard(props) {
     }
   };
 
-  const returnSearchResults = values => {
+  const returnSearchResults = (values) => {
     props.returnSearchResults(values);
   };
 
@@ -136,7 +137,7 @@ function Dashboard(props) {
       // opacity: 0
       // x: "100vw",
       // scale: 1
-    }
+    },
   };
 
   const style = {
@@ -146,20 +147,20 @@ function Dashboard(props) {
   const override = {
     display: "block",
     margin: "0 auto",
-    borderColor: "red"
+    borderColor: "red",
   };
 
   const pageTransition = {
     type: "tween",
     transition: "linear",
     ease: "anticipate",
-    duration: 1
+    duration: 1,
     // scale: 0.8
   };
 
   const buttonStyle = {
     display: "block",
-    margin: "10px auto"
+    margin: "10px auto",
   };
 
   const options = {
@@ -167,8 +168,8 @@ function Dashboard(props) {
     autoplay: true,
     animationData: animationData,
     rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice"
-    }
+      preserveAspectRatio: "xMidYMid slice",
+    },
   };
 
   return (
@@ -184,7 +185,7 @@ function Dashboard(props) {
         <div
           style={{
             paddingTop: "2.49%",
-            marginBottom: "3.5%"
+            marginBottom: "3.5%",
             // backgroundImage: "linear-gradient(#f6f6f6, #ffffff)"
           }}
         >
@@ -197,7 +198,7 @@ function Dashboard(props) {
             <h3
               style={{
                 lineHeight: "3rem",
-                letterSpacing: "-.1rem"
+                letterSpacing: "-.1rem",
               }}
               className="banner-header"
             >
@@ -207,7 +208,7 @@ function Dashboard(props) {
               style={{
                 padding: "0px",
                 fontSize: "16px",
-                margin: "0px!important"
+                margin: "0px!important",
               }}
               className="col-lg-12 col-8 about "
             >
@@ -239,7 +240,7 @@ function Dashboard(props) {
             marginTop: "5vw",
             height: "460px",
             transform: "rotateY(180deg)",
-            zIndex: -1
+            zIndex: -1,
           }}
         ></div>
 
